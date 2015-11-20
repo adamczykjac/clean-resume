@@ -1,0 +1,53 @@
+/* GENERAL */
+html, body {
+  margin: 30px 0;
+  font-family: montserratlight;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'montserratbold', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-family: 'montserratregular';
+  letter-spacing: 0.35em;
+}
+
+
+/* MASONRY CSS - taken from http://www.bootply.com/85737 */
+
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+.row {
+  -moz-column-width: 18em;
+  -webkit-column-width: 18em;
+  -moz-column-gap: 1em;
+  -webkit-column-gap: 1em;
+
+}
+
+.menu-category {
+  display: inline-block;
+  margin:  0.25rem;
+  padding:  1rem;
+  width:  100%;
+}
+
+/* TABLET */
+
+@media only screen and (min-width: 989px) {
+  .row {
+    -moz-column-width: 24em;
+    -webkit-column-width: 24em;
+  }
+}
+
+/* DESKTOP */
+
+@media only screen and (min-width: 1199px) {
+  .row {
+    -moz-column-width: 36em;
+    -webkit-column-width: 36em;
+  }
+}
