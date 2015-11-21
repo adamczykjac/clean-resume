@@ -1,25 +1,67 @@
 /* GENERAL */
 html, body {
-  margin: 30px 0;
+  margin: 2em 0;
   font-family: montserratlight;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'montserratbold', "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
+
 }
 
-h5 {
-  font-family: 'montserratregular';
+header {
+  margin-bottom: 1em;
+}
+
+header .push-down {
+  margin: 2em 0 0 0;
+}
+
+.main-lead {
+  color: #eb4b52;
+  margin: 0;
+}
+
+.sub-lead {
+  font-family: 'montserratlight';
   letter-spacing: 0.35em;
+  color: #6b6d70;
+  margin: 0;
 }
 
+.avatar {
+  margin: 0;
+  width: 6em;
+}
+
+td {
+  padding: 0.4em 0.5em;
+}
+
+.contact td:first-child {
+  text-transform: uppercase;
+  float: right;
+  font-family: 'montserratsemi_bold';
+  font-size: 0.8em;
+  vertical-align: text-bottom;
+  margin-top: 0.45em;
+}
+
+.social td:first-child {
+  float: right;
+  font-size: 1.5em;
+}
+
+.social td {
+  vertical-align: middle;
+}
 
 /* MASONRY CSS - taken from http://www.bootply.com/85737 */
 
 *, *:before, *:after {box-sizing:  border-box !important;}
 
-.row {
+.content.row {
   -moz-column-width: 18em;
   -webkit-column-width: 18em;
   -moz-column-gap: 1em;
@@ -37,7 +79,7 @@ h5 {
 /* TABLET */
 
 @media only screen and (min-width: 989px) {
-  .row {
+  .content.row {
     -moz-column-width: 24em;
     -webkit-column-width: 24em;
   }
@@ -46,8 +88,12 @@ h5 {
 /* DESKTOP */
 
 @media only screen and (min-width: 1199px) {
-  .row {
+  .content.row {
     -moz-column-width: 36em;
     -webkit-column-width: 36em;
+  }
+
+  header {
+    margin-bottom: 3em;
   }
 }
