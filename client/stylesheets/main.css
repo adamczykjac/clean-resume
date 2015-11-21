@@ -69,11 +69,16 @@ h3 {
   background-color: transparent;
 }
 
+.list-group-item [class*="col-xs-"] {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .progress {
   background: transparent;
   border: 1px solid #aaaaaa;
   border-radius: 0px;
-  height: 15px;
+  height: 13px;
 }
 
 .progress-bar-custom {
