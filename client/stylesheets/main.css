@@ -69,6 +69,18 @@ h3 {
   background-color: transparent;
 }
 
+.progress {
+  background: transparent;
+  border: 1px solid #aaaaaa;
+  border-radius: 0px;
+  height: 15px;
+}
+
+.progress-bar-custom {
+  background: rgba(66, 139, 202, 0);
+  border: 1px solid #eb4b52;
+}
+
 /* MASONRY CSS - taken from http://www.bootply.com/85737 */
 
 *, *:before, *:after {box-sizing:  border-box !important;}
