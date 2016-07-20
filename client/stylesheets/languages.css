@@ -1,0 +1,11 @@
+.progress-border {
+    stroke-width: 0;
+}
+.progress-circular-bar {
+    fill: #eb4b52;
+}
+.progress-text {
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #6b6d70;
+}
