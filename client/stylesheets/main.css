@@ -1,4 +1,5 @@
 /*** GENERAL ****/
+
 html, body {
   margin: 2em 0;
   font-family: montserratlight;
@@ -18,10 +19,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'montserratbold', "Helvetica Neue", Helvetica, Arial, sans-serif;
   letter-spacing: 3px;
   text-transform: uppercase;
+  font-weight: 700;
 }
 
 h5 {
   letter-spacing: 1px;
+  font-weight: 500;
 }
 
 header .push-down {
@@ -103,8 +106,8 @@ h3 {
 .col-lg-15 {
   position: relative;
   min-height: 1px;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 figure, figure figcaption {
@@ -146,7 +149,7 @@ figure span[class^="flaticon-"], figure span[class*=" flaticon-"] {
   margin-left: 84px;
 }
 
-/* Language section */
+/* Common Skills & Languages */
 
 .progress {
   background: transparent;
@@ -165,6 +168,15 @@ figure span[class^="flaticon-"], figure span[class*=" flaticon-"] {
   box-shadow: inset 0 0px 0px;
 }
 
+/* Language section */
+
+#languages svg {
+  position: relative;
+  left: -2.5em;
+}
+
+/* Certificates section */
+
 #certificates li {
   font-size: 1.5em;
   color: #eb4b52;
@@ -174,8 +186,6 @@ figure span[class^="flaticon-"], figure span[class*=" flaticon-"] {
   font-size: 0.65em;
   color: #6b6d70;
 }
-
-
 
 /* MASONRY CSS - taken from http://www.bootply.com/85737 */
 
@@ -196,12 +206,13 @@ figure span[class^="flaticon-"], figure span[class*=" flaticon-"] {
   width:  100%;
 }
 
-/*** Media quieries ***/
+/*** Media queries ***/
 
 .col-xs-15 {
   width: 20%;
   float: left;
 }
+
 @media (min-width: 768px) {
 .col-sm-15 {
       width: 20%;
