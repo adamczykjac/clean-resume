@@ -1,4 +1,4 @@
-/* GENERAL */
+/*** GENERAL ****/
 html, body {
   margin: 2em 0;
   font-family: montserratlight;
@@ -90,13 +90,40 @@ h3 {
 
 *[class^='flaticon-'].big {
   color: #eb4b52;
-  float: left;
-  padding-right: 2.5em;
 }
 
 *[class^='flaticon-'].big:before {
   font-size: 3.5em;
   margin-left: 0;
+}
+
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+figure, figure figcaption {
+  text-align: center;
+}
+
+figure span[class^="flaticon-"], figure span[class*=" flaticon-"] {
+  vertical-align: top;
+  display: inline-block;
+  float: none;
+  padding-right: 0
+}
+
+/* Common - Awards & Certificates */
+
+#awards [class^="flaticon-"], #awards [class*=" flaticon-"],
+#certificates [class^="flaticon-"], #certificates [class*=" flaticon-"] {
+  float: left;
+  padding-right: 2.5em;
 }
 
 /* Awards section */
@@ -148,6 +175,8 @@ h3 {
   color: #6b6d70;
 }
 
+
+
 /* MASONRY CSS - taken from http://www.bootply.com/85737 */
 
 *, *:before, *:after {box-sizing:  border-box !important;}
@@ -167,18 +196,35 @@ h3 {
   width:  100%;
 }
 
-/* TABLET */
+/*** Media quieries ***/
 
-@media only screen and (min-width: 989px) {
+.col-xs-15 {
+  width: 20%;
+  float: left;
+}
+@media (min-width: 768px) {
+.col-sm-15 {
+      width: 20%;
+      float: left;
+  }
+}
+@media (min-width: 992px) {
+  .col-md-15 {
+      width: 20%;
+      float: left;
+  }
+
   .content.row {
     -moz-column-width: 24em;
     -webkit-column-width: 24em;
   }
 }
+@media (min-width: 1200px) {
+  .col-lg-15 {
+      width: 20%;
+      float: left;
+  }
 
-/* DESKTOP */
-
-@media only screen and (min-width: 1199px) {
   .content.row {
     -moz-column-width: 36em;
     -webkit-column-width: 36em;
