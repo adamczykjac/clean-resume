@@ -1,7 +1,7 @@
 /*** GENERAL ****/
 
 html, body {
-  margin: 2em 0;
+  margin: 1em 0 2em 0;
   font-family: montserratlight;
 }
 
@@ -13,6 +13,11 @@ a, a:visited, a:active {
 a:hover {
   color: #c53f44;
   text-decoration: none;
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,23 +34,6 @@ h5 {
 
 header .push-down {
   margin: 2em 0 0 0;
-}
-
-.main-lead {
-  color: #eb4b52;
-  margin: 0;
-}
-
-.sub-lead {
-  font-family: 'montserratlight';
-  letter-spacing: 0.35em;
-  color: #6b6d70;
-  margin: 0;
-}
-
-.avatar {
-  margin: 0;
-  width: 6.5em;
 }
 
 td {
@@ -110,6 +98,11 @@ h3 {
   padding-left: 5px;
 }
 
+.col-xs-15 {
+  width: 20%;
+  float: left;
+}
+
 figure, figure figcaption {
   text-align: center;
 }
@@ -119,6 +112,54 @@ figure span[class^="flaticon-"], figure span[class*=" flaticon-"] {
   display: inline-block;
   float: none;
   padding-right: 0
+}
+
+
+footer {
+  text-align: center;
+  color: #aaa;
+}
+
+/* MASONRY CSS - taken from http://www.bootply.com/85737 */
+
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+.content.row {
+  -moz-column-width: 18em;
+  -webkit-column-width: 18em;
+  -moz-column-gap: 1em;
+  -webkit-column-gap: 1em;
+
+}
+
+.menu-category {
+  display: inline-block;
+  margin:  0.25rem;
+  padding:  1rem;
+  width:  100%;
+}
+
+/* Header */
+
+.main-lead {
+  color: #eb4b52;
+  margin: 0;
+}
+
+h2.main-lead {
+  letter-spacing: normal;
+}
+
+.sub-lead {
+  font-family: 'montserratlight';
+  letter-spacing: 0.35em;
+  color: #6b6d70;
+  margin: 0;
+}
+
+.avatar {
+  margin: 0;
+  width: 6em;
 }
 
 /* Common - Awards & Certificates */
@@ -139,14 +180,12 @@ figure span[class^="flaticon-"], figure span[class*=" flaticon-"] {
   padding-left: 1.3em;
   padding-bottom: 1em;
 }
-
 #awards [class^="flaticon-"], [class*=" flaticon-"] {
   position: relative;
   top: -8px;
 }
-
-#awards p {
-  margin-left: 84px;
+#awards .award-content {
+  margin: 0 40px 0 84px;
 }
 
 /* Common Skills & Languages */
@@ -174,6 +213,9 @@ figure span[class^="flaticon-"], figure span[class*=" flaticon-"] {
   position: relative;
   left: -2.5em;
 }
+#languages svg text{
+  letter-spacing: 1px;
+}
 
 /* Certificates section */
 
@@ -183,35 +225,12 @@ figure span[class^="flaticon-"], figure span[class*=" flaticon-"] {
 }
 
 #certificates li span {
-  font-size: 0.65em;
+  font-size: 0.7em;
   color: #6b6d70;
 }
 
-/* MASONRY CSS - taken from http://www.bootply.com/85737 */
-
-*, *:before, *:after {box-sizing:  border-box !important;}
-
-.content.row {
-  -moz-column-width: 18em;
-  -webkit-column-width: 18em;
-  -moz-column-gap: 1em;
-  -webkit-column-gap: 1em;
-
-}
-
-.menu-category {
-  display: inline-block;
-  margin:  0.25rem;
-  padding:  1rem;
-  width:  100%;
-}
 
 /*** Media queries ***/
-
-.col-xs-15 {
-  width: 20%;
-  float: left;
-}
 
 @media (min-width: 768px) {
 .col-sm-15 {
