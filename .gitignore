@@ -1,3 +1,4 @@
 .*
 !/.gitignore
 !/.meteor
+node_modules
