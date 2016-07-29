@@ -5,12 +5,19 @@ import { Skills } from '../api/skills.js';
 import Skill from './resume-modules/Skill.jsx';
 import { Awards } from '../api/awards.js';
 import Award from './resume-modules/Award.jsx';
+import { Works } from '../api/works.js';
+import Work from './resume-modules/Work.jsx';
 
 // Content component
 export default class Content extends Component {
   renderSkills() {
     return this.props.skills.map((skill) => (
       <Skill key={skill._id} skill={skill} />
+    ));
+  }
+  renderWorks() {
+    return this.props.works.map((work) => (
+      <Work key={work._id} work={work} />
     ));
   }
   renderAwards() {
@@ -23,12 +30,15 @@ export default class Content extends Component {
     return (
       <div className="content menu row">
           <div className="menu-category list-group" id="skills">
-              <h3>SKILLS</h3>
-              { this.renderSkills() }
+            <h3>SKILLS</h3>
+            { this.renderSkills() }
           </div>
 
           <div className="menu-category list-group" id="experience">
-              <h3>EXPERIENCE</h3>
+            <h3>WORK</h3>
+            <ul className="timeline">
+              { this.renderWorks() }
+            </ul>
           </div>
 
           <div className="menu-category list-group" id="awards">
@@ -37,7 +47,6 @@ export default class Content extends Component {
                 { this.renderAwards() }
               </ul>
           </div>
-
           <div className="menu-category list-group">
               <h3>EDUCATION</h3>
           </div>
@@ -49,7 +58,7 @@ export default class Content extends Component {
               <h3>CERTIFICATES</h3>
           </div>
           <div className="menu-category list-group" id="hobbies">
-              <h3>HOBBIES</h3>
+              <h3>UMIEJĘTNOŚCI</h3>
           </div>
       </div>
     );
@@ -58,12 +67,14 @@ export default class Content extends Component {
 
 Content.propTypes = {
   skills: PropTypes.array.isRequired,
-  awards: PropTypes.array.isRequired
+  awards: PropTypes.array.isRequired,
+  works: PropTypes.array.isRequired,
 };
 
 export default ContentContainer = createContainer(() => {
   return {
     skills: Skills.find({}).fetch(),
     awards: Awards.find({}).fetch(),
+    works: Works.find({}).fetch()
   };
 }, Content);

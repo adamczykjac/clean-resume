@@ -6,7 +6,7 @@ export default class Footer extends Component {
     return (
       <footer>
         <hr />
-        &copy; Jacek Adamczyk, 2015 - Icon credits: flaticon.com
+        &copy; Clean Resume, 2016 - Icon credits: <a href="http://flaticon.com" target="_blank">flaticon.com</a>
       </footer>
     );
   }

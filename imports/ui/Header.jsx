@@ -8,12 +8,12 @@ export default class Header extends Component {
               <div className="col-md-6">
                   <div className="row">
                       <div className="col-xs-2 col-md-3 col-lg-2 col-xs-offset-1 col-md-offset-0">
-                          <img className='img-circle avatar push-down' src='img/eda.jpg' />
+                          <img className='img-circle avatar push-down' src='img/profilepic.jpg' />
                       </div>
                       <div className="col-xs-7 col-xs-offset-1 col-sm-offset-2">
                         <div className="push-down">
-                          <h2 className="main-lead">Jacek Adamczyk</h2>
-                          <h5 className="sub-lead">LEAN PRODUCT & PROCESS MANAGER / <br /> WEB DEVELOPMENT</h5>
+                          <h2 className="main-lead">John Doe-Tyson</h2>
+                          <h5 className="sub-lead">LEAN MANAGOGO & PROCESS FUTURIST / WEBDEV (OCCASIONALLY)</h5>
                         </div>
                       </div>
                   </div>
@@ -23,23 +23,23 @@ export default class Header extends Component {
                     <tbody>
                       <tr>
                           <td>Mail</td>
-                          <td><a href="#">jacek.adamczyk.me</a></td>
+                          <td><a href="#">john.doe.tyson.me</a></td>
                       </tr>
                       <tr>
                           <td>Web</td>
-                          <td><a href="#">jacek@adamczyk.me</a></td>
+                          <td><a href="#">john@doe.tyson.me</a></td>
                       </tr>
                       <tr>
                           <td>Mobile</td>
-                          <td>+48 514 716 760</td>
+                          <td>691 3034 349</td>
                       </tr>
                       <tr>
                           <td>Nationality</td>
-                          <td>Polish</td>
+                          <td>American</td>
                       </tr>
                       <tr>
                           <td>Location</td>
-                          <td>Tilburg, Netherlands</td>
+                          <td>Cleveland, Ohio, US</td>
                       </tr>
                     </tbody>
                   </table>
@@ -49,15 +49,15 @@ export default class Header extends Component {
                     <tbody>
                       <tr>
                           <td><i className="flaticon-linkedin"></i></td>
-                          <td><a href="#">in/adamczykjac</a></td>
+                          <td><a href="#">in/theRealJohn</a></td>
                       </tr>
                       <tr>
                           <td><i className="flaticon-twitter"></i></td>
-                          <td><a href="#">@adamczykjac</a></td>
+                          <td><a href="#">@theRealJohn</a></td>
                       </tr>
                       <tr>
                           <td><i className="flaticon-github"></i></td>
-                          <td><a href="#">adamczykjac</a></td>
+                          <td><a href="#">theRealJohnCoding</a></td>
                       </tr>
                     </tbody>
                   </table>
