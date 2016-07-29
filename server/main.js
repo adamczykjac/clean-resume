@@ -1,1 +1,2 @@
-import '../imports/api/tasks.js';
+import '../imports/api/skills.js';
+import '../imports/api/awards.js';

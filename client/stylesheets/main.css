@@ -36,6 +36,12 @@ header .push-down {
   margin: 2em 0 0 0;
 }
 
+.table > tbody > tr > td {
+  line-height: normal;
+  vertical-align: inherit;
+  border-top: 0;
+}
+
 td {
   padding: 0.4em 0.5em;
 }
@@ -56,7 +62,7 @@ tr:first-child>td {
   font-family: 'montserratsemi_bold';
   font-size: 0.8em;
   vertical-align: text-bottom;
-  margin-top: 0.45em;
+  margin-top: 0.28em;
 }
 
 .social {
