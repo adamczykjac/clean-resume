@@ -12,8 +12,8 @@ export default class Header extends Component {
                       </div>
                       <div className="col-xs-7 col-xs-offset-1 col-sm-offset-2">
                         <div className="push-down">
-                          <h2 className="main-lead">John Doe-Tyson</h2>
-                          <h5 className="sub-lead">LEAN MANAGOGO & PROCESS FUTURIST / WEBDEV (OCCASIONALLY)</h5>
+                          <h2 className="main-lead">Dziubas Adamczyk</h2>
+                          <h5 className="sub-lead">Koszykasz Golden State Warriors i synek mamusi</h5>
                         </div>
                       </div>
                   </div>

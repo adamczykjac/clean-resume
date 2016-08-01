@@ -4,15 +4,19 @@
   position: relative;
 }
 
-.timeline:before {
-  top: 0;
-  bottom: 0;
-  position: absolute;
-  content: " ";
-  width: 1px;
+.timeline-wrap {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.timeline-before {
+  width: 2px;
   background-color: #eb4b52;
-  left: 10px;
-  margin-left: -1.5px;
+  position: relative;
+  left: 9px;
 }
 .timeline > li {
   margin-bottom: 10px;

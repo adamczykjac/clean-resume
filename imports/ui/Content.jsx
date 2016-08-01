@@ -7,6 +7,8 @@ import { Awards } from '../api/awards.js';
 import Award from './resume-modules/Award.jsx';
 import { Works } from '../api/works.js';
 import Work from './resume-modules/Work.jsx';
+import { Languages } from '../api/languages.js';
+import Language from './resume-modules/Language.jsx';
 
 // Content component
 export default class Content extends Component {
@@ -25,6 +27,11 @@ export default class Content extends Component {
       <Award key={award._id} award={award} />
     ));
   }
+  renderLanguages() {
+    return this.props.languages.map((lang) => (
+      <Language key={lang._id} lang={lang} />
+    ));
+  }
 
   render() {
     return (
@@ -34,11 +41,14 @@ export default class Content extends Component {
             { this.renderSkills() }
           </div>
 
-          <div className="menu-category list-group" id="experience">
+          <div className="menu-category list-group" id="works">
             <h3>WORK</h3>
-            <ul className="timeline">
-              { this.renderWorks() }
-            </ul>
+            <div className="timeline-wrap">
+              <div className="timeline-before"></div>
+              <ul className="timeline">
+                { this.renderWorks() }
+              </ul>
+            </div>
           </div>
 
           <div className="menu-category list-group" id="awards">
@@ -53,6 +63,7 @@ export default class Content extends Component {
 
           <div className="menu-category list-group" id="languages">
               <h3>LANGUAGES</h3>
+              { this.renderLanguages() }
           </div>
           <div className="menu-category list-group" id="certificates">
               <h3>CERTIFICATES</h3>
@@ -69,12 +80,14 @@ Content.propTypes = {
   skills: PropTypes.array.isRequired,
   awards: PropTypes.array.isRequired,
   works: PropTypes.array.isRequired,
+  languages: PropTypes.array.isRequired,
 };
 
 export default ContentContainer = createContainer(() => {
   return {
     skills: Skills.find({}).fetch(),
     awards: Awards.find({}).fetch(),
-    works: Works.find({}).fetch()
+    works: Works.find({}).fetch(),
+    languages: Languages.find({}).fetch()
   };
 }, Content);
