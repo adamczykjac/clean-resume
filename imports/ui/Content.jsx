@@ -5,10 +5,11 @@ import { Skills } from '../api/skills.js';
 import Skill from './resume-modules/Skill.jsx';
 import { Awards } from '../api/awards.js';
 import Award from './resume-modules/Award.jsx';
-import { Works } from '../api/works.js';
-import Work from './resume-modules/Work.jsx';
 import { Languages } from '../api/languages.js';
 import Language from './resume-modules/Language.jsx';
+import { Works } from '../api/works.js';
+import { Educations } from '../api/educations.js';
+import TimelineMoment from './resume-modules/TimelineMoment.jsx';
 
 // Content component
 export default class Content extends Component {
@@ -17,9 +18,16 @@ export default class Content extends Component {
       <Skill key={skill._id} skill={skill} />
     ));
   }
-  renderWorks() {
-    return this.props.works.map((work) => (
-      <Work key={work._id} work={work} />
+  renderTimelineMoments(momentType) {
+    var timelineIterable = null;
+    if (momentType === 'Work') {
+      timelineIterable = this.props.works;
+    }
+    else {
+      timelineIterable = this.props.educations;
+    }
+    return timelineIterable.map((moment) => (
+      <TimelineMoment key={moment._id} momentType={momentType} moment={moment} />
     ));
   }
   renderAwards() {
@@ -41,12 +49,12 @@ export default class Content extends Component {
             { this.renderSkills() }
           </div>
 
-          <div className="menu-category list-group" id="works">
+          <div className="menu-category list-group" id="work">
             <h3>WORK</h3>
             <div className="timeline-wrap">
               <div className="timeline-before"></div>
               <ul className="timeline">
-                { this.renderWorks() }
+                { this.renderTimelineMoments('Work') }
               </ul>
             </div>
           </div>
@@ -57,8 +65,14 @@ export default class Content extends Component {
                 { this.renderAwards() }
               </ul>
           </div>
-          <div className="menu-category list-group">
+          <div className="menu-category list-group" id="education">
               <h3>EDUCATION</h3>
+              <div className="timeline-wrap">
+                <div className="timeline-before"></div>
+                <ul className="timeline">
+                  { this.renderTimelineMoments('Education') }
+                </ul>
+              </div>
           </div>
 
           <div className="menu-category list-group" id="languages">
@@ -80,14 +94,17 @@ Content.propTypes = {
   skills: PropTypes.array.isRequired,
   awards: PropTypes.array.isRequired,
   works: PropTypes.array.isRequired,
-  languages: PropTypes.array.isRequired,
+  educations: PropTypes.array.isRequired,
+  languages: PropTypes.array.isRequired
 };
 
+// TODO extract collections from one JSON Resume entry
 export default ContentContainer = createContainer(() => {
   return {
     skills: Skills.find({}).fetch(),
     awards: Awards.find({}).fetch(),
     works: Works.find({}).fetch(),
+    educations: Educations.find({}).fetch(),
     languages: Languages.find({}).fetch()
   };
 }, Content);

@@ -5,7 +5,7 @@ export default class Work extends Component {
   render() {
     return (
       <li>
-          <div className="timeline-badge primary"><a><div className="circle" rel="tooltip" title="11 hours ago via Twitter" id=""></div></a></div>
+          <div className="timeline-badge primary"><a><div className="circle" rel="tooltip"></div></a></div>
           <div className="timeline-panel">
               <div className="timeline-body">
                   <h4>{ this.props.work.position }</h4>

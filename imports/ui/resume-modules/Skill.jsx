@@ -9,7 +9,12 @@ export default class Skill extends Component {
               { this.props.skill.title }
           </div>
           <div className="col-xs-6 col-md-5 progress">
-            <div className="progress-bar progress-bar-custom" role="progressbar" aria-valuenow={ this.props.skill.value } aria-valuemin="0" aria-valuemax="100" style={{ width: this.props.skill.value+'%' }}>
+            <div className="progress-bar progress-bar-custom"
+                  role="progressbar"
+                  aria-valuenow={ this.props.skill.value }
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style={{ width: this.props.skill.value+'%' }}>
             </div>
           </div>
       </div>
