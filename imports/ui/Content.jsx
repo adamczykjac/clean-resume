@@ -10,6 +10,10 @@ import Language from './resume-modules/Language.jsx';
 import { Works } from '../api/works.js';
 import { Educations } from '../api/educations.js';
 import TimelineMoment from './resume-modules/TimelineMoment.jsx';
+import { Certifications } from '../api/certifications.js';
+import Certification from './resume-modules/Certification.jsx';
+import { Interests } from '../api/interests.js';
+import Interest from './resume-modules/Interest.jsx';
 
 // Content component
 export default class Content extends Component {
@@ -38,6 +42,16 @@ export default class Content extends Component {
   renderLanguages() {
     return this.props.languages.map((lang) => (
       <Language key={lang._id} lang={lang} />
+    ));
+  }
+  renderCertifications() {
+    return this.props.certifications.map((cert) => (
+      <Certification key={cert._id} cert={cert} />
+    ));
+  }
+  renderInterests() {
+    return this.props.interests.map((interest) => (
+      <Interest key={interest._id} interest={interest} />
     ));
   }
 
@@ -79,11 +93,15 @@ export default class Content extends Component {
               <h3>LANGUAGES</h3>
               { this.renderLanguages() }
           </div>
-          <div className="menu-category list-group" id="certificates">
-              <h3>CERTIFICATES</h3>
+          <div className="menu-category list-group" id="certifications">
+              <h3>CERTIFICATIONS</h3>
+              <ul>
+                { this.renderCertifications() }
+              </ul>
           </div>
-          <div className="menu-category list-group" id="hobbies">
-              <h3>UMIEJĘTNOŚCI</h3>
+          <div className="menu-category list-group" id="interests">
+              <h3>INTERESTS</h3>
+              { this.renderInterests() }
           </div>
       </div>
     );
@@ -95,7 +113,9 @@ Content.propTypes = {
   awards: PropTypes.array.isRequired,
   works: PropTypes.array.isRequired,
   educations: PropTypes.array.isRequired,
-  languages: PropTypes.array.isRequired
+  languages: PropTypes.array.isRequired,
+  certifications: PropTypes.array.isRequired,
+  interests: PropTypes.array.isRequired
 };
 
 // TODO extract collections from one JSON Resume entry
@@ -105,6 +125,8 @@ export default ContentContainer = createContainer(() => {
     awards: Awards.find({}).fetch(),
     works: Works.find({}).fetch(),
     educations: Educations.find({}).fetch(),
-    languages: Languages.find({}).fetch()
+    languages: Languages.find({}).fetch(),
+    certifications: Certifications.find({}).fetch(),
+    interests: Interests.find({}).fetch()
   };
 }, Content);

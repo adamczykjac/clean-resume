@@ -178,25 +178,25 @@ footer {
   padding: 0;
 }
 
-/* Common Awards & Certificates section */
+/* Common Awards & Certifications section */
 
 #awards [class^="flaticon-"], #awards [class*=" flaticon-"],
-#certificates [class^="flaticon-"], #certificates [class*=" flaticon-"] {
+#certifications [class^="flaticon-"], #certifications [class*=" flaticon-"] {
   display: block;
   text-align: center;
 }
 
-#awards ul, #certificates ul {
+#awards ul, #certifications ul {
   list-style: none;
   padding: 0;
 }
-#awards li, #certificates li {
+#awards li, #certifications li {
   padding-bottom: 1em;
 }
-#awards .award-content, #certificates .certificate-content {
+#awards .award-content, #certifications .certificate-content {
   margin: 0 30px;
 }
-#awards h4, #certificates h4 {
+#awards h4, #certifications h4 {
   text-align: center;
   margin-bottom: 20px;
 }
@@ -269,33 +269,33 @@ footer {
     margin-left: 15px;
   }
 
-  /* Common - Awards & Certificates */
+  /* Common - Awards & Certifications */
 
   #awards [class^="flaticon-"], #awards [class*=" flaticon-"],
-  #certificates [class^="flaticon-"], #certificates [class*=" flaticon-"] {
+  #certifications [class^="flaticon-"], #certifications [class*=" flaticon-"] {
     float: left;
     padding-right: 2.5em;
   }
 
-  #awards li, #certificates li {
+  #awards li, #certifications li {
     padding-left: 1.3em;
   }
 
-  #awards span, #certificates span {
+  #awards span, #certifications span {
     float: left;
   }
 
-  #awards .award-content, #certificates .certificate-content {
+  #awards .award-content, #certifications .certification-content {
     margin: 0 40px 0 84px;
   }
 
-  #awards h4, #certificates h4 {
+  #awards h4, #certifications h4 {
     text-align: left;
     margin-bottom: inherit;
   }
 
   #awards [class^="flaticon-"], #awards [class*=" flaticon-"],
-  #certificates [class^="flaticon-"], #certificates [class*=" flaticon-"] {
+  #certifications [class^="flaticon-"], #certifications [class*=" flaticon-"] {
     position: relative;
     top: -8px;
   }
