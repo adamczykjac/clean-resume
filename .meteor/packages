@@ -23,3 +23,5 @@ twbs:bootstrap
 session
 archive:circular-progress
 react-meteor-data
+kadira:dochead
+kadira:flow-router-ssr
