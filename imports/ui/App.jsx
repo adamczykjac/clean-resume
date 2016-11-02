@@ -17,10 +17,31 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        {this.renderHeader()}
-        {this.renderContent()}
-        {this.renderFooter()}
+      <div className="top-wrapper">
+        <svg>
+            <defs>
+              <pattern id="basicPattern" x="0" y="0" width="50" height="86.6" patternUnits="userSpaceOnUse">
+                <polygon points="0,0 50,0"/>
+                <polygon points="25,0 0,43.3 50,43.3"/>
+                <polygon points="0,43.3 50,43.3 25,86.6"/>
+                <polygon points="0,86.6 50,86.6"/>
+              </pattern>
+              <linearGradient id="fadeGrad" y2="1" x2="0">
+                <stop offset="0" stopColor="white" stopOpacity="0.5"/>
+                <stop offset="0.7" stopColor="white" stopOpacity="0"/>
+              </linearGradient>
+              <mask id="fade" maskContentUnits="objectBoundingBox">
+                <rect width="1" height="1" fill="url(#fadeGrad)"/>
+              </mask>
+            </defs>
+
+            <rect x="0" y="00" width="100%" height="100%" fill="url(#basicPattern)" mask="url(#fade)"/>
+        </svg>
+        <div className="container">
+          {this.renderHeader()}
+          {this.renderContent()}
+          {this.renderFooter()}
+        </div>
       </div>
     );
   }
