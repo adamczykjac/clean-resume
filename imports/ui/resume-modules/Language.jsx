@@ -1,3 +1,5 @@
+import { Chromatic } from 'meteor/mdg:chromatic';
+
 import React, { Component, PropTypes } from 'react';
 import { Line, Circle } from 'rc-progress';
 
@@ -21,3 +23,25 @@ export default class Language extends Component {
 Language.propTypes = {
   lang: PropTypes.object.isRequired
 };
+
+// Chromatic specs
+if (Chromatic) {
+  Chromatic.add(Language, {
+    specs: [
+      new Chromatic.Spec('quarterLang', {
+        props: {
+          language: 'English',
+          fluency: 'CAE Certificate',
+          level: '90'
+        }
+      }),
+      new Chromatic.Spec('halfLang', {
+        props: {
+          language: 'Spanish',
+          fluency: 'Universidad de Certificacion',
+          level: '50'
+        }
+      })
+    ]
+  });
+}

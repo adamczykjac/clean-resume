@@ -22,3 +22,4 @@ twbs:bootstrap
 session
 archive:circular-progress
 react-meteor-data
+mdg:chromatic
