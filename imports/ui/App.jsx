@@ -9,10 +9,10 @@ import Content from './Content.jsx';
 
 export default class App extends Component {
   renderHeader() {
-    return <Header basics={ this.props.basics }/>;
+    return <Header basics={this.props.basics}/>;
   }
   renderContent() {
-    return <Content />;
+    return <Content skills={this.props.content.skills}/>;
   }
   renderFooter() {
     return <Footer />;
@@ -51,17 +51,25 @@ export default class App extends Component {
   }
 }
 
+// Validation of this.props.* types
 App.propTypes = {
   basics: PropTypes.object.isRequired,
+  content: PropTypes.object.isRequired,
 };
 
+// Fetch data from minimongo and pass it to React omponent
 export default createContainer(({ params }) => {
   const subscription = Meteor.subscribe('resumes.get', '581b93481c0dc022fdf3a5f8');
   const loading = !subscription.ready();
   let basics = {};
+  let content = {};
+
   resume = Resumes.findOne({});
   if(resume) {
-    basics = resume.basics
+    basics = resume.basics,
+    content = {
+      skills: resume.skills
+    }
   }
-  return { loading, basics };
+  return { loading, basics, content };
 }, App);

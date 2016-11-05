@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
-import { Skills } from '../api/skills.js';
 import Skill from './resume-modules/Skill.jsx';
 import { Awards } from '../api/awards.js';
 import Award from './resume-modules/Award.jsx';
@@ -18,8 +17,8 @@ import Interest from './resume-modules/Interest.jsx';
 // Content component
 export default class Content extends Component {
   renderSkills() {
-    return this.props.skills.map((skill) => (
-      <Skill key={skill._id} skill={skill} />
+    return this.props.skills.map((skill, idx) => (
+      <Skill key={idx} skill={skill} />
     ));
   }
   renderTimelineMoments(momentType) {
@@ -109,19 +108,18 @@ export default class Content extends Component {
 }
 
 Content.propTypes = {
-  skills: PropTypes.array.isRequired,
-  awards: PropTypes.array.isRequired,
-  works: PropTypes.array.isRequired,
-  educations: PropTypes.array.isRequired,
-  languages: PropTypes.array.isRequired,
-  certifications: PropTypes.array.isRequired,
-  interests: PropTypes.array.isRequired
+  skills: PropTypes.array,
+  awards: PropTypes.array,
+  works: PropTypes.array,
+  educations: PropTypes.array,
+  languages: PropTypes.array,
+  certifications: PropTypes.array,
+  interests: PropTypes.array
 };
 
 // TODO extract collections from one JSON Resume entry
 export default ContentContainer = createContainer(() => {
   return {
-    skills: Skills.find({}).fetch(),
     awards: Awards.find({}).fetch(),
     works: Works.find({}).fetch(),
     educations: Educations.find({}).fetch(),

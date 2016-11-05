@@ -10,7 +10,6 @@ export default class Header extends Component {
     out.push(typeof(city) == undefined ? null : city)
     out.push(typeof(region) == undefined ? null : region)
     out.push(typeof(countryCode) == undefined ? null : countryCode)
-    console.log(out);
     return out.join(', ')
   }
 
