@@ -67,7 +67,7 @@ App.propTypes = {
 
 // Fetch data from minimongo and pass it to React component
 export default createContainer(({ params }) => {
-  const subscription = Meteor.subscribe('resumes.get', '581b93481c0dc022fdf3a5f8');
+  const subscription = Meteor.subscribe('resumes.get');
   const loading = !subscription.ready();
   let basics = {};
   let content = {};

@@ -4,7 +4,10 @@ export const Resumes = new Mongo.Collection('resumes');
 
 if (Meteor.isServer) {
   Meteor.publish('resumes.get', ( resumeId ) => {
-    let oid = new Meteor.Collection.ObjectID(resumeId);
+    oid = {}
+    if(resumeId && resumeId != {}) {
+      let oid = new Meteor.Collection.ObjectID(resumeId);
+    }
     return Resumes.find(oid);
   });
 }
