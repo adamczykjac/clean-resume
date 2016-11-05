@@ -1,13 +1,22 @@
 import React, { Component, PropTypes } from 'react';
-import { createContainer } from 'meteor/react-meteor-data';
 
-import { Basics } from '../api/basics.js';
 // Header component
 export default class Header extends Component {
+  renderLocation() {
+    let city = this.props.basics.location.city;
+    let region = this.props.basics.location.region;
+    let countryCode = this.props.basics.location.countryCode;
+    out = []
+    out.push(typeof(city) == undefined ? null : city)
+    out.push(typeof(region) == undefined ? null : region)
+    out.push(typeof(countryCode) == undefined ? null : countryCode)
+    console.log(out);
+    return out.join(', ')
+  }
+
   render() {
-    // TODO Create a loading spinner
     // TODO Create a 'Social' component
-    return this.props.loading ? null : (
+    return (
       <header className="row">
               <div className="col-md-6">
                   <div className="row">
@@ -16,8 +25,8 @@ export default class Header extends Component {
                       </div>
                       <div className="col-xs-7 col-xs-offset-1 col-sm-offset-2">
                         <div className="push-down">
-                          <h2 className="main-lead">{ this.props.basics.basics.name }</h2>
-                          <h5 className="sub-lead">{ this.props.basics.basics.label }</h5>
+                          <h2 className="main-lead">{ this.props.basics.name }</h2>
+                          <h5 className="sub-lead">{ this.props.basics.label }</h5>
                         </div>
                       </div>
                   </div>
@@ -27,21 +36,19 @@ export default class Header extends Component {
                     <tbody>
                       <tr>
                           <td>Mail</td>
-                          <td><a href="#">{ this.props.basics.basics.website }</a></td>
+                          <td><a href="#">{ this.props.basics.website }</a></td>
                       </tr>
                       <tr>
                           <td>Web</td>
-                          <td><a href="#">{ this.props.basics.basics.email }</a></td>
+                          <td><a href="#">{ this.props.basics.email }</a></td>
                       </tr>
                       <tr>
                           <td>Phone</td>
-                          <td>{ this.props.basics.basics.phone }</td>
+                          <td>{ this.props.basics.phone }</td>
                       </tr>
                       <tr>
                           <td>Location</td>
-                          <td>{ this.props.basics.basics.location.city },
-                            { this.props.basics.basics.location.region },
-                            { this.props.basics.basics.location.countryCode }</td>
+                          <td>{ this.renderLocation() }</td>
                       </tr>
                     </tbody>
                   </table>
@@ -60,14 +67,3 @@ export default class Header extends Component {
     );
   }
 }
-
-Header.propTypes = {
-  name: PropTypes.string,
-};
-
-export default createContainer(({ params }) => {
-  const subscription = Meteor.subscribe('basics', '581b93481c0dc022fdf3a5f8');
-  const loading = !subscription.ready();
-  basics = Basics.findOne({}, {fields: {'basics': 1}});
-  return { loading, basics };
-}, Header);

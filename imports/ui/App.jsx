@@ -1,4 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { createContainer } from 'meteor/react-meteor-data';
+
+import { Resumes } from '../api/resumes.js';
 
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
@@ -6,7 +9,7 @@ import Content from './Content.jsx';
 
 export default class App extends Component {
   renderHeader() {
-    return <Header />;
+    return <Header basics={ this.props.basics }/>;
   }
   renderContent() {
     return <Content />;
@@ -16,7 +19,8 @@ export default class App extends Component {
   }
 
   render() {
-    return (
+    // TODO Create a loading spinner
+    return this.props.loading ? null : (
       <div className="top-wrapper">
         <svg>
             <defs>
@@ -46,3 +50,18 @@ export default class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  basics: PropTypes.object.isRequired,
+};
+
+export default createContainer(({ params }) => {
+  const subscription = Meteor.subscribe('resumes.get', '581b93481c0dc022fdf3a5f8');
+  const loading = !subscription.ready();
+  let basics = {};
+  resume = Resumes.findOne({});
+  if(resume) {
+    basics = resume.basics
+  }
+  return { loading, basics };
+}, App);
