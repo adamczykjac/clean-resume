@@ -3,8 +3,8 @@ import React, { Component, PropTypes } from 'react';
 // Education component
 export default class Education extends Component {
   renderCourses() {
-    return this.props.education.courses.map((course) => (
-      <span>
+    return this.props.education.courses.map((course, idx) => (
+      <span key={idx}>
         { course }{ this.props.education.courses[this.props.education.courses.length - 1] === course ? null : ', ' }
       </span>
     ));

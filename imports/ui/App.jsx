@@ -15,6 +15,11 @@ export default class App extends Component {
     return <Content
       skills={this.props.content.skills}
       awards={this.props.content.awards}
+      languages={this.props.content.languages}
+      works={this.props.content.works}
+      educations={this.props.content.educations}
+      certifications={this.props.content.certifications}
+      interests={this.props.content.interests}
     />;
   }
   renderFooter() {
@@ -60,7 +65,7 @@ App.propTypes = {
   content: PropTypes.object.isRequired,
 };
 
-// Fetch data from minimongo and pass it to React omponent
+// Fetch data from minimongo and pass it to React component
 export default createContainer(({ params }) => {
   const subscription = Meteor.subscribe('resumes.get', '581b93481c0dc022fdf3a5f8');
   const loading = !subscription.ready();
@@ -72,7 +77,12 @@ export default createContainer(({ params }) => {
     basics = resume.basics,
     content = {
       skills: resume.skills,
-      awards: resume.awards
+      awards: resume.awards,
+      languages: resume.languages,
+      works: resume.work,
+      educations: resume.education,
+      certifications: resume.certifications,
+      interests: resume.interests
     }
   }
   return { loading, basics, content };
