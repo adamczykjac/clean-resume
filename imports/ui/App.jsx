@@ -12,7 +12,10 @@ export default class App extends Component {
     return <Header basics={this.props.basics}/>;
   }
   renderContent() {
-    return <Content skills={this.props.content.skills}/>;
+    return <Content
+      skills={this.props.content.skills}
+      awards={this.props.content.awards}
+    />;
   }
   renderFooter() {
     return <Footer />;
@@ -68,7 +71,8 @@ export default createContainer(({ params }) => {
   if(resume) {
     basics = resume.basics,
     content = {
-      skills: resume.skills
+      skills: resume.skills,
+      awards: resume.awards
     }
   }
   return { loading, basics, content };

@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
 import Skill from './resume-modules/Skill.jsx';
-import { Awards } from '../api/awards.js';
 import Award from './resume-modules/Award.jsx';
 import { Languages } from '../api/languages.js';
 import Language from './resume-modules/Language.jsx';
@@ -34,8 +33,8 @@ export default class Content extends Component {
     ));
   }
   renderAwards() {
-    return this.props.awards.map((award) => (
-      <Award key={award._id} award={award} />
+    return this.props.awards.map((award, idx) => (
+      <Award key={idx} award={award} />
     ));
   }
   renderLanguages() {
@@ -120,7 +119,6 @@ Content.propTypes = {
 // TODO extract collections from one JSON Resume entry
 export default ContentContainer = createContainer(() => {
   return {
-    awards: Awards.find({}).fetch(),
     works: Works.find({}).fetch(),
     educations: Educations.find({}).fetch(),
     languages: Languages.find({}).fetch(),
