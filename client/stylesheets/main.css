@@ -3,7 +3,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: montserratlight;
+  font-family: "montserratlight";
 }
 
 a, a:visited, a:active {
@@ -125,6 +125,7 @@ footer {
   text-align: center;
   color: #aaa;
   font-size: 0.8em;
+  margin-bottom: 20px;
 }
 
 /* MASONRY CSS - taken from http://www.bootply.com/85737 */
@@ -146,6 +147,19 @@ footer {
   width:  100%;
 }
 
+/* hello-bar */
+
+.hello-bar {
+  background-color: #eb4b52;
+  padding: 10px 0;
+}
+
+.hello-bar .btn-inverse {
+  background-color: #eb4b52;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
 /* top-wrapper */
 
 .top-wrapper > svg {
@@ -154,12 +168,12 @@ footer {
   left: 0;
   height: 25em;
   width: 100%;
+  z-index: -1;
 }
 
 .top-wrapper > svg pattern polygon {
   stroke: #ddd;
   fill: #fff;
-  color: #fff;
 }
 
 /* Header */

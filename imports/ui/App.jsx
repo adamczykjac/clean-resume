@@ -3,11 +3,12 @@ import { createContainer } from 'meteor/react-meteor-data';
 
 import { Resumes } from '../api/resumes.js';
 
+import HelloBar from './HelloBar.jsx';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import Content from './Content.jsx';
 
-export default class App extends Component {
+export class App extends Component {
   renderHeader() {
     return <Header basics={this.props.basics}/>;
   }
@@ -49,6 +50,7 @@ export default class App extends Component {
 
             <rect x="0" y="00" width="100%" height="100%" fill="url(#basicPattern)" mask="url(#fade)"/>
         </svg>
+        <HelloBar />
         <div className="container">
           {this.renderHeader()}
           {this.renderContent()}
