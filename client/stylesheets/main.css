@@ -137,7 +137,6 @@ footer {
   -webkit-column-width: 18em;
   -moz-column-gap: 1em;
   -webkit-column-gap: 1em;
-
 }
 
 .menu-category {
@@ -236,7 +235,7 @@ footer {
 
 .progress {
   background: transparent;
-  border: 1px solid #aaaaaa;
+  border: 1px solid #aaa;
   border-radius: 0px;
   height: 13px;
   margin-top: 3px;
