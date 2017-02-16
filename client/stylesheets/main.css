@@ -3,11 +3,11 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: "montserratlight";
+  font-family: "MontLt";
 }
 
 a, a:visited, a:active {
-  font-family: "montserratregular";
+  font-family: "MontRgl";
   color: #eb4b52;
 }
 
@@ -22,15 +22,14 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'montserratbold', "Helvetica Neue", Helvetica, Arial, sans-serif;
-  letter-spacing: 3px;
+  font-family: 'MontBld', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: normal !important;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: bolder !important;
 }
 
 h5 {
-  letter-spacing: 1px;
-  font-weight: 500;
+  letter-spacing: normal !important;
 }
 
 header .push-down {
@@ -60,7 +59,7 @@ tr:first-child>td {
 .contact td:first-child {
   text-transform: uppercase;
   float: right;
-  font-family: 'montserratsemi_bold';
+  font-family: 'MontBld';
   font-size: 0.8em;
   vertical-align: text-bottom;
   margin-top: 0.28em;
@@ -123,7 +122,7 @@ figure span[class^="flaticon-"], figure span[class*=" flaticon-"] {
 
 footer {
   text-align: center;
-  color: #aaa;
+  color: #aaaaaa;
   font-size: 0.8em;
   margin-bottom: 20px;
 }
@@ -133,10 +132,11 @@ footer {
 *, *:before, *:after {box-sizing:  border-box !important;}
 
 .content.row {
-  -moz-column-width: 18em;
-  -webkit-column-width: 18em;
-  -moz-column-gap: 1em;
-  -webkit-column-gap: 1em;
+  -webkit-columns: 0 0;
+            /* This is the strange way to define the number of columns:
+               50% = 2 columns, 33% = 3 columns 25% = 4 columns */
+  width: 50%;
+  height: 90em;
 }
 
 .menu-category {
@@ -159,22 +159,6 @@ footer {
   border: 1px solid #fff;
 }
 
-/* top-wrapper */
-
-.top-wrapper > svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25em;
-  width: 100%;
-  z-index: -1;
-}
-
-.top-wrapper > svg pattern polygon {
-  stroke: #ddd;
-  fill: #fff;
-}
-
 /* Header */
 
 .main-lead {
@@ -184,7 +168,7 @@ footer {
 }
 
 .sub-lead {
-  font-family: 'montserratlight';
+  font-family: 'MontLt';
   letter-spacing: 0.2em;
   color: #6b6d70;
   margin: 0;

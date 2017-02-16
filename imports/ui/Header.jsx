@@ -17,7 +17,7 @@ export default class Header extends Component {
     // TODO Create a 'Social' component
     return (
       <header className="row">
-              <div className="col-md-6">
+              <div className="col-md-6 col-xs-6">
                   <div className="row">
                       <div className="col-xs-2 col-md-3 col-lg-2 col-xs-offset-1 col-md-offset-0">
                           <img className='img-circle avatar push-down' src='img/profilepic.jpg' />
@@ -30,7 +30,7 @@ export default class Header extends Component {
                       </div>
                   </div>
               </div>
-              <div className="col-sm-6 col-md-3 push-down">
+              <div className="col-sm-6 col-md-3 push-down col-xs-3">
                   <table className="table contact">
                     <tbody>
                       <tr>
@@ -52,7 +52,7 @@ export default class Header extends Component {
                     </tbody>
                   </table>
               </div>
-              <div className="col-sm-6 col-md-3 push-down">
+              <div className="col-sm-6 col-md-3 push-down col-xs-3">
                   <table className="table social">
                     <tbody>
                       <tr>
