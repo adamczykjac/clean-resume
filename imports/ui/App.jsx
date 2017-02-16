@@ -3,7 +3,6 @@ import { createContainer } from 'meteor/react-meteor-data';
 
 import { Resumes } from '../api/resumes.js';
 
-import HelloBar from './HelloBar.jsx';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import Content from './Content.jsx';
@@ -31,7 +30,6 @@ export class App extends Component {
     // TODO Create a loading spinner
     return this.props.loading ? null : (
       <div className="top-wrapper">
-        <HelloBar />
         <div className="container">
           {this.renderHeader()}
           {this.renderContent()}

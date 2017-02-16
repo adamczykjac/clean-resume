@@ -25,7 +25,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'MontBld', "Helvetica Neue", Helvetica, Arial, sans-serif;
   letter-spacing: normal !important;
   text-transform: uppercase;
-  font-weight: bolder !important;
 }
 
 h5 {
@@ -33,7 +32,8 @@ h5 {
 }
 
 header .push-down {
-  margin: 2em 0 0 0;
+  margin: 0;
+  padding-top: 20px;
 }
 
 .table > tbody > tr > td {
@@ -136,7 +136,7 @@ footer {
             /* This is the strange way to define the number of columns:
                50% = 2 columns, 33% = 3 columns 25% = 4 columns */
   width: 50%;
-  height: 90em;
+  height: 81em;
 }
 
 .menu-category {
@@ -196,8 +196,7 @@ footer {
 
 #awards [class^="flaticon-"], #awards [class*=" flaticon-"],
 #certifications [class^="flaticon-"], #certifications [class*=" flaticon-"] {
-  display: block;
-  text-align: center;
+  float: left;
 }
 
 #awards ul, #certifications ul {
@@ -208,10 +207,11 @@ footer {
   padding-bottom: 1em;
 }
 #awards .award-content, #certifications .certificate-content {
-  margin: 0 30px;
+  margin: 0 0 0 60px;
+  padding-top: 10px;
 }
+
 #awards h4, #certifications h4 {
-  text-align: center;
   margin-bottom: 20px;
 }
 
