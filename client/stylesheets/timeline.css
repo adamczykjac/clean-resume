@@ -13,14 +13,14 @@
 }
 
 .timeline-before {
-  width: 2px;
+  width: 1px;
   background-color: #eb4b52;
   position: relative;
   left: 9px;
 }
 
 #work .timeline-before {
-  width: 5px;
+  width: 1px;
 }
 
 .timeline > li {
@@ -31,7 +31,7 @@
   clear: left;
 }
 .timeline > li > .timeline-panel {
-  width: 95%;
+  width: 88%;
   border: 0px;
   left: 50px;
   position: relative;
@@ -55,9 +55,11 @@
   border-radius: 15px;
   height: 23px;
   width: 23px;
-  margin-top: 12px;
+  margin-top: 24px;
+  /*padding-top: 12px;*/
   position: relative;
   left: -3px;
+  top: 3px;
 }
 
 .timeline-title {
@@ -73,7 +75,7 @@
   color: #6b6d70;
 }
 .timeline-body > h4 {
-  padding-top: 5px;
+  padding: 5px 0;
 }
 .timeline-body > h5 {
   text-transform: none;
@@ -185,7 +187,7 @@ ul.timeline > li > .timeline-panel {
 
 @media (min-width: 992px) {
   #work .timeline-before {
-    width: 2px;
+    width: 1px;
   }
 
   #education .timeline-before {

@@ -80,11 +80,6 @@ export default class Content extends Component {
                 </ul>
               </div>
           </div>
-
-          <div className="menu-category list-group" id="languages">
-              <h3>LANGUAGES</h3>
-              { this.renderLanguages() }
-          </div>
           <div className="menu-category list-group" id="certifications">
               <h3>CERTIFICATIONS</h3>
               <ul>
