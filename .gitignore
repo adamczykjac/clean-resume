@@ -3,3 +3,4 @@
 !/.meteor
 node_modules
 .dbbackup
+.gulp

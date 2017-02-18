@@ -22,3 +22,4 @@ twbs:bootstrap
 session@1.1.7
 react-meteor-data
 shell-server
+kadira:flow-router
