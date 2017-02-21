@@ -43,19 +43,16 @@
 }
 
 .landing .timeline-before {
-  width: 2px;
+  width: 1px;
   background-color: #eb4b52;
   position: relative;
-  left: 11px;
+  left: 12px;
   height: 178px;
   float: left;
 }
 
 .landing .timeline > .timeline-badge {
   color: #fff;
-  width: 23px;
-  height: 23px;
-  line-height: 50px;
   font-size: 1.4em;
   text-align: center;
   position: absolute;
@@ -63,15 +60,20 @@
   z-index: 100;
 }
 
-.landing .timeline-badge > a > .circle {
+.landing .bullet {
   background-color: #eb4b52;
-  border: 7px solid #FFF;
+  border: 8px solid #FFF;
   border-radius: 26px;
   height: 30px;
   width: 30px;
   margin-top: 17px;
   position: relative;
   left: -3px;
+}
+
+.landing .bullet, .landing .slogan-texts {
+  position: relative;
+  top: 5px;
 }
 
 /*** Media queries ***/

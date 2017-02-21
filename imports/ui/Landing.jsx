@@ -10,13 +10,15 @@ export class Landing extends Component {
               <div className="col-xs-1 timeline-wrapper">
                 <div className="timeline">
                   <div className="timeline-before"></div>
-                  <div className="timeline-badge primary"><a><div className="circle"></div></a></div>
+                  <div className="bullet"></div>
                 </div>
               </div>
               <div className="col-xs-11">
-                <h1>Clean Resume,</h1>
-                <h2>At your service.</h2>
-                <div className="btn btn-lg">Get One</div>
+                <div className="slogan-texts">
+                  <h1>Clean Resume,</h1>
+                  <h2>At your service.</h2>
+                  <div className="btn btn-lg">Get One</div>
+                </div>
               </div>
             </div>
             <div className="col-sm-6"></div>
