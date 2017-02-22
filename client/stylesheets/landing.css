@@ -76,6 +76,12 @@
   top: 5px;
 }
 
+.landing footer {
+  position: absolute;
+  bottom: 0;
+  font-size: 12px;
+}
+
 /*** Media queries ***/
 
 @media (min-width: 568px) {

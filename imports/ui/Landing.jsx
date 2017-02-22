@@ -7,13 +7,13 @@ export class Landing extends Component {
         <div className="cleanresume-side-big">
           <header>
             <div className="col-sm-6 col-xs-12 slogan">
-              <div className="col-xs-1 timeline-wrapper">
+              <div className="col-md-1 col-xs-2 timeline-wrapper">
                 <div className="timeline">
                   <div className="timeline-before"></div>
                   <div className="bullet"></div>
                 </div>
               </div>
-              <div className="col-xs-11">
+              <div className="col-md-11 col-xs-1-offset col-xs-10">
                 <div className="slogan-texts">
                   <h1>Clean Resume,</h1>
                   <h2>At your service.</h2>
@@ -23,6 +23,9 @@ export class Landing extends Component {
             </div>
             <div className="col-sm-6"></div>
           </header>
+          <footer className="col-xs-12">
+            &copy; Clean Resume, 2017
+          </footer>
         </div>
       </div>
     );
