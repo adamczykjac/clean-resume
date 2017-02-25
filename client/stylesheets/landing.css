@@ -9,6 +9,7 @@
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  color: #828282;
 }
 
 .landing .cleanresume-side-big {
@@ -19,18 +20,33 @@
   background-position: calc(100% + 70vw) 80%;
 }
 
-.landing h1, .landing h2 {
+.landing h1, .landing h2, .landing h4 {
   letter-spacing: 1px;
 }
 
 .landing h1 {
   color: #eb4b52;
-  margin: 0.4em 0;
+  margin: 0.4em 0 0 0;
 }
 
 .landing h2 {
   color: #828282;
-  margin: 0.4em 0 1em 0;
+  margin: 0.2em 0 1em 0;
+}
+
+.landing h4.thinner {
+  font-family: "montserratlight"
+}
+
+.landing .reverse {
+  margin-left: 0;
+  display: inline-block;
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+  -ms-filter: fliph; /*IE*/
+  filter: fliph; /*IE*/
 }
 
 .landing .btn {
@@ -47,7 +63,7 @@
   background-color: #eb4b52;
   position: relative;
   left: 12px;
-  height: 178px;
+  height: 270px;
   float: left;
 }
 
@@ -62,7 +78,7 @@
 
 .landing .bullet {
   background-color: #eb4b52;
-  border: 8px solid #FFF;
+  border: 10px solid #FFF;
   border-radius: 26px;
   height: 30px;
   width: 30px;
