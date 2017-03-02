@@ -33,7 +33,7 @@
 .timeline > li > .timeline-panel {
   width: 88%;
   border: 0px;
-  left: 50px;
+  left: 45px;
   position: relative;
 }
 
@@ -72,7 +72,6 @@
 }
 .timeline-body > p {
   margin-top: 5px;
-  color: #6b6d70;
 }
 .timeline-body > h4 {
   padding: 5px 0;
