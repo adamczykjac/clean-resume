@@ -4,9 +4,9 @@ import React, { Component, PropTypes } from 'react';
 export default class Interest extends Component {
   render() {
     return (
-      <div className="col-xs-4 col-sm-15">
+      <div className="col-xs-3">
         <figure>
-          <span className={this.props.interest.icon + " big"}></span>
+          <span className={"flaticon-" + this.props.interest.icon + " big"}></span>
           <figcaption>{ this.props.interest.name }</figcaption>
         </figure>
       </div>
