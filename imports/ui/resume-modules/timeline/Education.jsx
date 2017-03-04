@@ -12,11 +12,11 @@ export default class Education extends Component {
 
   render() {
     return (
-      <div className="timeline-body">
+      <li className="timeline-body">
         <h4>{ this.props.education.studyType } { this.props.education.area }</h4>
         <h5>{ this.props.education.institution } | GPA { this.props.education.gpa } | { this.props.education.startDate } - { this.props.education.endDate }</h5>
         <p>{ this.renderCourses() }</p>
-      </div>
+      </li>
     );
   }
 }

@@ -5,14 +5,14 @@ import { Line, Circle } from 'rc-progress';
 export default class Language extends Component {
   render() {
     return (
-      <div className="col-xs-6 col-sm-3">
+      <div className="col-xs-3 lang-wrapper">
+        <img src={"img/circular-progress-bar-" + this.props.lang.level + "-8.svg"}/>
         <div className="lang-label-wrapper">
-          <label htmlFor="lang-bar">
+          <label>
             <span>{ this.props.lang.language }</span>
             <span>{ this.props.lang.fluency }</span>
           </label>
         </div>
-        <Circle percent={ this.props.lang.level } strokeWidth="2" strokeColor="#eb4b52" trailWidth="0" id="lang-bar"/>
       </div>
     );
   }
