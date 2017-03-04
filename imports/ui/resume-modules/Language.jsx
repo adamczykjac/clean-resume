@@ -1,12 +1,14 @@
 import React, { Component, PropTypes } from 'react';
-import { Line, Circle } from 'rc-progress';
+import CircularProgressBar from './language/CircularProgressBar.jsx';
 
 // Language component
 export default class Language extends Component {
   render() {
+    console.log(this.props.key);
+
     return (
       <div className="col-xs-3 lang-wrapper">
-        <img src={"img/circular-progress-bar-" + this.props.lang.level + "-8.svg"}/>
+        <CircularProgressBar level={ this.props.lang.level } id={ this.props.id } />
         <div className="lang-label-wrapper">
           <label>
             <span>{ this.props.lang.language }</span>

@@ -33,7 +33,7 @@ export default class Content extends Component {
   }
   renderLanguages() {
     return this.props.languages.map((lang, idx) => (
-      <Language key={idx} lang={lang} />
+      <Language key={idx} id={idx} lang={lang} />
     ));
   }
   renderCertifications() {
