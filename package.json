@@ -8,9 +8,12 @@
     "classnames": "^2.2.3",
     "meteor-node-stubs": "~0.2.0",
     "rc-progress": "^1.0.4",
-    "react": "^15.3.2",
+    "react": "^15.4.2",
     "react-addons-pure-render-mixin": "^15.2.1",
-    "react-dom": "^15.3.2",
-    "react-mounter": "^1.2.0"
+    "react-dom": "^15.4.2",
+    "react-mounter": "^1.2.0",
+    "simpl-schema": "^0.2.2",
+    "uniforms": "^1.13.1",
+    "uniforms-bootstrap3": "^1.13.1"
   }
 }
