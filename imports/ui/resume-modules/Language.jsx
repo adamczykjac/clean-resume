@@ -7,7 +7,7 @@ export default class Language extends Component {
     console.log(this.props.key);
 
     return (
-      <div className="col-xs-3 lang-wrapper">
+      <div className="col-xs-4 lang-wrapper">
         <CircularProgressBar level={ this.props.lang.level } id={ this.props.id } />
         <div className="lang-label-wrapper">
           <label>

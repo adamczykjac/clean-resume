@@ -39,11 +39,11 @@ export default class Header extends Component {
                           <td><a href="#" target="_blank">{ this.props.basics.email }</a></td>
                       </tr>
                       <tr>
-                          <td>Phone</td>
+                          <td>Tel</td>
                           <td>{ this.props.basics.phone }</td>
                       </tr>
                       <tr>
-                          <td>Location</td>
+                          <td>Lokalizacja</td>
                           <td>{ this.renderLocation() }</td>
                       </tr>
                     </tbody>
