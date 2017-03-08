@@ -1,19 +1,21 @@
-import React, { Component, PropTypes } from 'react';
+import { insert } from '../../imports/api/resumes/methods.js'
+import { Meteor } from 'meteor/meteor';
+import { Resumes } from '../../imports/api/resumes/resumes.js'
 import AutoForm from 'uniforms-bootstrap3/AutoForm';
-import { ResumeSchema } from '../../lib/ResumeSchema.js'
+import React, { Component, PropTypes } from 'react';
 
-export default class EntryFom extends Component {
+export default class EntryForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ResumeSchema: ResumeSchema
+      ResumeSchema: Resumes.schema
     };
   }
 
   render() {
     return (
       <div className="container">
-        <AutoForm schema={ this.state.ResumeSchema } onSubmit={doc => console.log(doc)} />
+        <AutoForm schema={ this.state.ResumeSchema } onSubmit={ data => insert.call(data) } />
       </div>
     );
   }

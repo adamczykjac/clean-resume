@@ -1,4 +1,25 @@
+import { Meteor } from 'meteor/meteor';
+import { Mongo } from 'meteor/mongo';
+
 import SimpleSchema from 'simpl-schema';
+
+export const Resumes = new Mongo.Collection('resumes');
+
+// if (Meteor.isServer) {
+//   Meteor.publish('resumes.get', ( resumeId ) => {
+//     oid = {}
+//     if(resumeId && resumeId != {}) {
+//       let oid = new Meteor.Collection.ObjectID(resumeId);
+//     }
+//     return Resumes.find(oid);
+//   });
+// }
+
+Resumes.deny({
+  insert: () => true,
+  update: () => true,
+  remove: () => true,
+});
 
 const LocationSchema = new SimpleSchema({
   address: {
@@ -30,33 +51,14 @@ const BasicsSchema = new SimpleSchema({
     type: String,
     max: 40
   },
-  label: {
-    type: String,
-    max: 40
-  },
-  email: {
-    type: String,
-    // Taken from http://emailregex.com/
-    regEx: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  },
-  phone: {
-    type: SimpleSchema.Integer
-  },
-  url: {
-    type: String,
-    regEx: /(?:(?=[\s`!()\[\]{};:'".,<>?«»“”‘’])|\b)((?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/|[a-z0-9.\-]+[.](?:com|org|net))(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))*(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]|\b))/
-  },
-  location: LocationSchema,
-  social: {
-    type: SocialSchema,
-    minCount: 1,
-    maxCount: 4
-  }
+  location: LocationSchema
 })
 
-export const ResumeSchema = new SimpleSchema({
+Resumes.schema = new SimpleSchema({
   basics: BasicsSchema
 })
+
+Resumes.attachSchema(Resumes.schema)
 
 // {
 //   "$schema": "http://json-schema.org/draft-04/schema#",
