@@ -18,8 +18,9 @@ export default class Landing extends Component {
                   <h1>Ear<div className="reverse">r</div>ly,</h1>
                   <h2>The very first impression, done right.</h2>
                   <h4 className="thinner">We want to beautify your resume, <br />
-                    tell us about your needs.</h4>
-                  <a href="https://goo.gl/forms/ZGd4p1AoSHpjktj53" className="btn btn-lg" target="_blank">Fill the survey</a>
+                    tell us about your needs (and fill the survey)!</h4>
+                  <a href="https://goo.gl/forms/ZGd4p1AoSHpjktj53" className="btn btn-lg col-md-5 col-md-offset-1 col-xs-10" target="_blank">I'm an applicant</a>
+                  <a href="https://goo.gl/forms/k6gLEbeAM0BvedPi1" className="btn btn-lg col-md-5 col-md-offset-1 col-xs-10" target="_blank">I'm a recruiter</a>
                 </div>
               </div>
             </div>

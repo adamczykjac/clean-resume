@@ -52,9 +52,8 @@
 .landing .btn {
   font-family: 'montserratregular';
   background-color: #eb4b52;
-  padding-left: 60px;
-  padding-right: 60px;
   border-radius: 0;
+  margin: 5px;
   color: #fff;
 }
 
