@@ -1,1 +1,1 @@
-import '../imports/api/resumes/resumes.js';
+import '/imports/startup/server';

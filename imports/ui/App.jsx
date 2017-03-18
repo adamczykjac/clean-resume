@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
-import { Resumes } from '../api/resumes.js';
+import { Resumes } from '../api/resumes/resumes.js';
 
 import HelloBar from './HelloBar.jsx';
 import Header from './Header.jsx';
