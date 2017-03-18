@@ -36,7 +36,7 @@ const generatePDF = (html, fileName) => {
   }
 };
 
-const getComponentAsHTML = (component, props) => {
+const getComponentAsHTML = (component) => {
   try {
     return ReactDOMServer.renderToStaticMarkup(component);
   } catch (exception) {
@@ -44,9 +44,9 @@ const getComponentAsHTML = (component, props) => {
   }
 };
 
-const handler = ({ component, props, fileName }, promise) => {
+const handler = ({ component, fileName }, promise) => {
   pdfModule = promise;
-  const html = getComponentAsHTML(component, props);
+  const html = getComponentAsHTML(component);
   if (html && fileName) generatePDF(html, fileName);
 };
 

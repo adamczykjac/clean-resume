@@ -15,8 +15,11 @@ export const downloadResume = new ValidatedMethod({
   run({ resumeId }) {
     const resume = Resumes.findOne({ _id: resumeId });
     const fileName = `resume_${resume._id}.pdf`;
-    return generateComponentAsPDF({ component: <Footer />, props: { resume }, fileName })
+    return generateComponentAsPDF({ component: <Footer resume={ resume }/>, fileName })
     .then((result) => result)
-    .catch((error) => { throw new Meteor.Error('500', error); });
+    .catch((error) => {
+      console.log(error);
+      throw new Meteor.Error('500', error);
+    });
   },
 });
