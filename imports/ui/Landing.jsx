@@ -15,7 +15,7 @@ export default class Landing extends Component {
               </div>
               <div className="col-md-11 col-xs-1-offset col-xs-10">
                 <div className="slogan-texts">
-                  <h1>Ear<div className="reverse">r</div>ly,</h1>
+                  <h1>earrl<div className="reverse">,y</div></h1>
                   <h2>The very first impression, done right.</h2>
                   <h4 className="thinner">We want to beautify your resume, <br />
                     tell us about your needs (and fill the survey)!</h4>
