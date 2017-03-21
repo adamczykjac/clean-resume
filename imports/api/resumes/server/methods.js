@@ -4,7 +4,7 @@ import { Resumes } from '../resumes.js'
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import SimpleSchema from 'simpl-schema';
 import { generateComponentAsPDF } from '../../../modules/server/generate-pdf.js';
-import Footer from '../../../ui/Footer.jsx';
+import App from '../../../ui/App.jsx';
 import { Bert } from 'meteor/themeteorchef:bert';
 
 export const downloadResume = new ValidatedMethod({
@@ -15,7 +15,7 @@ export const downloadResume = new ValidatedMethod({
   run({ resumeId }) {
     const resume = Resumes.findOne({ _id: resumeId });
     const fileName = `resume_${resume._id}.pdf`;
-    return generateComponentAsPDF({ component: <Footer resume={ resume }/>, fileName })
+    return generateComponentAsPDF({ component: <App />, fileName })
     .then((result) => result)
     .catch((error) => {
       console.log(error);

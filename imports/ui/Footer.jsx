@@ -15,8 +15,6 @@ export default class Footer extends Component {
         <footer>
           <hr />
           &copy; Clean Resume, 2016 - Icon credits: <a href="http://flaticon.com" target="_blank">flaticon.com</a>
-          <hr />
-          { this.props.resume.basics.name }
         </footer>
       </InlineCss>
     );
