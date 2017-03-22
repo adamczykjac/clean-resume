@@ -10,105 +10,127 @@ import Interest from './resume-modules/Interest.jsx';
 // Content component
 export default class Content extends Component {
   renderSkills() {
-    return this.props.skills.map((skill, idx) => (
-      <Skill key={idx} skill={skill} />
-    ));
+    return (
+      <div className="menu-category list-group" id="skills">
+        <h3>UMIEJĘTNOŚCI</h3>
+        { this.props.skills.map((skill, idx) => (
+            <Skill key={idx} skill={skill} />
+          ))
+        }
+      </div>
+    );
   }
+
   renderTimelineMoments(momentType) {
     var timelineIterable = null;
+    var timelineLabel = '';
     if (momentType === 'Work') {
       timelineIterable = this.props.works;
+      timelineLabel = 'Doświadczenie'
     }
-    else {
+    else { // Education
       timelineIterable = this.props.educations;
+      timelineLabel = 'Edukacja'
     }
-    return timelineIterable.map((moment, idx) => (
-      <TimelineMoment key={idx} momentType={momentType} moment={moment} />
-    ));
+    return (
+      <div className="menu-category list-group" id="education">
+        <h3>{ timelineLabel }</h3>
+        <div className="timeline-wrap">
+          <div className="timeline-before"></div>
+          <ul className="timeline">
+            {
+              timelineIterable.map((moment, idx) => (
+                <TimelineMoment key={idx} momentType={momentType} moment={moment} />
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    );
   }
+
   renderAwards() {
-    return this.props.awards.map((award, idx) => (
-      <Award key={idx} award={award} />
-    ));
+    return (
+      <div className="menu-category list-group" id="awards">
+        <h3>NAGRODY</h3>
+        <ul>
+          { this.props.awards.map((award, idx) => (
+              <Award key={idx} award={award} />
+            ))
+          }
+        </ul>
+      </div>
+    );
   }
-  renderLanguages() {
-    return this.props.languages.map((lang, idx) => (
-      <Language key={idx} id={idx} lang={lang} />
-    ));
-  }
+
   renderCertifications() {
-    return this.props.certifications.map((cert, idx) => (
-      <Certification key={idx} cert={cert} />
-    ));
+    return (
+      <div className="menu-category list-group" id="certifications">
+        <h3>CERTYFIKATY</h3>
+        <ul>
+          {
+            this.props.certifications.map((cert, idx) => (
+              <Certification key={idx} cert={cert} />
+            ))
+          }
+        </ul>
+      </div>
+    );
   }
+
+  renderLanguages() {
+    return (
+      <div className="menu-category list-group" id="languages">
+        <h3>JĘZYKI</h3>
+        {
+          this.props.languages.map((lang, idx) => (
+            <Language key={idx} id={idx} lang={lang} />
+          ))
+        }
+      </div>
+    );
+  }
+
   renderInterests() {
-    return this.props.interests.map((interest, idx) => (
-      <Interest key={idx} interest={interest} />
-    ));
+    return (
+      <div className="menu-category list-group" id="interests">
+        <h3>ZAINTERESOWANIA</h3>
+        {
+          this.props.interests.map((interest, idx) => (
+            <Interest key={idx} interest={interest} />
+          ))
+        }
+      </div>
+    );
   }
 
   render() {
     return (
       <div className="content menu row">
-          <div className="menu-category list-group" id="skills">
-            <h3>UMIEJĘTNOŚCI</h3>
-            { this.renderSkills() }
-          </div>
+        { this.renderSkills() }
 
-          <div className="menu-category list-group" id="work">
-            <h3>DOŚWIADCZENIE</h3>
-            <div className="timeline-wrap">
-              <div className="timeline-before"></div>
-              <ul className="timeline">
-                { this.renderTimelineMoments('Work') }
-              </ul>
-            </div>
-          </div>
+        { this.renderTimelineMoments('Work') }
 
-          <div className="menu-category list-group" id="awards">
-              <h3>NAGRODY</h3>
-              <ul>
-                { this.renderAwards() }
-              </ul>
-          </div>
+        { this.props.awards ? this.renderAwards() : "" }
 
-          <div className="menu-category list-group" id="education">
-              <h3>EDUKACJA</h3>
-              <div className="timeline-wrap">
-                <div className="timeline-before"></div>
-                <ul className="timeline">
-                  { this.renderTimelineMoments('Education') }
-                </ul>
-              </div>
-          </div>
+        { this.renderTimelineMoments('Education') }
 
-          <div className="menu-category list-group" id="certifications">
-              <h3>CERTYFIKATY</h3>
-              <ul>
-                { this.renderCertifications() }
-              </ul>
-          </div>
+        { this.props.certifications ? this.renderCertifications() : "" }
 
-          <div className="menu-category list-group" id="languages">
-            <h3>JĘZYKI</h3>
-            { this.renderLanguages() }
-          </div>
+        { this.props.languages ? this.renderLanguages() : "" }
 
-          <div className="menu-category list-group" id="interests">
-              <h3>ZAINTERESOWANIA</h3>
-              { this.renderInterests() }
-          </div>
+        { this.renderInterests() }
       </div>
     );
   }
 }
 
 Content.propTypes = {
-  skills: PropTypes.array,
+  skills: PropTypes.array.isRequired,
   awards: PropTypes.array,
-  works: PropTypes.array,
-  educations: PropTypes.array,
-  languages: PropTypes.array,
+  works: PropTypes.array.isRequired,
+  educations: PropTypes.array.isRequired,
   certifications: PropTypes.array,
-  interests: PropTypes.array
+  languages: PropTypes.array,
+  interests: PropTypes.array.isRequired
 };
