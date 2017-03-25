@@ -7,8 +7,49 @@ import TimelineMoment from './resume-modules/TimelineMoment.jsx';
 import Certification from './resume-modules/Certification.jsx';
 import Interest from './resume-modules/Interest.jsx';
 
+let spliceIntoArraysWithLength = ( array, spliceLen, result ) => {
+  if(!result) result = [];
+  if(array.length > spliceLen) {
+    result.push(array.splice(0, spliceLen));
+    return spliceIntoArraysWithLength( array, spliceLen, result );
+  }
+  result.push(array);
+  return result;
+}
+
 // Content component
 export default class Content extends Component {
+  static getConstant(constant) {
+    const constants = {
+      MAX_COLUMNS: 4, // up to four columns look pleasant in one columnn of the template
+      TWT_BOOTSTRAP_GRID_COLUMNS: 12
+    }
+    return constants[constant]
+  }
+
+  renderRowsWithComponents(rows, Component) {
+    // calculate Bootstrap column width
+    console.log(rows[0].length);
+    let bootstrapColWidth;
+    if( rows.length > 1 ) bootstrapColWidth = Math.floor(Content.getConstant("TWT_BOOTSTRAP_GRID_COLUMNS") /
+                                                         Content.getConstant("MAX_COLUMNS"));
+    else bootstrapColWidth = Math.floor(Content.getConstant("TWT_BOOTSTRAP_GRID_COLUMNS") / rows[0].length);
+    return (
+      rows.map((row, rowIndex) => (
+        <div className="row" key={rowIndex}>
+          {
+            row.map((rowElement, rowElementIndex) => (
+              <Component key={rowElementIndex}
+                                  id={rowElementIndex}
+                                  colWidth={bootstrapColWidth}
+                                  data={rowElement} />
+            ))
+          }
+        </div>
+      ))
+    );
+  }
+
   renderSkills() {
     return (
       <div className="menu-category list-group" id="skills">
@@ -79,27 +120,21 @@ export default class Content extends Component {
   }
 
   renderLanguages() {
+    let rows = spliceIntoArraysWithLength(this.props.languages, Content.getConstant("MAX_COLUMNS"));
     return (
       <div className="menu-category list-group" id="languages">
         <h3>JĘZYKI</h3>
-        {
-          this.props.languages.map((lang, idx) => (
-            <Language key={idx} id={idx} lang={lang} />
-          ))
-        }
+        { this.renderRowsWithComponents(rows, Language) }
       </div>
     );
   }
 
   renderInterests() {
+    let rows = spliceIntoArraysWithLength(this.props.interests, Content.getConstant("MAX_COLUMNS"));
     return (
       <div className="menu-category list-group" id="interests">
         <h3>ZAINTERESOWANIA</h3>
-        {
-          this.props.interests.map((interest, idx) => (
-            <Interest key={idx} interest={interest} />
-          ))
-        }
+        { this.renderRowsWithComponents(rows, Interest) }
       </div>
     );
   }
