@@ -29,7 +29,6 @@ export default class Content extends Component {
 
   renderRowsWithComponents(rows, Component) {
     // calculate Bootstrap column width
-    console.log(rows[0].length);
     let bootstrapColWidth;
     if( rows.length > 1 ) bootstrapColWidth = Math.floor(Content.getConstant("TWT_BOOTSTRAP_GRID_COLUMNS") /
                                                          Content.getConstant("MAX_COLUMNS"));
@@ -107,7 +106,7 @@ export default class Content extends Component {
   renderCertifications() {
     return (
       <div className="menu-category list-group" id="certifications">
-        <h3>CERTYFIKATY</h3>
+        <h3>DOKUMENTY</h3>
         <ul>
           {
             this.props.certifications.map((cert, idx) => (
@@ -139,6 +138,17 @@ export default class Content extends Component {
     );
   }
 
+  // fluid empty element to fill up the remaining part of a document and to prevent wkhtmltopdf
+  // zoom effect
+  renderFillUp(height) {
+    const fillUpStyle = {
+      height: height
+    }
+    return (
+      <div style={fillUpStyle}></div>
+    )
+  }
+
   render() {
     return (
       <div className="content menu row">
@@ -150,11 +160,15 @@ export default class Content extends Component {
 
         { this.renderTimelineMoments('Education') }
 
+        { this.renderFillUp('300px') }
+
         { this.props.certifications ? this.renderCertifications() : "" }
 
         { this.props.languages ? this.renderLanguages() : "" }
 
         { this.renderInterests() }
+
+        { this.renderFillUp('1000px') }
       </div>
     );
   }

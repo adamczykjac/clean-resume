@@ -11,6 +11,7 @@ export class App extends Component {
   renderHeader() {
     return <Header basics={this.props.basics}/>;
   }
+
   renderContent() {
     return <Content
       skills={this.props.content.skills}
@@ -22,6 +23,7 @@ export class App extends Component {
       interests={this.props.content.interests}
     />;
   }
+
   renderFooter() {
     return <Footer />;
   }
