@@ -29,22 +29,30 @@ export default class Header extends Component {
         <div className="col-sm-6 col-md-3 col-xs-7">
           <table className="table contact">
             <tbody>
-              <tr>
-                <td>Mail</td>
-                <td><a href="#" target="_blank">{ this.props.basics.email }</a></td>
-              </tr>
-              <tr>
-                <td>Web</td>
-                <td><a href="#" target="_blank">{ this.props.basics.web }</a></td>
-              </tr>
-              <tr>
-                <td>Tel</td>
-                <td>{ this.props.basics.phone }</td>
-              </tr>
-              <tr>
-                <td>Lokalizacja</td>
-                <td>{ this.renderLocation() }</td>
-              </tr>
+              { this.props.basics.email &&
+                <tr>
+                  <td>Mail</td>
+                  <td><a href="#" target="_blank">{ this.props.basics.email }</a></td>
+                </tr>
+              }
+              { this.props.basics.web &&
+                <tr>
+                  <td>Web</td>
+                  <td><a href="#" target="_blank">{ this.props.basics.web }</a></td>
+                </tr>
+              }
+              { this.props.basics.phone &&
+                <tr>
+                  <td>Tel</td>
+                  <td>{ this.props.basics.phone }</td>
+                </tr>
+              }
+              { this.props.basics.location &&
+                <tr>
+                  <td>Lokalizacja</td>
+                  <td>{ this.renderLocation() }</td>
+                </tr>
+              }
             </tbody>
           </table>
         </div>
