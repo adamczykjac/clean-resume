@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-// Award component
 export default class Award extends Component {
   render() {
     return (

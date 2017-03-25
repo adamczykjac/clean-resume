@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-// Certification component
 export default class Certification extends Component {
   certificationDetails(authority, date) {
     let args = Array.prototype.slice.call(arguments);

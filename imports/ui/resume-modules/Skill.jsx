@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-// Skill component
 export default class Skill extends Component {
   render() {
     return (

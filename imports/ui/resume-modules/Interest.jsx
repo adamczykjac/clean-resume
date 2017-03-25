@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-// Interest component
 export default class Interest extends Component {
   render() {
     return (

@@ -3,9 +3,9 @@ import React, { Component, PropTypes } from 'react';
 import Work from './timeline/Work.jsx'
 import Education from './timeline/Education.jsx'
 
-// TimelineMoment component
 export default class TimelineMoment extends Component {
   renderTimelineMomentBody() {
+    // TimelineMoment elements need to be Components either the type of Work or Education
     switch (this.props.momentType) {
       case 'Work':
         return <Work work={this.props.moment} />;
@@ -26,7 +26,6 @@ export default class TimelineMoment extends Component {
   }
 }
 
-// TimelineMoment elements need to be Components either the type of Work or Education
 TimelineMoment.propTypes = {
   momentType: PropTypes.string.isRequired,
   moment: PropTypes.object.isRequired,

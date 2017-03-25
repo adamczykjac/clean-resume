@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-// Header component
 export default class Header extends Component {
   renderLocation() {
     let city = this.props.basics.location.city;
@@ -53,3 +52,7 @@ export default class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  basics: PropTypes.object.isRequired,
+};

@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-// Education component
 export default class Education extends Component {
   renderCourses() {
     return this.props.education.courses.map((course, idx) => (

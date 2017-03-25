@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import CircularProgressBar from './language/CircularProgressBar.jsx';
 
-// Language component
 export default class Language extends Component {
   render() {
     return (
