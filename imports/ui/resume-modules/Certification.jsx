@@ -21,9 +21,9 @@ export default class Certification extends Component {
         <div className="certification-content">
           <h4>{ this.props.cert.name }</h4>
           <h5>
-            { this.certificationDetails(
-                this.props.cert.authority,
-                this.props.cert.date)
+            {
+              this.certificationDetails(this.props.cert.authority,
+                                        this.props.cert.date)
             }
           </h5>
         </div>
