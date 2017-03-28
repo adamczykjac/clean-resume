@@ -118,12 +118,20 @@ export default class Content extends Component {
     );
   }
 
+  renderCertificateConfirmation(data) {
+    let hasCertificate = data.some((element) => element.certificate);
+    if(hasCertificate) return (
+      <span>* potwierdzony certyfikatem</span>
+    )
+  }
+
   renderLanguages() {
     let rows = spliceIntoArraysWithLength(this.props.languages, Content.getConstant("MAX_COLUMNS"));
     return (
       <div className="menu-category list-group" id="languages">
         <h3>JĘZYKI</h3>
         { this.renderRowsWithComponents(rows, Language) }
+        { this.renderCertificateConfirmation(this.props.languages) }
       </div>
     );
   }

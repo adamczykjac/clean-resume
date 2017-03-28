@@ -9,7 +9,10 @@ export default class Language extends Component {
         <div className="lang-label-wrapper">
           <label>
             <span>{ this.props.data.language }</span>
-            <span>{ this.props.data.fluency }</span>
+            <span>
+              { this.props.data.fluency }
+              { this.props.data.certificate ? "*" : "" }
+            </span>
           </label>
         </div>
       </div>
