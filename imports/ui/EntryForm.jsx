@@ -14,6 +14,19 @@ export default class EntryForm extends Component {
       ResumeSchema: Resumes.schema
     };
   }
+  
+  // TEMP
+  componentDidMount() {
+    Meteor.call('resumes.download', { resumeId: '58d2d48d945f3a9097406a68'}, (error, response) => {
+      if (error) {
+        console.log(error);
+        Bert.alert(error.reason, 'danger');
+      } else {
+        const blob = base64ToBlob(response.base64);
+        fileSaver.saveAs(blob, response.fileName);
+      }
+    })
+  }
 
   handleForm(data) {
     Meteor.call('resumes.insert', { name: data.name }, (error, response) => {
@@ -21,7 +34,7 @@ export default class EntryForm extends Component {
       console.log(error);
       Bert.alert(error.reason, 'danger');
     } else {
-      Meteor.call('resumes.download', { resumeId: 'gmtqR7NHiQPEK56z2'}, (error, response) => {
+      Meteor.call('resumes.download', { resumeId: '58d2d48d945f3a9097406a68'}, (error, response) => {
         if (error) {
           console.log(error);
           Bert.alert(error.reason, 'danger');
@@ -35,11 +48,18 @@ export default class EntryForm extends Component {
     return true;
   }
 
+// TEMP
   render() {
     return (
-      <div className="container">
-        <AutoForm schema={ this.state.ResumeSchema } onSubmit={ data => this.handleForm(data) }/>
-      </div>
-    );
+      <div></div>
+    )
   }
+
+  // render() {
+  //   return (
+  //     <div className="container">
+  //       <AutoForm schema={ this.state.ResumeSchema } onSubmit={ data => this.handleForm(data) }/>
+  //     </div>
+  //   );
+  // }
 }
