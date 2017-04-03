@@ -9,84 +9,94 @@ import Footer from './Footer.jsx';
 import Content from './Content.jsx';
 
 export class App extends Component {
-  // static getFont(fontPath) {
-  //   let assetFontPath = 'fonts/' + fontPath
-  //   if(Meteor.isServer){
-  //     return Assets.absoluteFilePath(assetFontPath);
-  //   }
-  //   return assetFontPath
-  // }
-  // 
-  // static styles() {
-  //   return `
-  //     @font-face {
-  //         font-family: 'MontRgl';
-  //         src: url('${ App.getFont('montserrat/MontRgl.ttf') }') format('truetype');
-  //         font-weight: normal;
-  //         font-style: normal;
-  //     }
-  //     
-  //     @font-face {
-  //         font-family: 'MontLt';
-  //         src: url('${ App.getFont('montserrat/MontLt.ttf') }') format('truetype');
-  //         font-weight: normal;
-  //         font-style: normal;
-  //     }
-  //     
-  //     @font-face {
-  //         font-family: 'MontBld';
-  //         src: url('${ App.getFont('montserrat/MontBld.ttf') }') format('truetype');
-  //         font-weight: normal;
-  //         font-style: normal;
-  //     }
-  // 
-  //     html, body {
-  //       margin: 1em 0.8em 0 0;
-  //       padding: 0;
-  //       font-family: "MontLt";
-  //     }
-  // 
-  //     a, a:visited, a:active {
-  //       font-family: "MontRgl";
-  //       color: #EB5757;
-  //     }
-  // 
-  //     a:hover {
-  //       color: #EB5757;
-  //       text-decoration: none;
-  //     }
-  // 
-  //     p {
-  //       text-align: justify;
-  //       text-justify: inter-word;
-  //     }
-  // 
-  //     h1, h2, h3, h4, h5, h6 {
-  //       font-family: 'MontBld', "Helvetica Neue", Helvetica, Arial, sans-serif;
-  //       letter-spacing: normal !important;
-  //       text-transform: uppercase;
-  //     }
-  // 
-  //     h5 {
-  //       letter-spacing: normal !important;
-  //     }
-  // 
-  //     .table > tbody > tr > td {
-  //       line-height: normal;
-  //       vertical-align: inherit;
-  //       border-top: 0;
-  //     }
-  // 
-  //     td {
-  //       padding: 0.4em 0.5em;
-  //     }
-  // 
-  //     tr:first-child>td {
-  //       margin-top: 0;
-  //       padding-top: 0;
-  //     }
-  //   `
-  // }
+  static getFont(fontPath) {
+    let assetFontPath = 'fonts/' + fontPath
+    if(Meteor.isServer){
+      return Assets.absoluteFilePath(assetFontPath);
+    }
+    return assetFontPath
+  }
+  
+  static externalStyles() {
+    if(Meteor.isServer){
+      return Assets.getText('stylesheets/bootstrap/bootstrap.min.css')
+    }
+  }
+  
+  static componentStyles() {
+    return `
+      @font-face {
+          font-family: 'MontRgl';
+          src: url('${ App.getFont('montserrat/MontRgl.ttf') }') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+      }
+      
+      @font-face {
+          font-family: 'MontLt';
+          src: url('${ App.getFont('montserrat/MontLt.ttf') }') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+      }
+      
+      @font-face {
+          font-family: 'MontBld';
+          src: url('${ App.getFont('montserrat/MontBld.ttf') }') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+      }
+  
+      html, body {
+        margin: 1em 0.8em 0 0;
+        padding: 0;
+        font-family: "MontLt";
+      }
+  
+      a, a:visited, a:active {
+        font-family: "MontRgl";
+        color: #EB5757;
+      }
+  
+      a:hover {
+        color: #EB5757;
+        text-decoration: none;
+      }
+  
+      p {
+        text-align: justify;
+        text-justify: inter-word;
+      }
+  
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'MontBld', "Helvetica Neue", Helvetica, Arial, sans-serif;
+        letter-spacing: normal !important;
+        text-transform: uppercase;
+      }
+  
+      h5 {
+        letter-spacing: normal !important;
+      }
+  
+      .table > tbody > tr > td {
+        line-height: normal;
+        vertical-align: inherit;
+        border-top: 0;
+      }
+  
+      td {
+        padding: 0.4em 0.5em;
+      }
+  
+      tr:first-child>td {
+        margin-top: 0;
+        padding-top: 0;
+      }
+    `
+  }
+  
+  static styles() {
+    return App.externalStyles() + App.componentStyles()
+  }
 
   renderHeader() {
     return <Header basics={this.props.basics}/>;
@@ -109,12 +119,14 @@ export class App extends Component {
   render() {
     // TODO Create a loading spinner
     return this.props.loading ? null : (
-      <div className="top-wrapper">
-        <div className="container">
-          {this.renderHeader()}
-          {this.renderFooter()}
+      <InlineCss stylesheet={ App.styles() }>
+        <div className="top-wrapper">
+          <div className="container">
+            {this.renderHeader()}
+            {this.renderFooter()}
+          </div>
         </div>
-      </div>
+    </InlineCss>
     );
   }
 }

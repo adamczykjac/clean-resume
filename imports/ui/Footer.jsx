@@ -2,38 +2,9 @@ import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 import InlineCss from 'react-inline-css';
 
-export default class Footer extends Component {
-  static getFont(fontPath) {
-    let assetFontPath = 'fonts/' + fontPath
-    if(Meteor.isServer){
-      return Assets.absoluteFilePath(assetFontPath);
-    }
-    return assetFontPath
-  }
-  
+export default class Footer extends Component {  
   static styles() {
     return `
-      @font-face {
-        font-family: 'MontRgl';
-        src: url('${ Footer.getFont('montserrat/MontRgl.ttf') }') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-      }
-      
-      @font-face {
-        font-family: 'MontLt';
-        src: url('${ Footer.getFont('montserrat/MontLt.ttf') }') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-      }
-
-      @font-face {
-        font-family: 'MontBld';
-        src: url('${ Footer.getFont('montserrat/MontBld.ttf') }') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-      }
-
       html, body {
         margin: 1em 0.8em 0 0;
         padding: 0;
