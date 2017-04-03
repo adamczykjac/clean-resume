@@ -49,53 +49,14 @@ export default class Content extends Component {
 
   render() {
     return (
-      <div className="content menu row">
+      <InlineCss stylesheet={ Content.styles() }>
+        <div className="content menu row">
           <div className="menu-category list-group" id="skills">
             <h3>SKILLS</h3>
             { this.renderSkills() }
           </div>
-
-          <div className="menu-category list-group" id="work">
-            <h3>WORK</h3>
-            <div className="timeline-wrap">
-              <div className="timeline-before"></div>
-              <ul className="timeline">
-                { this.renderTimelineMoments('Work') }
-              </ul>
-            </div>
-          </div>
-
-          <div className="menu-category list-group" id="awards">
-              <h3>AWARDS</h3>
-              <ul>
-                { this.renderAwards() }
-              </ul>
-          </div>
-          <div className="menu-category list-group" id="education">
-              <h3>EDUCATION</h3>
-              <div className="timeline-wrap">
-                <div className="timeline-before"></div>
-                <ul className="timeline">
-                  { this.renderTimelineMoments('Education') }
-                </ul>
-              </div>
-          </div>
-
-          <div className="menu-category list-group" id="languages">
-              <h3>LANGUAGES</h3>
-              { this.renderLanguages() }
-          </div>
-          <div className="menu-category list-group" id="certifications">
-              <h3>CERTIFICATIONS</h3>
-              <ul>
-                { this.renderCertifications() }
-              </ul>
-          </div>
-          <div className="menu-category list-group" id="interests">
-              <h3>INTERESTS</h3>
-              { this.renderInterests() }
-          </div>
-      </div>
+        </div>
+      </InlineCss>
     );
   }
 }
