@@ -17,21 +17,24 @@ const getBase64String = (path) => {
 
 const generatePDF = (html, fileName) => {
   try {
-    wkhtmltopdf(html, {
-      pageSize: 'letter'
-    }, (error, stream) => {
+    wkhtmltopdf(html, { encoding: 'UTF-8', debug: true }, (error, stream) => {
       if (error) {
+        console.log(error);
         pdfModule.reject(error);
-      } else {
-        const outputPDF = fs.createWriteStream(fileName);
-        stream.pipe(outputPDF);
-        outputPDF.on('finish', function() {
-          pdfModule.resolve({ fileName, base64: getBase64String(outputPDF.path) });
-          fs.unlink(outputPDF.path);
-        });
+        return error
       }
+      const outputPDF = fs.createWriteStream(fileName);
+      stream.pipe(outputPDF);
+      outputPDF.on('finish', function() {
+        pdfModule.resolve({ fileName, base64: getBase64String(outputPDF.path) });
+        // fs.unlink(outputPDF.path);
+      }).on('error', function(err) {
+        console.log(err);
+        pdfModule.reject(err);
+      });
     });
   } catch (exception) {
+    console.log(exception);
     pdfModule.reject(exception);
   }
 };

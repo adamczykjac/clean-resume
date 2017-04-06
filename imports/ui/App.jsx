@@ -156,17 +156,6 @@ export class App extends Component {
         width:  100%;
       }
 
-      /* Skills */
-      #skills .list-group-item {
-        border: 0;
-        padding: 0.4em 0.5em 0.4em 0;
-        background-color: transparent;
-      }
-
-      #skills .list-group-item .skill-caption {
-        padding: 0;
-      }
-
       /* Common Awards & Certifications section */
 
       #awards [class^="flaticon-"], #awards [class*=" flaticon-"],
@@ -282,7 +271,7 @@ export class App extends Component {
   render() {
     // TODO Create a loading spinner
     return this.props.loading ? null : (
-      <InlineCss stylesheet={ App.styles() }>
+      <InlineCss namespace="App" stylesheet={ App.styles() }>
         <div className="top-wrapper">
           <div className="container">
             {this.renderHeader()}
@@ -290,7 +279,7 @@ export class App extends Component {
             {this.renderFooter()}
           </div>
         </div>
-    </InlineCss>
+      </InlineCss>
     );
   }
 }
