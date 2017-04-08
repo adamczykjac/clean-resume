@@ -1,6 +1,7 @@
 .*
 !/.gitignore
 !/.meteor
+!/.custom_binaries
 node_modules
 .dbbackup
 .gulp
