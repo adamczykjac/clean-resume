@@ -10,34 +10,48 @@ import Content from './Content.jsx';
 
 export class App extends Component {
   static getFont(fontPath) {
-    let assetFontPath = 'fonts/' + fontPath
     if(Meteor.isServer){
-      return Assets.absoluteFilePath(assetFontPath);
+      return Assets.absoluteFilePath(fontPath);
     }
-    return assetFontPath
+    // client
+    return fontPath
   }
   
   static loadFontFaces() {
     return `
       @font-face {
-          font-family: 'MontRgl';
-          src: url('${ App.getFont('montserrat/MontRgl.ttf') }') format('truetype');
-          font-weight: normal;
-          font-style: normal;
+        font-family: 'MontRgl';
+        src: url('${ App.getFont('fonts/montserrat/MontRgl.ttf') }') format('truetype');
+        font-weight: normal;
+        font-style: normal;
       }
       
       @font-face {
-          font-family: 'MontLt';
-          src: url('${ App.getFont('montserrat/MontLt.ttf') }') format('truetype');
-          font-weight: normal;
-          font-style: normal;
+        font-family: 'MontLt';
+        src: url('${ App.getFont('fonts/montserrat/MontLt.ttf') }') format('truetype');
+        font-weight: normal;
+        font-style: normal;
       }
       
       @font-face {
-          font-family: 'MontBld';
-          src: url('${ App.getFont('montserrat/MontBld.ttf') }') format('truetype');
-          font-weight: normal;
-          font-style: normal;
+        font-family: 'MontBld';
+        src: url('${ App.getFont('fonts/montserrat/MontBld.ttf') }') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+      
+      @font-face {
+        font-family: "Flaticon";
+        src: url('${ App.getFont('fonts/flaticon/Flaticon.ttf') }') format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @media screen and (-webkit-min-device-pixel-ratio:0) {
+        @font-face {
+          font-family: "Flaticon";
+          src: url('${ App.getFont('fonts/flaticon/Flaticon.svg') }#Flaticon') format("svg");
+        }
       }
       `
     }
@@ -103,6 +117,25 @@ export class App extends Component {
       h4, h5 {
         padding-bottom: 0.5em !important;
       }
+      
+      [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+      [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+        font-family: Flaticon;
+        font-size: 20px;
+        font-style: normal;
+        margin-left: 20px;
+      }
+
+      .flaticon-award:before { content: "\\f100"; }
+      .flaticon-basketball:before { content: "\\f101"; }
+      .flaticon-bulb:before { content: "\\f102"; }
+      .flaticon-diploma:before { content: "\\f103"; }
+      .flaticon-dish:before { content: "\\f104"; }
+      .flaticon-github:before { content: "\\f105"; }
+      .flaticon-guitar:before { content: "\\f106"; }
+      .flaticon-linkedin:before { content: "\\f107"; }
+      .flaticon-tennis-racket:before { content: "\\f108"; }
+      .flaticon-twitter:before { content: "\\f109"; }
 
       *[class^='flaticon-'].big {
         color: #EB5757;
