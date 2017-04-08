@@ -19,7 +19,10 @@ export const downloadResume = new ValidatedMethod({
       <App basics={ resume.basics } 
            content={( { skills: resume.skills,
                         works: resume.work,
-                        awards: resume.awards } )} />, fileName })
+                        awards: resume.awards,
+                        educations: resume.education,
+                        languages: resume.languages,
+                        certifications: resume.certifications } )} />, fileName })
     .then((result) => result)
     .catch((error) => {
       console.log(error);

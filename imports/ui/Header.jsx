@@ -76,7 +76,7 @@ export default class Header extends Component {
           <div className="col-md-6">
             <div className="row">
               <div className="col-xs-2 col-md-3 col-lg-2 col-xs-offset-1 col-md-offset-0">
-                <img className='img-circle avatar push-down' src='img/profilepic.jpg' />
+                <img className='img-circle avatar push-down' src={ Assets.absoluteFilePath("img/profilepic.png") } />
               </div>
               <div className="col-xs-7 col-xs-offset-1 col-sm-offset-2">
                 <div className="push-down">

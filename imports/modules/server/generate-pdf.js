@@ -5,6 +5,8 @@ import path from 'path';
 
 let pdfModule;
 
+toFileUri = (filename) => ('file://' + path.resolve(filename))
+
 const getBase64String = (path) => {
   try {
     const file = fs.readFileSync(path);
@@ -17,21 +19,21 @@ const getBase64String = (path) => {
 
 const generatePDF = (html, fileName) => {
   try {
-    wkhtmltopdf(html, { encoding: 'UTF-8', debug: true }, (error, stream) => {
-      if (error) {
-        console.log(error);
-        pdfModule.reject(error);
-        return error
-      }
-      const outputPDF = fs.createWriteStream(fileName);
-      stream.pipe(outputPDF);
-      outputPDF.on('finish', function() {
-        pdfModule.resolve({ fileName, base64: getBase64String(outputPDF.path) });
-        // fs.unlink(outputPDF.path);
-      }).on('error', function(err) {
-        console.log(err);
-        pdfModule.reject(err);
-      });
+    const htmlStream = fs.createWriteStream("out.html")
+    htmlStream.write(html)
+    htmlStream.end()
+
+    // This needs to be rewritten, no clue why passing a stream does not work, so passing an URL
+    // to a file instead
+    const outputPDF = fs.createWriteStream(fileName);
+    wkhtmltopdf(toFileUri('out.html'), { encoding: 'UTF-8' }).pipe(outputPDF);
+    outputPDF.on('finish', function() {
+      pdfModule.resolve({ fileName, base64: getBase64String(outputPDF.path) });
+      fs.unlink(htmlStream.path);
+      fs.unlink(outputPDF.path);
+    }).on('error', function(err) {
+      console.log(err);
+      pdfModule.reject(err);
     });
   } catch (exception) {
     console.log(exception);

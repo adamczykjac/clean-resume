@@ -66,7 +66,7 @@ export default class Content extends Component {
       .timeline-badge > a > .circle {
         background-color: #eb4b52;
         border: 7px solid #fff;
-        // border-radius: 15px;
+        border-radius: 15px;
         height: 23px;
         width: 23px;
         margin-top: 12px;
@@ -166,8 +166,30 @@ export default class Content extends Component {
               { this.renderAwards() }
             </ul>
           </div>
+          
+          <div className="menu-category list-group" id="education">
+            <h3>EDUCATION</h3>
+            <div className="timeline-wrap">
+              <div className="timeline-before"></div>
+              <ul className="timeline">
+                { this.renderTimelineMoments('Education') }
+              </ul>
+            </div>
+          </div>
+          
+          <div className="menu-category list-group" id="languages">
+            <h3>LANGUAGES</h3>
+            { this.renderLanguages() }
+          </div>
+          
+          <div className="menu-category list-group" id="certifications">
+              <h3>CERTIFICATIONS</h3>
+              <ul>
+                { this.renderCertifications() }
+              </ul>
+          </div>
+          
         </div>
-        
       </InlineCss>
     );
   }

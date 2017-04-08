@@ -204,37 +204,6 @@ export class App extends Component {
         box-shadow: inset 0 0px 0px;
       }
 
-      /* Language section */
-      #languages > [class*=' col-'] {
-        padding: 15px;
-      }
-
-      #languages .lang-wrapper {
-        position: relative;
-      }
-
-      #languages .lang-label-wrapper {
-        position: absolute;
-        top: 34%;
-        left: 15%;
-        height: 102px;
-        width: 102px;
-      }
-
-      #languages .lang-label-wrapper label{
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 1em;
-      }
-
-      #languages .lang-label-wrapper label > span{
-        display: block;
-      }
-
-      #languages svg #circular-progress-bar use {
-        fill: #EB5757;
-      }
-
       footer {
         text-align: center;
         color: #aaa;
