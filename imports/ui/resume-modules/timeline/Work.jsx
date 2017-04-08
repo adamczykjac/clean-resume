@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-// Work component
 export default class Work extends Component {
   render() {
     return (

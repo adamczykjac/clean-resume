@@ -1,8 +1,11 @@
-import { insert } from '../../imports/api/resumes/methods.js'
 import { Meteor } from 'meteor/meteor';
 import { Resumes } from '../../imports/api/resumes/resumes.js'
 import AutoForm from 'uniforms-bootstrap3/AutoForm';
 import React, { Component, PropTypes } from 'react';
+import { base64ToBlob } from '../modules/base64-to-blob.js'
+import fileSaver from 'file-saver'
+
+import wkhtmltopdf from 'wkhtmltopdf';
 
 export default class EntryForm extends Component {
   constructor(props) {
@@ -11,22 +14,52 @@ export default class EntryForm extends Component {
       ResumeSchema: Resumes.schema
     };
   }
+  
+  // TEMP
+  componentDidMount() {
+    Meteor.call('resumes.download', { resumeId: '58d2d48d945f3a9097406a68'}, (error, response) => {
+      if (error) {
+        console.log(error);
+        Bert.alert(error.reason, 'danger');
+      } else {
+        const blob = base64ToBlob(response.base64);
+        fileSaver.saveAs(blob, response.fileName);
+      }
+    })
+  }
 
+  handleForm(data) {
+    Meteor.call('resumes.insert', { name: data.name }, (error, response) => {
+      if (error) {
+      console.log(error);
+      Bert.alert(error.reason, 'danger');
+    } else {
+      Meteor.call('resumes.download', { resumeId: '58d2d48d945f3a9097406a68'}, (error, response) => {
+        if (error) {
+          console.log(error);
+          Bert.alert(error.reason, 'danger');
+        } else {
+          const blob = base64ToBlob(response.base64);
+          fileSaver.saveAs(blob, response.fileName);
+        }
+      })
+    }
+    });
+    return true;
+  }
+
+// TEMP
   render() {
     return (
-      <div className="container">
-        <AutoForm schema={ this.state.ResumeSchema } onSubmit={ data => insert.call(data) } />
-      </div>
-    );
+      <div></div>
+    )
   }
-}
 
-// Content.propTypes = {
-//   skills: PropTypes.array,
-//   awards: PropTypes.array,
-//   works: PropTypes.array,
-//   educations: PropTypes.array,
-//   languages: PropTypes.array,
-//   certifications: PropTypes.array,
-//   interests: PropTypes.array
-// };
+  // render() {
+  //   return (
+  //     <div className="container">
+  //       <AutoForm schema={ this.state.ResumeSchema } onSubmit={ data => this.handleForm(data) }/>
+  //     </div>
+  //   );
+  // }
+}

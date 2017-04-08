@@ -27,6 +27,7 @@
 .landing h1 {
   color: #eb4b52;
   margin: 0.4em 0 0 0;
+  text-transform: lowercase;
 }
 
 .landing h2 {
