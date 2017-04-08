@@ -49,7 +49,7 @@ export default class Header extends Component {
               }
               { this.props.basics.location &&
                 <tr>
-                  <td>Lokalizacja</td>
+                  <td>Location</td>
                   <td>{ this.renderLocation() }</td>
                 </tr>
               }

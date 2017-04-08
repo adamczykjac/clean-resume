@@ -52,7 +52,7 @@ export default class Content extends Component {
   renderSkills() {
     return (
       <div className="menu-category list-group" id="skills">
-        <h3>UMIEJĘTNOŚCI</h3>
+        <h3>SKILLS</h3>
         { this.props.skills.map((skill, idx) => (
             <Skill key={idx} skill={skill} />
           ))
@@ -66,11 +66,11 @@ export default class Content extends Component {
     var timelineLabel = '';
     if (momentType === 'Work') {
       timelineIterable = this.props.works;
-      timelineLabel = 'Doświadczenie'
+      timelineLabel = 'Work'
     }
     else { // Education
       timelineIterable = this.props.educations;
-      timelineLabel = 'Edukacja'
+      timelineLabel = 'Education'
     }
     return (
       <div className="menu-category list-group" id="education">
@@ -92,7 +92,7 @@ export default class Content extends Component {
   renderAwards() {
     return (
       <div className="menu-category list-group" id="awards">
-        <h3>NAGRODY</h3>
+        <h3>AWARDS</h3>
         <ul>
           { this.props.awards.map((award, idx) => (
               <Award key={idx} award={award} />
@@ -106,7 +106,7 @@ export default class Content extends Component {
   renderCertifications() {
     return (
       <div className="menu-category list-group" id="certifications">
-        <h3>DOKUMENTY</h3>
+        <h3>CERTIFICATIONS</h3>
         <ul>
           {
             this.props.certifications.map((cert, idx) => (
@@ -121,7 +121,7 @@ export default class Content extends Component {
   renderCertificateConfirmation(data) {
     let hasCertificate = data.some((element) => element.certificate);
     if(hasCertificate) return (
-      <span>* potwierdzony certyfikatem</span>
+      <span>* confirmed by a certificate</span>
     )
   }
 
@@ -129,7 +129,7 @@ export default class Content extends Component {
     let rows = spliceIntoArraysWithLength(this.props.languages, Content.getConstant("MAX_COLUMNS"));
     return (
       <div className="menu-category list-group" id="languages">
-        <h3>JĘZYKI</h3>
+        <h3>LANGUAGES</h3>
         { this.renderRowsWithComponents(rows, Language) }
         { this.renderCertificateConfirmation(this.props.languages) }
       </div>
@@ -140,7 +140,7 @@ export default class Content extends Component {
     let rows = spliceIntoArraysWithLength(this.props.interests, Content.getConstant("MAX_COLUMNS"));
     return (
       <div className="menu-category list-group" id="interests">
-        <h3>ZAINTERESOWANIA</h3>
+        <h3>INTERESTS</h3>
         { this.renderRowsWithComponents(rows, Interest) }
       </div>
     );
