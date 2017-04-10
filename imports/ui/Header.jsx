@@ -16,16 +16,17 @@ export default class Header extends Component {
     return `
       .contact {
         position: relative;
-        left: -4px;
+        left: -40px;
       }
 
       .contact td:first-child {
         text-transform: uppercase;
-        float: right !important;
         font-family: 'MontBld';
         font-size: 0.8em;
+        text-align: right;
         vertical-align: text-bottom;
         margin-top: 0.28em;
+        padding-right: 2.5em;
       }
 
       .social {
@@ -92,7 +93,7 @@ export default class Header extends Component {
               </div>
             </div>
           </div>
-          <div className="col-sm-6 col-md-3 col-xs-7">
+          <div className="col-sm-6 col-md-3 col-xs-6">
             <table className="table contact">
               <tbody>
                 { this.props.basics.email &&

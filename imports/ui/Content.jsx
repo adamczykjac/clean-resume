@@ -58,6 +58,7 @@ export default class Content extends Component {
         width: 88%;
         border: 0px;
         left: 50px;
+        top: -1px;
         position: relative;
       }
 
