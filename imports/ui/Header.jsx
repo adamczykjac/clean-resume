@@ -2,9 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import InlineCss from 'react-inline-css';
 
 // Header component
-export default class Header extends Component {  
+export default class Header extends Component {
   static styles() {
-    return `  
+    return `
       .contact {
         position: relative;
         left: -4px;
@@ -55,13 +55,13 @@ export default class Header extends Component {
         float: left;
       }
     `
-  } 
-  
+  }
+
   renderLocation() {
     let city = this.props.basics.location.city;
     let region = this.props.basics.location.region;
     let countryCode = this.props.basics.location.countryCode;
-    out = []
+    let out = []
     out.push(typeof(city) == undefined ? null : city)
     out.push(typeof(region) == undefined ? null : region)
     out.push(typeof(countryCode) == undefined ? null : countryCode)
@@ -69,52 +69,47 @@ export default class Header extends Component {
   }
 
   render() {
-    // TODO Create a 'Social' component
     return (
       <InlineCss stylesheet={ Header.styles() }>
         <header className="row">
-          <div className="col-md-6">
+          <div className="col-md-6 col-xs-5">
             <div className="row">
-              <div className="col-xs-2 col-md-3 col-lg-2 col-xs-offset-1 col-md-offset-0">
-                <img className='img-circle avatar push-down' src={ Assets.absoluteFilePath("img/profilepic.png") } />
+              <div className="col-xs-2 col-md-3 col-lg-2 col-md-offset-0">
+                <img className="img-circle avatar" src="img/profilepic.jpg" />
               </div>
-              <div className="col-xs-7 col-xs-offset-1 col-sm-offset-2">
-                <div className="push-down">
-                  <h2 className="main-lead">{ this.props.basics.name }</h2>
-                  <h5 className="sub-lead">{ this.props.basics.label }</h5>
-                </div>
+              <div className="col-xs-8 col-xs-offset-2 col-sm-offset-2">
+                <h2 className="main-lead">{ this.props.basics.name }</h2>
+                <h5 className="sub-lead">{ this.props.basics.label }</h5>
               </div>
             </div>
           </div>
-          <div className="col-sm-6 col-md-3 push-down">
+          <div className="col-sm-6 col-md-3 col-xs-7">
             <table className="table contact">
               <tbody>
-                <tr>
-                  <td>Mail</td>
-                  <td><a href="#">{ this.props.basics.website }</a></td>
-                </tr>
-                <tr>
-                  <td>Web</td>
-                  <td><a href="#">{ this.props.basics.email }</a></td>
-                </tr>
-                <tr>
-                  <td>Phone</td>
-                  <td>{ this.props.basics.phone }</td>
-                </tr>
-                <tr>
-                  <td>Location</td>
-                  <td>{ this.renderLocation() }</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div className="col-sm-6 col-md-3 push-down">
-            <table className="table social">
-              <tbody>
-                <tr>
-                  <td><i className="flaticon-twitter"></i></td>
-                  <td><a href="#">@theRealJohn</a></td>
-                </tr>
+                { this.props.basics.email &&
+                  <tr>
+                    <td>Mail</td>
+                    <td><a href="#" target="_blank">{ this.props.basics.email }</a></td>
+                  </tr>
+                }
+                { this.props.basics.web &&
+                  <tr>
+                    <td>Web</td>
+                    <td><a href="#" target="_blank">{ this.props.basics.web }</a></td>
+                  </tr>
+                }
+                { this.props.basics.phone &&
+                  <tr>
+                    <td>Phone</td>
+                    <td>{ this.props.basics.phone }</td>
+                  </tr>
+                }
+                { this.props.basics.location &&
+                  <tr>
+                    <td>Location</td>
+                    <td>{ this.renderLocation() }</td>
+                  </tr>
+                }
               </tbody>
             </table>
           </div>
@@ -123,3 +118,7 @@ export default class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  basics: PropTypes.object.isRequired,
+};

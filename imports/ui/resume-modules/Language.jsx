@@ -1,23 +1,25 @@
 import React, { Component, PropTypes } from 'react';
-import { Line, Circle } from 'rc-progress';
+import CircularProgressBar from './language/CircularProgressBar.jsx';
 
-// Language component
 export default class Language extends Component {
   render() {
     return (
-      <div className="col-xs-6 col-sm-3">
+      <div className={"col-xs-" + this.props.colWidth + " lang-wrapper"}>
+        <CircularProgressBar level={ this.props.data.level } id={ this.props.id } />
         <div className="lang-label-wrapper">
-          <label htmlFor="lang-bar">
-            <span>{ this.props.lang.language }</span>
-            <span>{ this.props.lang.fluency }</span>
+          <label>
+            <span>{ this.props.data.language }</span>
+            <span>
+              { this.props.data.fluency }
+              { this.props.data.certificate ? "*" : "" }
+            </span>
           </label>
         </div>
-        <Circle percent={ this.props.lang.level } strokeWidth="2" strokeColor="#eb4b52" trailWidth="0" id="lang-bar"/>
       </div>
     );
   }
 }
 
 Language.propTypes = {
-  lang: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired
 };

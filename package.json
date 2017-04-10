@@ -18,6 +18,10 @@
     "simpl-schema": "^0.2.2",
     "uniforms": "^1.13.1",
     "uniforms-bootstrap3": "^1.13.1",
-    "wkhtmltopdf": "^0.3.4"
+    "wkhtmltopdf": "^0.3.4",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
   }
 }

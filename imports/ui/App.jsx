@@ -16,7 +16,7 @@ export class App extends Component {
     // client
     return fontPath
   }
-  
+
   static loadFontFaces() {
     return `
       @font-face {
@@ -25,21 +25,21 @@ export class App extends Component {
         font-weight: normal;
         font-style: normal;
       }
-      
+
       @font-face {
         font-family: 'MontLt';
         src: url('${ App.getFont('fonts/montserrat/MontLt.ttf') }') format('truetype');
         font-weight: normal;
         font-style: normal;
       }
-      
+
       @font-face {
         font-family: 'MontBld';
         src: url('${ App.getFont('fonts/montserrat/MontBld.ttf') }') format('truetype');
         font-weight: normal;
         font-style: normal;
       }
-      
+
       @font-face {
         font-family: "Flaticon";
         src: url('${ App.getFont('fonts/flaticon/Flaticon.ttf') }') format("truetype");
@@ -55,15 +55,15 @@ export class App extends Component {
       }
       `
     }
-    
+
     static externalStyles() {
       if(Meteor.isServer){
         return Assets.getText('stylesheets/bootstrap/bootstrap.min.css')
       }
     }
-    
+
     static componentStyles() {
-      return `  
+      return `
       html, body {
         margin: 1em 0.8em 0 0;
         padding: 0;
@@ -117,7 +117,7 @@ export class App extends Component {
       h4, h5 {
         padding-bottom: 0.5em !important;
       }
-      
+
       [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
       [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
         font-family: Flaticon;
@@ -245,16 +245,17 @@ export class App extends Component {
       }
     `
   }
-  
+
   static styles() {
-    return App.loadFontFaces() + 
-           App.externalStyles() + 
+    return App.loadFontFaces() +
+           App.externalStyles() +
            App.componentStyles()
   }
 
   renderHeader() {
     return <Header basics={this.props.basics}/>;
   }
+
   renderContent() {
     return <Content
       skills={this.props.content.skills}
@@ -266,6 +267,7 @@ export class App extends Component {
       interests={this.props.content.interests}
     />;
   }
+
   renderFooter() {
     return <Footer />;
   }
@@ -298,7 +300,7 @@ export class App extends Component {
 //   const loading = !subscription.ready();
 //   let basics = {};
 //   let content = {};
-// 
+//
 //   resume = Resumes.findOne({_id: '58d2d48d945f3a9097406a68'});
 //   console.log(res);
 //   if(resume) {
