@@ -9,6 +9,7 @@ import Footer from './Footer.jsx';
 import Content from './Content.jsx';
 
 export class App extends Component {
+  // Take it out to the separate module
   static getFont(fontPath) {
     if(Meteor.isServer){
       return Assets.absoluteFilePath(fontPath);
@@ -65,7 +66,7 @@ export class App extends Component {
     static componentStyles() {
       return `
       html, body {
-        margin: 1em 0.8em 0 0;
+        margin: 1.5em 0.8em 0 0;
         padding: 0;
         font-family: "MontLt";
       }

@@ -29,7 +29,7 @@ const generatePDF = (html, fileName) => {
     wkhtmltopdf(toFileUri('out.html'), { encoding: 'UTF-8' }).pipe(outputPDF);
     outputPDF.on('finish', function() {
       pdfModule.resolve({ fileName, base64: getBase64String(outputPDF.path) });
-      fs.unlink(htmlStream.path);
+      // fs.unlink(htmlStream.path);
       fs.unlink(outputPDF.path);
     }).on('error', function(err) {
       console.log(err);

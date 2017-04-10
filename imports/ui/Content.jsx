@@ -36,7 +36,7 @@ export default class Content extends Component {
       }
 
       .timeline-before {
-        width: 2px;
+        width: 1px;
         background-color: #eb4b52;
         position: relative;
         left: 9px;
@@ -55,7 +55,7 @@ export default class Content extends Component {
       }
 
       .timeline > li > .timeline-panel {
-        width: 95%;
+        width: 88%;
         border: 0px;
         left: 50px;
         position: relative;

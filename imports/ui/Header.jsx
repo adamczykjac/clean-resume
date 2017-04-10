@@ -3,6 +3,15 @@ import InlineCss from 'react-inline-css';
 
 // Header component
 export default class Header extends Component {
+  // Take it out to the separate module
+  static getAsset(assetPath) {
+    if(Meteor.isServer){
+      return Assets.absoluteFilePath(assetPath);
+    }
+    // client
+    return assetPath
+  }
+
   static styles() {
     return `
       .contact {
@@ -12,7 +21,7 @@ export default class Header extends Component {
 
       .contact td:first-child {
         text-transform: uppercase;
-        float: right;
+        float: right !important;
         font-family: 'MontBld';
         font-size: 0.8em;
         vertical-align: text-bottom;
@@ -75,7 +84,7 @@ export default class Header extends Component {
           <div className="col-md-6 col-xs-5">
             <div className="row">
               <div className="col-xs-2 col-md-3 col-lg-2 col-md-offset-0">
-                <img className="img-circle avatar" src="img/profilepic.jpg" />
+                <img className="img-circle avatar" src={ Header.getAsset('img/profilepic.png') } />
               </div>
               <div className="col-xs-8 col-xs-offset-2 col-sm-offset-2">
                 <h2 className="main-lead">{ this.props.basics.name }</h2>

@@ -14,7 +14,6 @@ export const downloadResume = new ValidatedMethod({
   }).validator(),
   run({ resumeId }) {
     const resume = Resumes.findOne({ _id: resumeId });
-    console.log(resume);
     const fileName = `resume_${resume._id}.pdf`;
     return generateComponentAsPDF({ component:
       <App basics={ resume.basics }
