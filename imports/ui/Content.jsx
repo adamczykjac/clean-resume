@@ -10,9 +10,7 @@ import Interest from './resume-modules/Interest.jsx';
 
 let spliceIntoArraysWithLength = ( array, spliceLen, result ) => {
   if(!result) result = [];
-  console.log(array);
   if(array.length > spliceLen) {
-    console.log('Hello');
     result.push(array.splice(0, spliceLen));
     return spliceIntoArraysWithLength( array, spliceLen, result );
   }
