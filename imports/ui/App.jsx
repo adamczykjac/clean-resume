@@ -237,13 +237,6 @@ export class App extends Component {
         -webkit-box-shadow: inset 0 0px 0px;
         box-shadow: inset 0 0px 0px;
       }
-
-      footer {
-        text-align: center;
-        color: #aaa;
-        font-size: 0.8em;
-        margin-bottom: 20px;
-      }
     `
   }
 
