@@ -6,6 +6,6 @@ export const insert = new ValidatedMethod({
   name: 'resumes.insert',
   validate: Resumes.schema.validator(),
   run(resume) {
-    Resumes.insert(resume);
+    return Resumes.insert(resume);
   }
 });

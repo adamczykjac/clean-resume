@@ -96,7 +96,7 @@ export default class Content extends Component {
 
       .timeline-body > p {
         margin-top: 5px;
-        color: #6b6d70;
+        color: #000;
       }
 
       .timeline-body > h4 {
@@ -258,17 +258,7 @@ export default class Content extends Component {
         <div className="content menu row">
           { this.renderSkills() }
 
-          { this.renderTimelineMoments('Work') }
-
           { this.props.awards ? this.renderAwards() : "" }
-
-          { this.renderTimelineMoments('Education') }
-
-          { this.props.certifications ? this.renderCertifications() : "" }
-
-          { this.props.languages ? this.renderLanguages() : "" }
-
-          { this.renderInterests() }
         </div>
       </InlineCss>
     );

@@ -16,7 +16,7 @@ export default class Header extends Component {
     return `
       .contact {
         position: relative;
-        left: -40px;
+        left: -52px;
       }
 
       .contact td:first-child {
@@ -102,10 +102,10 @@ export default class Header extends Component {
                     <td><a href="#" target="_blank">{ this.props.basics.email }</a></td>
                   </tr>
                 }
-                { this.props.basics.web &&
+                { this.props.basics.website &&
                   <tr>
                     <td>Web</td>
-                    <td><a href="#" target="_blank">{ this.props.basics.web }</a></td>
+                    <td><a href="#" target="_blank">{ this.props.basics.website }</a></td>
                   </tr>
                 }
                 { this.props.basics.phone &&
