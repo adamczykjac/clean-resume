@@ -1,23 +1,58 @@
 import React, { Component, PropTypes } from 'react';
-import { Line, Circle } from 'rc-progress';
+import CircularProgressBar from './language/CircularProgressBar.jsx';
+import InlineCss from 'react-inline-css';
 
-// Language component
 export default class Language extends Component {
+  static styles() {
+    return `
+      #languages > [class*=' col-'] {
+        padding: 15px;
+      }
+
+      #languages .menu-category {
+        padding-top: 0;
+      }
+
+      #languages .lang-wrapper {
+        text-align: center;
+        margin-bottom: -35px;
+      }
+
+      #languages .lang-label-wrapper {
+        position: relative;
+        top: -68px;
+      }
+
+      #languages .lang-label-wrapper label{
+        text-transform: uppercase;
+      }
+
+      #languages .lang-label-wrapper label > span{
+        display: block;
+      }
+      `
+  }
+
   render() {
     return (
-      <div className="col-xs-6 col-sm-3">
-        <div className="lang-label-wrapper">
-          <label htmlFor="lang-bar">
-            <span>{ this.props.lang.language }</span>
-            <span>{ this.props.lang.fluency }</span>
-          </label>
+      <InlineCss stylesheet={ Language.styles() }>
+        <div className={"col-xs-" + this.props.colWidth + " lang-wrapper"}>
+          <CircularProgressBar level={ this.props.data.level } id={ this.props.id } />
+          <div className="lang-label-wrapper">
+            <label>
+              <span>{ this.props.data.language }</span>
+              <span>
+                { this.props.data.fluency }
+                { this.props.data.certificate ? "*" : "" }
+              </span>
+            </label>
+          </div>
         </div>
-        <Circle percent={ this.props.lang.level } strokeWidth="2" strokeColor="#eb4b52" trailWidth="0" id="lang-bar"/>
-      </div>
+      </InlineCss>
     );
   }
 }
 
 Language.propTypes = {
-  lang: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired
 };

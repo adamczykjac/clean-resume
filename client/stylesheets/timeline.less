@@ -1,3 +1,5 @@
+@import "vars.import.less";
+
 .timeline {
   list-style: none;
   padding: 0;
@@ -13,14 +15,14 @@
 }
 
 .timeline-before {
-  width: 2px;
-  background-color: #eb4b52;
+  width: 1px;
+  background-color: @primary-brand-color;
   position: relative;
   left: 9px;
 }
 
 #work .timeline-before {
-  width: 5px;
+  width: 1px;
 }
 
 .timeline > li {
@@ -30,10 +32,15 @@
   float: left;
   clear: left;
 }
+
+.timeline > li:last-child {
+  margin-bottom: 0;
+}
+
 .timeline > li > .timeline-panel {
-  width: 95%;
+  width: 88%;
   border: 0px;
-  left: 50px;
+  left: 45px;
   position: relative;
 }
 
@@ -50,46 +57,43 @@
 }
 
 .timeline-badge > a > .circle {
-  background-color: #eb4b52;
+  background-color: @primary-brand-color;
   border: 7px solid #FFF;
   border-radius: 15px;
   height: 23px;
   width: 23px;
-  margin-top: 12px;
+  margin-top: 24px;
+  /*padding-top: 12px;*/
   position: relative;
   left: -3px;
+  top: 3px;
 }
 
-.timeline-title {
-  margin-top: 0;
-  color: inherit;
-}
 .timeline-body > ul {
   padding:20px;
   margin-bottom: 0;
 }
 .timeline-body > p {
   margin-top: 5px;
-  color: #6b6d70;
 }
+
+/* Remove the paragraph margin for a list child */
+.timeline > li:last-child .timeline-body > p {
+  margin-bottom: 0;
+}
+
 .timeline-body > h4 {
-  padding-top: 5px;
+  padding: 5px 0;
 }
 .timeline-body > h5 {
   text-transform: none;
 }
 .timeline-body > h4, .timeline-body > h5 {
-  font-family: 'montserratregular';
+  font-family: 'MontRgl';
   letter-spacing: 0.1em;
 }
-.timeline-footer{
-  padding:20px;
-  background-color:#f4f4f4;
-}
-.timeline-footer > a{
-  cursor: pointer;
-  text-decoration: none;
-}
+
+
 .tooltip{
   position:absolute;
   z-index:1020;
@@ -161,12 +165,8 @@
   height:0;
 }
 
-ul.timeline > li {
-  margin-bottom: 20px;
-  position: relative;
-  width: 100%;
-  float: left;
-  clear: left;
+ul.timeline {
+  margin: 0;
 }
 
 ul.timeline > li > .timeline-panel {
@@ -185,7 +185,7 @@ ul.timeline > li > .timeline-panel {
 
 @media (min-width: 992px) {
   #work .timeline-before {
-    width: 2px;
+    width: 1px;
   }
 
   #education .timeline-before {

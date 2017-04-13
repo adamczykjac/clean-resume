@@ -8,6 +8,16 @@ import TimelineMoment from './resume-modules/TimelineMoment.jsx';
 import Certification from './resume-modules/Certification.jsx';
 import Interest from './resume-modules/Interest.jsx';
 
+let spliceIntoArraysWithLength = ( array, spliceLen, result ) => {
+  if(!result) result = [];
+  if(array.length > spliceLen) {
+    result.push(array.splice(0, spliceLen));
+    return spliceIntoArraysWithLength( array, spliceLen, result );
+  }
+  result.push(array);
+  return result;
+}
+
 export default class Content extends Component {
   static styles() {
     return `
@@ -26,7 +36,7 @@ export default class Content extends Component {
       }
 
       .timeline-before {
-        width: 2px;
+        width: 1px;
         background-color: #eb4b52;
         position: relative;
         left: 9px;
@@ -43,14 +53,15 @@ export default class Content extends Component {
         float: left;
         clear: left;
       }
-      
+
       .timeline > li > .timeline-panel {
-        width: 95%;
+        width: 88%;
         border: 0px;
         left: 50px;
+        top: -1px;
         position: relative;
       }
-      
+
       .timeline > li > .timeline-badge {
         color: #fff;
         width: 23px;
@@ -62,7 +73,7 @@ export default class Content extends Component {
         margin-left: 0;
         z-index: 100;
       }
-      
+
       .timeline-badge > a > .circle {
         background-color: #eb4b52;
         border: 7px solid #fff;
@@ -77,118 +88,189 @@ export default class Content extends Component {
       .timeline-title {
         margin-top: 0;
       }
-      
+
       .timeline-body > ul {
         padding:20px;
         margin-bottom: 0;
       }
-      
+
       .timeline-body > p {
         margin-top: 5px;
-        color: #6b6d70;
+        color: #000;
       }
-      
+
       .timeline-body > h4 {
         padding-top: 5px;
       }
-      
+
       .timeline-body > h5 {
         text-transform: none;
       }
-      
+
       .timeline-body > h4, .timeline-body > h5 {
         font-family: 'MontRgl';
         letter-spacing: 0.1em;
       }
     `
   }
-  
-  renderSkills() {
-    return this.props.skills.map((skill, idx) => (
-      <Skill key={idx} skill={skill} />
-    ));
+
+  static getConstant(constant) {
+    const constants = {
+      MAX_COLUMNS: 4, // up to four columns look pleasant in one column of the template
+      TWT_BOOTSTRAP_GRID_COLUMNS: 12
+    }
+    return constants[constant]
   }
+
+  renderRowsWithComponents(rows, Component) {
+    // calculate Bootstrap column width
+    let bootstrapColWidth;
+    if( rows.length > 1 ) bootstrapColWidth = Math.floor(Content.getConstant("TWT_BOOTSTRAP_GRID_COLUMNS") /
+                                                         Content.getConstant("MAX_COLUMNS"));
+    else bootstrapColWidth = Math.floor(Content.getConstant("TWT_BOOTSTRAP_GRID_COLUMNS") / rows[0].length);
+    return (
+      rows.map((row, rowIndex) => (
+        <div className="row" key={rowIndex}>
+          {
+            row.map((rowElement, rowElementIndex) => (
+              <Component key={rowElementIndex}
+                         id={rowElementIndex}
+                         colWidth={bootstrapColWidth}
+                         data={rowElement} />
+            ))
+          }
+        </div>
+      ))
+    );
+  }
+
+  renderSkills() {
+    return (
+      <div className="menu-category list-group" id="skills">
+        <h3>SKILLS</h3>
+        { this.props.skills.map((skill, idx) => (
+            <Skill key={idx} skill={skill} />
+          ))
+        }
+      </div>
+    );
+  }
+
   renderTimelineMoments(momentType) {
     var timelineIterable = null;
+    var timelineLabel = '';
     if (momentType === 'Work') {
       timelineIterable = this.props.works;
+      timelineLabel = 'Work'
     }
-    else {
+    else { // Education
       timelineIterable = this.props.educations;
+      timelineLabel = 'Education'
     }
-    return timelineIterable.map((moment, idx) => (
-      <TimelineMoment key={idx} momentType={momentType} moment={moment} />
-    ));
+    return (
+      <div className="menu-category list-group" id="education">
+        <h3>{ timelineLabel }</h3>
+        <div className="timeline-wrap">
+          <div className="timeline-before"></div>
+          <ul className="timeline">
+            {
+              timelineIterable.map((moment, idx) => (
+                <TimelineMoment key={idx} momentType={momentType} moment={moment} />
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    );
   }
+
   renderAwards() {
-    return this.props.awards.map((award, idx) => (
-      <Award key={idx} award={award} />
-    ));
+    return (
+      <div className="menu-category list-group" id="awards">
+        <h3>AWARDS</h3>
+        <ul>
+          { this.props.awards.map((award, idx) => (
+              <Award key={idx} award={award} />
+            ))
+          }
+        </ul>
+      </div>
+    );
   }
-  renderLanguages() {
-    return this.props.languages.map((lang, idx) => (
-      <Language key={idx} lang={lang} />
-    ));
-  }
+
   renderCertifications() {
-    return this.props.certifications.map((cert, idx) => (
-      <Certification key={idx} cert={cert} />
-    ));
+    return (
+      <div className="menu-category list-group" id="certifications">
+        <h3>CERTIFICATIONS</h3>
+        <ul>
+          {
+            this.props.certifications.map((cert, idx) => (
+              <Certification key={idx} cert={cert} />
+            ))
+          }
+        </ul>
+      </div>
+    );
   }
+
+  renderCertificateConfirmation(data) {
+    let hasCertificate = data.some((element) => element.certificate);
+    if(hasCertificate) return (
+      <span>* confirmed by a certificate</span>
+    )
+  }
+
+  renderLanguages() {
+    let rows = spliceIntoArraysWithLength(this.props.languages, Content.getConstant("MAX_COLUMNS"));
+    return (
+      <div className="menu-category list-group" id="languages">
+        <h3>LANGUAGES</h3>
+        { this.renderRowsWithComponents(rows, Language) }
+        { this.renderCertificateConfirmation(this.props.languages) }
+      </div>
+    );
+  }
+
   renderInterests() {
-    return this.props.interests.map((interest, idx) => (
-      <Interest key={idx} interest={interest} />
-    ));
+    let rows = spliceIntoArraysWithLength(this.props.interests, Content.getConstant("MAX_COLUMNS"));
+    return (
+      <div className="menu-category list-group" id="interests">
+        <h3>INTERESTS</h3>
+        { this.renderRowsWithComponents(rows, Interest) }
+      </div>
+    );
+  }
+
+  // fluid empty element to fill up the remaining part of a document and to prevent wkhtmltopdf
+  // zoom effect
+  renderFillUp(height) {
+    const fillUpStyle = {
+      height: height
+    }
+    return (
+      <div style={fillUpStyle}></div>
+    )
   }
 
   render() {
     return (
       <InlineCss namespace="Content" stylesheet={ Content.styles() }>
         <div className="content menu row">
-          <div className="menu-category list-group" id="skills">
-            <h3>SKILLS</h3>
-            { this.renderSkills() }
-          </div>
-          
-          <div className="menu-category list-group" id="work">
-            <h3>WORK</h3>
-            <div className="timeline-wrap">
-              <div className="timeline-before"></div>
-              <ul className="timeline">
-                { this.renderTimelineMoments('Work') }
-              </ul>
-            </div>
-          </div>
-          
-          <div className="menu-category list-group" id="awards">
-            <h3>AWARDS</h3>
-            <ul>
-              { this.renderAwards() }
-            </ul>
-          </div>
-          
-          <div className="menu-category list-group" id="education">
-            <h3>EDUCATION</h3>
-            <div className="timeline-wrap">
-              <div className="timeline-before"></div>
-              <ul className="timeline">
-                { this.renderTimelineMoments('Education') }
-              </ul>
-            </div>
-          </div>
-          
-          <div className="menu-category list-group" id="languages">
-            <h3>LANGUAGES</h3>
-            { this.renderLanguages() }
-          </div>
-          
-          <div className="menu-category list-group" id="certifications">
-              <h3>CERTIFICATIONS</h3>
-              <ul>
-                { this.renderCertifications() }
-              </ul>
-          </div>
-          
+          { this.renderSkills() }
+
+          { this.renderTimelineMoments('Work') }
+
+          { this.props.awards ? this.renderAwards() : "" }
+
+          { this.renderFillUp('300px') }
+
+          { this.renderTimelineMoments('Education') }
+
+          { this.props.languages ? this.renderLanguages() : "" }
+
+          { this.props.certifications ? this.renderCertifications() : "" }
+
+          { this.renderInterests() }
         </div>
       </InlineCss>
     );
@@ -196,11 +278,11 @@ export default class Content extends Component {
 }
 
 Content.propTypes = {
-  skills: PropTypes.array,
+  skills: PropTypes.array.isRequired,
   awards: PropTypes.array,
-  works: PropTypes.array,
-  educations: PropTypes.array,
-  languages: PropTypes.array,
+  works: PropTypes.array.isRequired,
+  educations: PropTypes.array.isRequired,
   certifications: PropTypes.array,
-  interests: PropTypes.array
+  languages: PropTypes.array,
+  interests: PropTypes.array.isRequired
 };

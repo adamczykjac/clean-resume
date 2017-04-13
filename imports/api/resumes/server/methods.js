@@ -15,14 +15,15 @@ export const downloadResume = new ValidatedMethod({
   run({ resumeId }) {
     const resume = Resumes.findOne({ _id: resumeId });
     const fileName = `resume_${resume._id}.pdf`;
-    return generateComponentAsPDF({ component: 
-      <App basics={ resume.basics } 
+    return generateComponentAsPDF({ component:
+      <App basics={ resume.basics }
            content={( { skills: resume.skills,
                         works: resume.work,
                         awards: resume.awards,
                         educations: resume.education,
                         languages: resume.languages,
-                        certifications: resume.certifications } )} />, fileName })
+                        certifications: resume.certifications,
+                        interests: resume.interests } )} />, fileName })
     .then((result) => result)
     .catch((error) => {
       console.log(error);

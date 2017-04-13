@@ -2,6 +2,7 @@
 !/.gitignore
 !/.meteor
 !/.custom_binaries
+!/.editorconfig
 node_modules
 .dbbackup
 .gulp

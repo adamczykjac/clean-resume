@@ -2,13 +2,12 @@ import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 import InlineCss from 'react-inline-css';
 
-export default class Footer extends Component {  
+export default class Footer extends Component {
   static styles() {
     return `
       footer {
         text-align: center;
         font-size: 1em;
-        margin-bottom: 20px;
         padding: 0;
       }
 
@@ -24,7 +23,8 @@ export default class Footer extends Component {
       <InlineCss stylesheet={ Footer.styles() }>
         <footer>
           <hr />
-          &copy; Clean Resume, 2016 - Icon credits: <a href="http://flaticon.com" target="_blank">flaticon.com</a>
+          Crafted with <a href="http://www.earrly.com">earrly.com</a> &copy; 2017 - Icon credits:&nbsp;
+          <a href="http://flaticon.com" target="_blank" className="regular-text">flaticon.com</a>
         </footer>
       </InlineCss>
     );

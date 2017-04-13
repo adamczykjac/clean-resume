@@ -9,49 +9,64 @@ import Footer from './Footer.jsx';
 import Content from './Content.jsx';
 
 export class App extends Component {
+  // Take it out to the separate module
   static getFont(fontPath) {
-    let assetFontPath = 'fonts/' + fontPath
     if(Meteor.isServer){
-      return Assets.absoluteFilePath(assetFontPath);
+      return Assets.absoluteFilePath(fontPath);
     }
-    return assetFontPath
+    // client
+    return fontPath
   }
-  
+
   static loadFontFaces() {
     return `
       @font-face {
-          font-family: 'MontRgl';
-          src: url('${ App.getFont('montserrat/MontRgl.ttf') }') format('truetype');
-          font-weight: normal;
-          font-style: normal;
+        font-family: 'MontRgl';
+        src: url('${ App.getFont('fonts/montserrat/MontRgl.ttf') }') format('truetype');
+        font-weight: normal;
+        font-style: normal;
       }
-      
+
       @font-face {
-          font-family: 'MontLt';
-          src: url('${ App.getFont('montserrat/MontLt.ttf') }') format('truetype');
-          font-weight: normal;
-          font-style: normal;
+        font-family: 'MontLt';
+        src: url('${ App.getFont('fonts/montserrat/MontLt.ttf') }') format('truetype');
+        font-weight: normal;
+        font-style: normal;
       }
-      
+
       @font-face {
-          font-family: 'MontBld';
-          src: url('${ App.getFont('montserrat/MontBld.ttf') }') format('truetype');
-          font-weight: normal;
-          font-style: normal;
+        font-family: 'MontBld';
+        src: url('${ App.getFont('fonts/montserrat/MontBld.ttf') }') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Flaticon";
+        src: url('${ App.getFont('fonts/flaticon/Flaticon.ttf') }') format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @media screen and (-webkit-min-device-pixel-ratio:0) {
+        @font-face {
+          font-family: "Flaticon";
+          src: url('${ App.getFont('fonts/flaticon/Flaticon.svg') }#Flaticon') format("svg");
+        }
       }
       `
     }
-    
+
     static externalStyles() {
       if(Meteor.isServer){
         return Assets.getText('stylesheets/bootstrap/bootstrap.min.css')
       }
     }
-    
+
     static componentStyles() {
-      return `  
+      return `
       html, body {
-        margin: 1em 0.8em 0 0;
+        margin: 1.5em 0.8em 0 0;
         padding: 0;
         font-family: "MontLt";
       }
@@ -103,6 +118,25 @@ export class App extends Component {
       h4, h5 {
         padding-bottom: 0.5em !important;
       }
+
+      [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+      [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+        font-family: Flaticon;
+        font-size: 20px;
+        font-style: normal;
+        margin-left: 20px;
+      }
+
+      .flaticon-award:before { content: "\\f100"; }
+      .flaticon-basketball:before { content: "\\f101"; }
+      .flaticon-bulb:before { content: "\\f102"; }
+      .flaticon-diploma:before { content: "\\f103"; }
+      .flaticon-dish:before { content: "\\f104"; }
+      .flaticon-github:before { content: "\\f105"; }
+      .flaticon-guitar:before { content: "\\f106"; }
+      .flaticon-linkedin:before { content: "\\f107"; }
+      .flaticon-tennis-racket:before { content: "\\f108"; }
+      .flaticon-twitter:before { content: "\\f109"; }
 
       *[class^='flaticon-'].big {
         color: #EB5757;
@@ -203,25 +237,19 @@ export class App extends Component {
         -webkit-box-shadow: inset 0 0px 0px;
         box-shadow: inset 0 0px 0px;
       }
-
-      footer {
-        text-align: center;
-        color: #aaa;
-        font-size: 0.8em;
-        margin-bottom: 20px;
-      }
     `
   }
-  
+
   static styles() {
-    return App.loadFontFaces() + 
-           App.externalStyles() + 
+    return App.loadFontFaces() +
+           App.externalStyles() +
            App.componentStyles()
   }
 
   renderHeader() {
     return <Header basics={this.props.basics}/>;
   }
+
   renderContent() {
     return <Content
       skills={this.props.content.skills}
@@ -233,6 +261,7 @@ export class App extends Component {
       interests={this.props.content.interests}
     />;
   }
+
   renderFooter() {
     return <Footer />;
   }
@@ -265,7 +294,7 @@ export class App extends Component {
 //   const loading = !subscription.ready();
 //   let basics = {};
 //   let content = {};
-// 
+//
 //   resume = Resumes.findOne({_id: '58d2d48d945f3a9097406a68'});
 //   console.log(res);
 //   if(resume) {

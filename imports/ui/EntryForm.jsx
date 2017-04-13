@@ -4,8 +4,9 @@ import AutoForm from 'uniforms-bootstrap3/AutoForm';
 import React, { Component, PropTypes } from 'react';
 import { base64ToBlob } from '../modules/base64-to-blob.js'
 import fileSaver from 'file-saver'
-
 import wkhtmltopdf from 'wkhtmltopdf';
+
+import getModelFixtures from '../startup/modelFixtures.js'
 
 export default class EntryForm extends Component {
   constructor(props) {
@@ -14,27 +15,28 @@ export default class EntryForm extends Component {
       ResumeSchema: Resumes.schema
     };
   }
-  
-  // TEMP
-  componentDidMount() {
-    Meteor.call('resumes.download', { resumeId: '58d2d48d945f3a9097406a68'}, (error, response) => {
-      if (error) {
-        console.log(error);
-        Bert.alert(error.reason, 'danger');
-      } else {
-        const blob = base64ToBlob(response.base64);
-        fileSaver.saveAs(blob, response.fileName);
-      }
-    })
-  }
+
+  // // TEMP
+  // componentDidMount() {
+  //   Meteor.call('resumes.download', { resumeId: '58d2d48d945f3a9097406a68'}, (error, response) => {
+  //     if (error) {
+  //       console.log(error);
+  //       Bert.alert(error.reason, 'danger');
+  //     } else {
+  //       const blob = base64ToBlob(response.base64);
+  //       fileSaver.saveAs(blob, response.fileName);
+  //     }
+  //   })
+  // }
 
   handleForm(data) {
-    Meteor.call('resumes.insert', { name: data.name }, (error, response) => {
+    console.log(data);
+    Meteor.call('resumes.insert', data , (error, _id) => {
       if (error) {
       console.log(error);
       Bert.alert(error.reason, 'danger');
     } else {
-      Meteor.call('resumes.download', { resumeId: '58d2d48d945f3a9097406a68'}, (error, response) => {
+      Meteor.call('resumes.download', { resumeId: _id }, (error, response) => {
         if (error) {
           console.log(error);
           Bert.alert(error.reason, 'danger');
@@ -51,15 +53,12 @@ export default class EntryForm extends Component {
 // TEMP
   render() {
     return (
-      <div></div>
-    )
+      <div className="container">
+        <AutoForm schema={ this.state.ResumeSchema }
+                  onSubmit={ data => this.handleForm(data) }
+                  onChangeModel = { model => console.log(model) }
+                  model = { getModelFixtures() } />
+      </div>
+    );
   }
-
-  // render() {
-  //   return (
-  //     <div className="container">
-  //       <AutoForm schema={ this.state.ResumeSchema } onSubmit={ data => this.handleForm(data) }/>
-  //     </div>
-  //   );
-  // }
 }

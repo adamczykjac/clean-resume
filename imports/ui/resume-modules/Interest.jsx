@@ -1,13 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 
-// Interest component
 export default class Interest extends Component {
   render() {
     return (
-      <div className="col-xs-4 col-sm-15">
+      <div className={"col-xs-" + this.props.colWidth + " lang-wrapper"}>
         <figure>
-          <span className={this.props.interest.icon + " big"}></span>
-          <figcaption>{ this.props.interest.name }</figcaption>
+          <span className={"flaticon-" + this.props.data.icon + " big"}></span>
+          <figcaption>{ this.props.data.name }</figcaption>
         </figure>
       </div>
     );
@@ -15,5 +14,5 @@ export default class Interest extends Component {
 }
 
 Interest.propTypes = {
-  interest: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired
 };

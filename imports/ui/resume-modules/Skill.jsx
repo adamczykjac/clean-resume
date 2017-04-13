@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import InlineCss from 'react-inline-css';
 
-// Skill component
 export default class Skill extends Component {
   static styles() {
     return `
