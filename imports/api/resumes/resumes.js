@@ -156,7 +156,36 @@ Resumes.schema = new SimpleSchema({
   'languages.$.level': {
       type: Number
   },
-
+  // Certifications
+  certifications: {
+      type: Array,
+      minCount: 1
+  },
+  'certifications.$': Object,
+  'certifications.$.name': {
+      type: String
+  },
+  'certifications.$.date': {
+      type: String
+  },
+  'certifications.$.expiryDate': {
+      type: String
+  },
+  'certifications.$.authority': {
+      type: String
+  },
+  // Interests
+  interests: {
+      type: Array,
+      minCount: 1
+  },
+  'interests.$': Object,
+  'interests.$.name': {
+      type: String
+  },
+  'interests.$.icon': {
+      type: String
+  },
 })
 
 Resumes.attachSchema(Resumes.schema)

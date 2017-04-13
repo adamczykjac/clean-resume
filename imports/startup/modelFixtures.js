@@ -169,52 +169,52 @@ export default getModelFixtures = () => ({
           "level" : 6
       }
   ],
-  // "interests" : [
-  //     {
-  //         "name" : "Basketball",
-  //         "keywords" : [
-  //             "NBA",
-  //             "Playing"
-  //         ],
-  //         "icon" : "basketball"
-  //     },
-  //     {
-  //         "name" : "Tennis",
-  //         "keywords" : [
-  //             "ATP",
-  //             "Federer"
-  //         ],
-  //         "icon" : "tennis-racket"
-  //     },
-  //     {
-  //         "name" : "Restaurants",
-  //         "keywords" : [
-  //             "Oriental",
-  //             "Fasftood"
-  //         ],
-  //         "icon" : "dish"
-  //     }
-  // ],
+  "interests" : [
+      {
+          "name" : "Basketball",
+          "icon" : "basketball",
+          // "keywords" : [
+          //     "NBA",
+          //     "Playing"
+          // ]
+      },
+      {
+          "name" : "Tennis",
+          "icon" : "tennis-racket",
+          // "keywords" : [
+          //     "ATP",
+          //     "Federer"
+          // ]
+      },
+      {
+          "name" : "Restaurants",
+          "icon" : "dish",
+          // "keywords" : [
+          //     "Oriental",
+          //     "Fasftood"
+          // ]
+      }
+  ],
   // "references" : [
   //     {
   //         "name" : "Erlich Bachman",
   //         "reference" : "It is my pleasure to recommend Richard, his performance working as a consultant for Main St. Company proved that he will be a valuable addition to any company."
   //     }
   // ],
-  // "certifications" : [
-  //     {
-  //         "name" : "CCC - Compression Codec Certification",
-  //         "date" : "2015-02-10",
-  //         "expiryDate" : "2020-02-10",
-  //         "authority" : "Compression Institute"
-  //     },
-  //     {
-  //         "name" : "PMP - Project Management Profesional",
-  //         "date" : "2017-01-15",
-  //         "expiryDate" : "2020-02-10",
-  //         "authority" : "PMI Internatial"
-  //     }
-  // ],
+  "certifications" : [
+      {
+          "name" : "CCC - Compression Codec Certification",
+          "date" : "2015-02-10",
+          "expiryDate" : "2020-02-10",
+          "authority" : "Compression Institute"
+      },
+      {
+          "name" : "PMP - Project Management Profesional",
+          "date" : "2017-01-15",
+          "expiryDate" : "2020-02-10",
+          "authority" : "PMI Internatial"
+      }
+  ],
   // "meta" : {
   //     "url" : "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
   //     "dateModified" : 1461755909

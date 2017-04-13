@@ -265,6 +265,10 @@ export default class Content extends Component {
           { this.renderTimelineMoments('Education') }
 
           { this.props.languages ? this.renderLanguages() : "" }
+
+          { this.props.certifications ? this.renderCertifications() : "" }
+
+          { this.renderInterests() }
         </div>
       </InlineCss>
     );
@@ -276,7 +280,7 @@ Content.propTypes = {
   awards: PropTypes.array,
   works: PropTypes.array.isRequired,
   educations: PropTypes.array.isRequired,
-  // certifications: PropTypes.array,
+  certifications: PropTypes.array,
   languages: PropTypes.array,
-  // interests: PropTypes.array.isRequired
+  interests: PropTypes.array.isRequired
 };
