@@ -10,6 +10,7 @@ Resumes.deny({
 });
 
 Resumes.schema = new SimpleSchema({
+  // Basics
   "basics": {
     type: Object,
   },
@@ -51,6 +52,7 @@ Resumes.schema = new SimpleSchema({
   "basics.location.region": {
     type: String
   },
+  // Skills
   skills: {
       type: Array,
       minCount: 1
@@ -64,6 +66,7 @@ Resumes.schema = new SimpleSchema({
       min: 0,
       max: 100
   },
+  // Awards
   awards: {
       type: Array,
       minCount: 1
@@ -80,7 +83,32 @@ Resumes.schema = new SimpleSchema({
   },
   'awards.$.summary': {
       type: String
-  }
+  },
+  // Work
+  work: {
+      type: Array,
+      minCount: 1
+  },
+  'work.$': Object,
+  'work.$.company': {
+      type: String
+  },
+  'work.$.position': {
+      type: String
+  },
+  'work.$.website': {
+      type: String
+  },
+  'work.$.startDate': {
+      type: String
+  },
+  'work.$.endDate': {
+      type: String,
+      optional: true
+  },
+  'work.$.summary': {
+      type: String
+  },
 })
 
 Resumes.attachSchema(Resumes.schema)

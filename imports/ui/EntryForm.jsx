@@ -8,15 +8,6 @@ import wkhtmltopdf from 'wkhtmltopdf';
 
 import getModelFixtures from '../startup/modelFixtures.js'
 
-// getModelFixtures = () => ({
-//   basics: {
-//     name: 'John Doe',
-//     label: 'Consultant',
-//     email: 'john@doe.com',
-//     web: 'johndoe.com'
-//   }
-// })
-
 export default class EntryForm extends Component {
   constructor(props) {
     super(props);

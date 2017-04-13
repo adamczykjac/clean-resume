@@ -28,46 +28,46 @@ export default getModelFixtures = () => ({
       //     }
       // ]
   },
-  // "work" : [
-  //     {
-  //         "company" : "Google",
-  //         "position" : "Graphic Designer",
-  //         "website" : "http://google.com",
-  //         "startDate" : "2013-12-01",
-  //         "endDate" : "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  //         "highlights" : [
-  //             "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
-  //             "Successfully won Techcrunch Disrupt",
-  //             "Optimized an algorithm that holds the current world record for Weisman Scores"
-  //         ]
-  //     },
-  //     {
-  //         "company" : "Acme Inc.",
-  //         "position" : "Internship",
-  //         "website" : "http://acme.com",
-  //         "startDate" : "2013-12-01",
-  //         "endDate" : "2014-12-01",
-  //         "summary" : "Lorem Ipsum Dolor Sit Amet. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
-  //         "highlights" : [
-  //             "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
-  //             "Successfully won Techcrunch Disrupt",
-  //             "Optimized an algorithm that holds the current world record for Weisman Scores"
-  //         ]
-  //     },
-  //     {
-  //         "company" : "SomeCompoany",
-  //         "position" : "Great POsition",
-  //         "website" : "http://innastrona.com",
-  //         "startDate" : "2013-12-01",
-  //         "endDate" : "2014-12-01",
-  //         "summary" : "Lorem Ipsum Dolor Sit Amet.",
-  //         "highlights" : [
-  //             "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
-  //             "Successfully won Techcrunch Disrupt",
-  //             "Optimized an algorithm that holds the current world record for Weisman Scores"
-  //         ]
-  //     }
-  // ],
+  "work" : [
+      {
+          "company" : "Google",
+          "position" : "Graphic Designer",
+          "website" : "http://google.com",
+          "startDate" : "2013-12-01",
+          "summary" : "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          // "highlights" : [
+          //     "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
+          //     "Successfully won Techcrunch Disrupt",
+          //     "Optimized an algorithm that holds the current world record for Weisman Scores"
+          // ]
+      },
+      {
+          "company" : "Acme Inc.",
+          "position" : "Internship",
+          "website" : "http://acme.com",
+          "startDate" : "2013-12-01",
+          "endDate" : "2014-12-01",
+          "summary" : "Lorem Ipsum Dolor Sit Amet. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+          // "highlights" : [
+          //     "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
+          //     "Successfully won Techcrunch Disrupt",
+          //     "Optimized an algorithm that holds the current world record for Weisman Scores"
+          // ]
+      },
+      {
+          "company" : "SomeCompoany",
+          "position" : "Great POsition",
+          "website" : "http://innastrona.com",
+          "startDate" : "2013-12-01",
+          "endDate" : "2014-12-01",
+          "summary" : "Lorem Ipsum Dolor Sit Amet.",
+          // "highlights" : [
+          //     "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
+          //     "Successfully won Techcrunch Disrupt",
+          //     "Optimized an algorithm that holds the current world record for Weisman Scores"
+          // ]
+      }
+  ],
   // "volunteer" : [
   //     {
   //         "organization" : "CoderDojo",

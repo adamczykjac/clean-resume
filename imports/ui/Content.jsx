@@ -258,6 +258,8 @@ export default class Content extends Component {
         <div className="content menu row">
           { this.renderSkills() }
 
+          { this.renderTimelineMoments('Work') }
+
           { this.props.awards ? this.renderAwards() : "" }
         </div>
       </InlineCss>
@@ -269,8 +271,8 @@ Content.propTypes = {
   skills: PropTypes.array.isRequired,
   awards: PropTypes.array,
   works: PropTypes.array.isRequired,
-  educations: PropTypes.array.isRequired,
-  certifications: PropTypes.array,
-  languages: PropTypes.array,
-  interests: PropTypes.array.isRequired
+  // educations: PropTypes.array.isRequired,
+  // certifications: PropTypes.array,
+  // languages: PropTypes.array,
+  // interests: PropTypes.array.isRequired
 };
