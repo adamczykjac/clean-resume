@@ -109,6 +109,54 @@ Resumes.schema = new SimpleSchema({
   'work.$.summary': {
       type: String
   },
+  // Education
+  education: {
+      type: Array,
+      minCount: 1
+  },
+  'education.$': Object,
+  'education.$.institution': {
+      type: String
+  },
+  'education.$.area': {
+      type: String
+  },
+  'education.$.studyType': {
+      type: String
+  },
+  'education.$.startDate': {
+      type: String
+  },
+  'education.$.endDate': {
+      type: String,
+      optional: true
+  },
+  'education.$.gpa': {
+      type: String
+  },
+  'education.$.courses': {
+      type: Array,
+      minCount: 1
+  },
+  'education.$.courses.$': {
+      type: String
+  },
+  // Languages
+  languages: {
+      type: Array,
+      minCount: 1
+  },
+  'languages.$': Object,
+  'languages.$.language': {
+      type: String
+  },
+  'languages.$.fluency': {
+      type: String
+  },
+  'languages.$.level': {
+      type: Number
+  },
+
 })
 
 Resumes.attachSchema(Resumes.schema)

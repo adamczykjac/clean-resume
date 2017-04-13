@@ -81,32 +81,32 @@ export default getModelFixtures = () => ({
   //         ]
   //     }
   // ],
-  // "education" : [
-  //     {
-  //         "institution" : "Universitofy of Michigan",
-  //         "area" : "Philosophy",
-  //         "studyType" : "Master of Science",
-  //         "startDate" : "2011-06-01",
-  //         "endDate" : "2014-01-01",
-  //         "gpa" : "4.0",
-  //         "courses" : [
-  //             "DB1101 - Purism",
-  //             "CS2011 - Advanced Greek Philosophy"
-  //         ]
-  //     },
-  //     {
-  //         "institution" : "Nazwa Szkoły / Uczelni",
-  //         "area" : "Kierunek",
-  //         "studyType" : "Typ Zajęć / Studiów",
-  //         "startDate" : "2011-06-01",
-  //         "endDate" : "2014-01-01",
-  //         "gpa" : "4.0",
-  //         "courses" : [
-  //             "DB1101 - Trolling",
-  //             "CS2011 - Basic Programming"
-  //         ]
-  //     }
-  // ],
+  "education" : [
+      {
+          "institution" : "Universitofy of Michigan",
+          "area" : "Philosophy",
+          "studyType" : "Master of Science",
+          "startDate" : "2011-06-01",
+          "endDate" : "2014-01-01",
+          "gpa" : "4.0",
+          "courses" : [
+              "DB1101 - Purism",
+              "CS2011 - Advanced Greek Philosophy"
+          ]
+      },
+      {
+          "institution" : "Nazwa Szkoły / Uczelni",
+          "area" : "Kierunek",
+          "studyType" : "Typ Zajęć / Studiów",
+          "startDate" : "2011-06-01",
+          "endDate" : "2014-01-01",
+          "gpa" : "4.0",
+          "courses" : [
+              "DB1101 - Trolling",
+              "CS2011 - Basic Programming"
+          ]
+      }
+  ],
   "awards" : [
       {
           "title" : "Junior Pulitzer Prize",
@@ -157,18 +157,18 @@ export default getModelFixtures = () => ({
           // ]
       }
   ],
-  // "languages" : [
-  //     {
-  //         "language" : "English",
-  //         "fluency" : "Native",
-  //         "level" : 8
-  //     },
-  //     {
-  //         "language" : "Spanish",
-  //         "fluency" : "B1",
-  //         "level" : 6
-  //     }
-  // ],
+  "languages" : [
+      {
+          "language" : "English",
+          "fluency" : "Native",
+          "level" : 8
+      },
+      {
+          "language" : "Spanish",
+          "fluency" : "B1",
+          "level" : 6
+      }
+  ],
   // "interests" : [
   //     {
   //         "name" : "Basketball",

@@ -261,6 +261,10 @@ export default class Content extends Component {
           { this.renderTimelineMoments('Work') }
 
           { this.props.awards ? this.renderAwards() : "" }
+
+          { this.renderTimelineMoments('Education') }
+
+          { this.props.languages ? this.renderLanguages() : "" }
         </div>
       </InlineCss>
     );
@@ -271,8 +275,8 @@ Content.propTypes = {
   skills: PropTypes.array.isRequired,
   awards: PropTypes.array,
   works: PropTypes.array.isRequired,
-  // educations: PropTypes.array.isRequired,
+  educations: PropTypes.array.isRequired,
   // certifications: PropTypes.array,
-  // languages: PropTypes.array,
+  languages: PropTypes.array,
   // interests: PropTypes.array.isRequired
 };
