@@ -262,6 +262,8 @@ export default class Content extends Component {
 
           { this.props.awards ? this.renderAwards() : "" }
 
+          { this.renderFillUp('300px') }
+
           { this.renderTimelineMoments('Education') }
 
           { this.props.languages ? this.renderLanguages() : "" }
