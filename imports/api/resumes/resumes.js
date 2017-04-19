@@ -132,7 +132,8 @@ Resumes.schema = new SimpleSchema({
       optional: true
   },
   'education.$.gpa': {
-      type: String
+      type: String,
+      optional: true
   },
   'education.$.courses': {
       type: Array,
@@ -155,6 +156,10 @@ Resumes.schema = new SimpleSchema({
   },
   'languages.$.level': {
       type: Number
+  },
+  'languages.$.certificate': {
+      type: Boolean,
+      optional: true
   },
   // Certifications
   certifications: {

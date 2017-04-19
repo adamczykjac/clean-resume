@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import InlineCss from 'react-inline-css';
+import i18n from 'meteor/universe:i18n';
 
 import { Resumes } from '../api/resumes/resumes.js';
 
@@ -9,6 +10,11 @@ import Footer from './Footer.jsx';
 import Content from './Content.jsx';
 
 export class App extends Component {
+  constructor(props) {
+    super(props);
+    i18n.setLocale('pl');
+  }
+
   // Take it out to the separate module
   static getFont(fontPath) {
     if(Meteor.isServer){

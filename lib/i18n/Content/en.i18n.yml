@@ -1,0 +1,17 @@
+_namespace: Content
+
+skills: "Skills"
+
+work: "Work"
+until_now: "until now"
+
+education: "Education"
+gpa: "Gpa" # Grades per average
+
+awards: "Awards"
+
+certifications: "Certifications"
+confirmed_by_a_certificate: "confirmed by a certificate"
+
+languages: "Languages"
+interests: "Interests"

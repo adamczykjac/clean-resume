@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import InlineCss from 'react-inline-css';
+import i18n from 'meteor/universe:i18n';
 
 import Skill from './resume-modules/Skill.jsx';
 import Award from './resume-modules/Award.jsx';
@@ -7,6 +8,8 @@ import Language from './resume-modules/Language.jsx';
 import TimelineMoment from './resume-modules/TimelineMoment.jsx';
 import Certification from './resume-modules/Certification.jsx';
 import Interest from './resume-modules/Interest.jsx';
+
+const T = i18n.createComponent();
 
 let spliceIntoArraysWithLength = ( array, spliceLen, result ) => {
   if(!result) result = [];
@@ -147,7 +150,7 @@ export default class Content extends Component {
   renderSkills() {
     return (
       <div className="menu-category list-group" id="skills">
-        <h3>SKILLS</h3>
+        <h3><T>Content.skills</T></h3>
         { this.props.skills.map((skill, idx) => (
             <Skill key={idx} skill={skill} />
           ))
@@ -161,11 +164,11 @@ export default class Content extends Component {
     var timelineLabel = '';
     if (momentType === 'Work') {
       timelineIterable = this.props.works;
-      timelineLabel = 'Work'
+      timelineLabel = <T>Content.work</T>
     }
     else { // Education
       timelineIterable = this.props.educations;
-      timelineLabel = 'Education'
+      timelineLabel = <T>Content.education</T>
     }
     return (
       <div className="menu-category list-group" id="education">
@@ -187,7 +190,7 @@ export default class Content extends Component {
   renderAwards() {
     return (
       <div className="menu-category list-group" id="awards">
-        <h3>AWARDS</h3>
+        <h3><T>Content.awards</T></h3>
         <ul>
           { this.props.awards.map((award, idx) => (
               <Award key={idx} award={award} />
@@ -201,7 +204,7 @@ export default class Content extends Component {
   renderCertifications() {
     return (
       <div className="menu-category list-group" id="certifications">
-        <h3>CERTIFICATIONS</h3>
+        <h3><T>Content.certifications</T></h3>
         <ul>
           {
             this.props.certifications.map((cert, idx) => (
@@ -216,7 +219,7 @@ export default class Content extends Component {
   renderCertificateConfirmation(data) {
     let hasCertificate = data.some((element) => element.certificate);
     if(hasCertificate) return (
-      <span>* confirmed by a certificate</span>
+      <span>* <T>Content.confirmed_by_a_certificate</T></span>
     )
   }
 
@@ -224,7 +227,7 @@ export default class Content extends Component {
     let rows = spliceIntoArraysWithLength(this.props.languages, Content.getConstant("MAX_COLUMNS"));
     return (
       <div className="menu-category list-group" id="languages">
-        <h3>LANGUAGES</h3>
+        <h3><T>Content.languages</T></h3>
         { this.renderRowsWithComponents(rows, Language) }
         { this.renderCertificateConfirmation(this.props.languages) }
       </div>
@@ -235,7 +238,7 @@ export default class Content extends Component {
     let rows = spliceIntoArraysWithLength(this.props.interests, Content.getConstant("MAX_COLUMNS"));
     return (
       <div className="menu-category list-group" id="interests">
-        <h3>INTERESTS</h3>
+        <h3><T>Content.interests</T></h3>
         { this.renderRowsWithComponents(rows, Interest) }
       </div>
     );

@@ -1,0 +1,17 @@
+_namespace: Content
+
+skills: "Umiejętności"
+
+work: "Doświadczenie"
+until_now: "obecnie"
+
+education: "Edukacja"
+gpa: "Średnia"
+
+awards: "Wyróżnienia"
+
+certifications: "Certyfikaty"
+confirmed_by_a_certificate: "potwierdzony certyfikatem"
+
+languages: "Języki"
+interests: "Zainteresowania"

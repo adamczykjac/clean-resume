@@ -161,7 +161,8 @@ export default getModelFixtures = () => ({
       {
           "language" : "English",
           "fluency" : "Native",
-          "level" : 8
+          "level" : 8,
+          "certificate": true
       },
       {
           "language" : "Spanish",

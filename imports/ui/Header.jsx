@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import InlineCss from 'react-inline-css';
+import i18n from 'meteor/universe:i18n';
 
-// Header component
+const T = i18n.createComponent();
+
 export default class Header extends Component {
   // Take it out to the separate module
   static getAsset(assetPath) {
@@ -98,25 +100,25 @@ export default class Header extends Component {
               <tbody>
                 { this.props.basics.email &&
                   <tr>
-                    <td>Mail</td>
+                    <td>Email</td>
                     <td><a href="#" target="_blank">{ this.props.basics.email }</a></td>
                   </tr>
                 }
                 { this.props.basics.website &&
                   <tr>
-                    <td>Web</td>
+                    <td><T>Header.web</T></td>
                     <td><a href="#" target="_blank">{ this.props.basics.website }</a></td>
                   </tr>
                 }
                 { this.props.basics.phone &&
                   <tr>
-                    <td>Phone</td>
+                    <td><T>Header.phone</T></td>
                     <td>{ this.props.basics.phone }</td>
                   </tr>
                 }
                 { this.props.basics.location &&
                   <tr>
-                    <td>Location</td>
+                    <td><T>Header.location</T></td>
                     <td>{ this.renderLocation() }</td>
                   </tr>
                 }

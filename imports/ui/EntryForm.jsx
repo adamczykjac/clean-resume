@@ -9,26 +9,6 @@ import wkhtmltopdf from 'wkhtmltopdf';
 import getModelFixtures from '../startup/modelFixtures.js'
 
 export default class EntryForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      ResumeSchema: Resumes.schema
-    };
-  }
-
-  // // TEMP
-  // componentDidMount() {
-  //   Meteor.call('resumes.download', { resumeId: '58d2d48d945f3a9097406a68'}, (error, response) => {
-  //     if (error) {
-  //       console.log(error);
-  //       Bert.alert(error.reason, 'danger');
-  //     } else {
-  //       const blob = base64ToBlob(response.base64);
-  //       fileSaver.saveAs(blob, response.fileName);
-  //     }
-  //   })
-  // }
-
   handleForm(data) {
     console.log(data);
     Meteor.call('resumes.insert', data , (error, _id) => {
@@ -50,13 +30,11 @@ export default class EntryForm extends Component {
     return true;
   }
 
-// TEMP
   render() {
     return (
       <div className="container">
-        <AutoForm schema={ this.state.ResumeSchema }
+        <AutoForm schema={ Resumes.schema }
                   onSubmit={ data => this.handleForm(data) }
-                  onChangeModel = { model => console.log(model) }
                   model = { getModelFixtures() } />
       </div>
     );
