@@ -1,19 +1,18 @@
-// for the purposes
 export default getModelFixtures = () => ({
   "basics" : {
-      "name" : "John Doe",
-      "label" : "Consultant",
+      "name" : "Rozalia Jakubowska",
+      "label" : "",
       // "picture" : "",
-      "email" : "John@doe.com",
-      "phone" : "987 675 432",
-      "website" : "johndoe.com",
+      "email" : "jakubowskarozalia@gmail.com",
+      "phone" : "+48 785 496 548",
+      "website" : "rosiejaredovna.blogspot.com",
       // "summary" : "Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!",
       "location" : {
-          "address" : "2712 Broadway St",
-          "postalCode" : "CA 94115",
-          "city" : "New York",
-          "countryCode" : "US",
-          "region" : "NY"
+          // "address" : "2712 Broadway St",
+          // "postalCode" : "CA 94115",
+          "city" : "Poznań",
+          "countryCode" : "PL",
+          // "region" : "NY"
       },
       // "profiles" : [
       //     {
@@ -30,11 +29,11 @@ export default getModelFixtures = () => ({
   },
   "work" : [
       {
-          "company" : "Google",
-          "position" : "Graphic Designer",
-          "website" : "http://google.com",
-          "startDate" : "2013-12-01",
-          "summary" : "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "company" : "Ewa SO - kobieca fotografka",
+          "position" : "Współudział w sesji zdjęciowej",
+          "startDate" : "Luty 2017",
+          "endDate" : "Luty 2017"
+          // "summary" : "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           // "highlights" : [
           //     "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
           //     "Successfully won Techcrunch Disrupt",
@@ -42,12 +41,11 @@ export default getModelFixtures = () => ({
           // ]
       },
       {
-          "company" : "Acme Inc.",
-          "position" : "Internship",
-          "website" : "http://acme.com",
-          "startDate" : "2013-12-01",
-          "endDate" : "2014-12-01",
-          "summary" : "Lorem Ipsum Dolor Sit Amet. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+          "company" : "Naia.com.pl",
+          "position" : "Współpraca",
+          "website" : "http://naia.com.pl",
+          "startDate" : "Styczeń 2017",
+          "summary" : "Współprowadzenie bloga dla marki modowej Naia (tematyka beauty).",
           // "highlights" : [
           //     "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
           //     "Successfully won Techcrunch Disrupt",
@@ -55,12 +53,36 @@ export default getModelFixtures = () => ({
           // ]
       },
       {
-          "company" : "SomeCompoany",
-          "position" : "Great POsition",
-          "website" : "http://innastrona.com",
-          "startDate" : "2013-12-01",
-          "endDate" : "2014-12-01",
-          "summary" : "Lorem Ipsum Dolor Sit Amet.",
+          "company" : "Agencja Reklamowa adStone",
+          "position" : "Praktyki w dziale PR oraz Marketingu",
+          "website" : "http://adstone.pl/",
+          "startDate" : "Czerwiec",
+          "endDate" : "Sierpień 2016"
+          // "summary" : "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          // "highlights" : [
+          //     "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
+          //     "Successfully won Techcrunch Disrupt",
+          //     "Optimized an algorithm that holds the current world record for Weisman Scores"
+          // ]
+      },
+      {
+          "company" : "Sesja zdjęciowa",
+          "position" : "Współpraca z Manufakturą Ślubną oraz Agnieszką Bondyrą",
+          "startDate" : "Kwiecień 2016",
+          "endDate" : "Kwiecień 2016"
+          // "summary" : "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          // "highlights" : [
+          //     "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
+          //     "Successfully won Techcrunch Disrupt",
+          //     "Optimized an algorithm that holds the current world record for Weisman Scores"
+          // ]
+      },
+      {
+          "company" : "Rosie Jaredovna",
+          "position" : "Prowadzenie Fanpage'a",
+          "website" : "http://rosiejaredovna.blogspot.com",
+          "startDate" : "2015",
+          "summary" : "Blog - beauty | moda | lifestyle.",
           // "highlights" : [
           //     "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
           //     "Successfully won Techcrunch Disrupt",
@@ -83,42 +105,17 @@ export default getModelFixtures = () => ({
   // ],
   "education" : [
       {
-          "institution" : "Universitofy of Michigan",
-          "area" : "Philosophy",
-          "studyType" : "Master of Science",
-          "startDate" : "2011-06-01",
-          "endDate" : "2014-01-01",
-          "gpa" : "4.0",
-          "courses" : [
-              "DB1101 - Purism",
-              "CS2011 - Advanced Greek Philosophy"
-          ]
+          "institution" : "Uniwersytet Ekonomiczny w Poznaniu",
+          "area" : "Polityka Społeczna - specjalność: Komunikacja Społeczna",
+          "studyType" : "Studia licencjackie",
+          "startDate" : "2014",
       },
       {
-          "institution" : "Nazwa Szkoły / Uczelni",
-          "area" : "Kierunek",
-          "studyType" : "Typ Zajęć / Studiów",
-          "startDate" : "2011-06-01",
-          "endDate" : "2014-01-01",
-          "gpa" : "4.0",
-          "courses" : [
-              "DB1101 - Trolling",
-              "CS2011 - Basic Programming"
-          ]
-      }
-  ],
-  "awards" : [
-      {
-          "title" : "Junior Pulitzer Prize",
-          "date" : "2014-11-01",
-          "awarder" : "Alabama Institute",
-          "summary" : "Podsumowanie, opis nagrody."
-      },
-      {
-          "title" : "State Chess Champion",
-          "date" : "2014-11-01",
-          "awarder" : "Michigan State",
-          "summary" : "Podsumowanie, opis nagrody."
+          "institution" : "VI LO im. I.J. Paderewskiego w Poznaniu",
+          "area" : "Profil humanistyczny",
+          "studyType" : "Liceum Ogólnokształcące",
+          "startDate" : "2011",
+          "endDate" : "2014"
       }
   ],
   // "publications" : [
@@ -132,8 +129,8 @@ export default getModelFixtures = () => ({
   // ],
   "skills" : [
       {
-          "name" : "Logical Thinking",
-          "level" : 95,
+          "name" : "Promocja i reklama w social media",
+          "level" : 65
           // "keywords" : [
           //     "HTML",
           //     "CSS",
@@ -141,8 +138,8 @@ export default getModelFixtures = () => ({
           // ]
       },
       {
-          "name" : "Strategy Planning",
-          "level" : 95,
+          "name" : "Prezentacja",
+          "level" : 75
           // "keywords" : [
           //     "Mpeg",
           //     "MP4",
@@ -150,8 +147,15 @@ export default getModelFixtures = () => ({
           // ]
       },
       {
-          "name" : "Digital Marketing",
-          "level" : 50,
+          "name" : "Kierowanie, motywacja i współpraca",
+          "level" : 70
+          // "keywords" : [
+          //     "Cold Emails"
+          // ]
+      },
+      {
+          "name" : "Organizacja eventów",
+          "level" : 50
           // "keywords" : [
           //     "Cold Emails"
           // ]
@@ -159,37 +163,49 @@ export default getModelFixtures = () => ({
   ],
   "languages" : [
       {
-          "language" : "English",
-          "fluency" : "Native",
-          "level" : 8,
-          "certificate": true
+          "language" : "angielski",
+          "fluency" : "advanced",
+          "level" : 5
       },
       {
-          "language" : "Spanish",
-          "fluency" : "B1",
-          "level" : 6
+          "language" : "włoski",
+          "fluency" : "elementare",
+          "level" : 3
+      },
+      {
+          "language" : "rosyjski",
+          "fluency" : "osnovni",
+          "level" : 3
       }
   ],
   "interests" : [
       {
-          "name" : "Basketball",
-          "icon" : "basketball",
+          "name" : "Wizaż",
+          "icon" : "fashion",
           // "keywords" : [
           //     "NBA",
           //     "Playing"
           // ]
       },
       {
-          "name" : "Tennis",
-          "icon" : "tennis-racket",
+          "name" : "Moda",
+          "icon" : "women",
           // "keywords" : [
           //     "ATP",
           //     "Federer"
           // ]
       },
       {
-          "name" : "Restaurants",
-          "icon" : "dish",
+          "name" : "Śpiew",
+          "icon" : "music-1",
+          // "keywords" : [
+          //     "Oriental",
+          //     "Fasftood"
+          // ]
+      },
+      {
+          "name" : "Literatura",
+          "icon" : "open-book",
           // "keywords" : [
           //     "Oriental",
           //     "Fasftood"
@@ -204,16 +220,7 @@ export default getModelFixtures = () => ({
   // ],
   "certifications" : [
       {
-          "name" : "CCC - Compression Codec Certification",
-          "date" : "2015-02-10",
-          "expiryDate" : "2020-02-10",
-          "authority" : "Compression Institute"
-      },
-      {
-          "name" : "PMP - Project Management Profesional",
-          "date" : "2017-01-15",
-          "expiryDate" : "2020-02-10",
-          "authority" : "PMI Internatial"
+          "name" : "Prawo jazdy - kat. B"
       }
   ],
   // "meta" : {
