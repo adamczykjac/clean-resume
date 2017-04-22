@@ -79,11 +79,11 @@ export class App extends Component {
 
       a, a:visited, a:active {
         font-family: "MontRgl";
-        color: #EB5757;
+        color: #1abc9c;
       }
 
       a:hover {
-        color: #EB5757;
+        color: #1abc9c;
         text-decoration: none;
       }
 
@@ -133,19 +133,23 @@ export class App extends Component {
         margin-left: 20px;
       }
 
-      .flaticon-award:before { content: "\\f100"; }
-      .flaticon-basketball:before { content: "\\f101"; }
-      .flaticon-bulb:before { content: "\\f102"; }
+      .flaticon-music-1:before { content: "\\f100"; }
+      .flaticon-women:before { content: "\\f101"; }
+      .flaticon-fashion:before { content: "\\f102"; }
       .flaticon-diploma:before { content: "\\f103"; }
-      .flaticon-dish:before { content: "\\f104"; }
-      .flaticon-github:before { content: "\\f105"; }
-      .flaticon-guitar:before { content: "\\f106"; }
-      .flaticon-linkedin:before { content: "\\f107"; }
-      .flaticon-tennis-racket:before { content: "\\f108"; }
-      .flaticon-twitter:before { content: "\\f109"; }
+      .flaticon-airplane:before { content: "\\f104"; }
+      .flaticon-bulb:before { content: "\\f105"; }
+      .flaticon-raquet:before { content: "\\f106"; }
+      .flaticon-basketball:before { content: "\\f107"; }
+      .flaticon-trophy:before { content: "\\f108"; }
+      .flaticon-oscar:before { content: "\\f109"; }
+      .flaticon-book:before { content: "\\f10a"; }
+      .flaticon-open-book:before { content: "\\f10b"; }
+      .flaticon-music:before { content: "\\f10c"; }
+      .flaticon-people:before { content: "\\f10d"; }
 
       *[class^='flaticon-'].big {
-        color: #EB5757;
+        color: #1abc9c;
       }
 
       *[class^='flaticon-'].big:before {
@@ -187,7 +191,7 @@ export class App extends Component {
                      50% = 2 columns, 33% = 3 columns 25% = 4 columns */
         -webkit-column-gap: 30px;
         width: 50%;
-        height: 1276px;
+        height: 1250px;
       }
 
       .menu-category {
@@ -239,7 +243,7 @@ export class App extends Component {
 
       .progress-bar-custom {
         background: rgba(66, 139, 202, 0);
-        border: 1px solid #EB5757;
+        border: 1px solid #1abc9c;
         -webkit-box-shadow: inset 0 0px 0px;
         box-shadow: inset 0 0px 0px;
       }

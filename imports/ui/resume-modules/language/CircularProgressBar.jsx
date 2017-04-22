@@ -8,7 +8,7 @@ export default class CircularProgressBar extends Component {
         <g id="Canvas" transform="translate(-4199 -165)">
           <g id="circular-progress-bar">
             <g id="Ellipse">
-              <use xlinkHref={"#path_stroke_" + this.props.id } transform={"translate(" + this.progress(this.props.level).translate_x + " 166)"} fill="#EB5757" />
+              <use xlinkHref={"#path_stroke_" + this.props.id } transform={"translate(" + this.progress(this.props.level).translate_x + " 166)"} fill="#1abc9c" />
             </g>
           </g>
         </g>

@@ -20,7 +20,8 @@ Resumes.schema = new SimpleSchema({
   },
   "basics.label": {
     type: String,
-    label: 'Label'
+    label: 'Label',
+    optional: true
   },
   "basics.email": {
     type: String,
@@ -28,7 +29,8 @@ Resumes.schema = new SimpleSchema({
   },
   "basics.website": {
     type: String,
-    label: 'Website'
+    label: 'Website',
+    optional: true
   },
   "basics.phone": {
     type: String,
@@ -38,10 +40,12 @@ Resumes.schema = new SimpleSchema({
     type: Object
   },
   "basics.location.address": {
-    type: String
+    type: String,
+    optional: true
   },
   "basics.location.postalCode": {
-    type: String
+    type: String,
+    optional: true
   },
   "basics.location.city": {
     type: String
@@ -50,7 +54,8 @@ Resumes.schema = new SimpleSchema({
     type: String
   },
   "basics.location.region": {
-    type: String
+    type: String,
+    optional: true
   },
   // Skills
   skills: {
@@ -69,7 +74,7 @@ Resumes.schema = new SimpleSchema({
   // Awards
   awards: {
       type: Array,
-      minCount: 1
+      optional: true
   },
   'awards.$': Object,
   'awards.$.title': {
@@ -97,7 +102,8 @@ Resumes.schema = new SimpleSchema({
       type: String
   },
   'work.$.website': {
-      type: String
+      type: String,
+      optional: true
   },
   'work.$.startDate': {
       type: String
@@ -107,7 +113,8 @@ Resumes.schema = new SimpleSchema({
       optional: true
   },
   'work.$.summary': {
-      type: String
+      type: String,
+      optional: true
   },
   // Education
   education: {
@@ -137,7 +144,7 @@ Resumes.schema = new SimpleSchema({
   },
   'education.$.courses': {
       type: Array,
-      minCount: 1
+      optional: true
   },
   'education.$.courses.$': {
       type: String
@@ -164,20 +171,23 @@ Resumes.schema = new SimpleSchema({
   // Certifications
   certifications: {
       type: Array,
-      minCount: 1
+      optional: true
   },
   'certifications.$': Object,
   'certifications.$.name': {
       type: String
   },
   'certifications.$.date': {
-      type: String
+      type: String,
+      optional: true
   },
   'certifications.$.expiryDate': {
-      type: String
+      type: String,
+      optional: true
   },
   'certifications.$.authority': {
-      type: String
+      type: String,
+      optional: true
   },
   // Interests
   interests: {

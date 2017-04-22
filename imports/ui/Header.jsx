@@ -18,7 +18,7 @@ export default class Header extends Component {
     return `
       .contact {
         position: relative;
-        left: -52px;
+        left: -7px;
       }
 
       .contact td:first-child {
@@ -47,7 +47,7 @@ export default class Header extends Component {
       }
 
       .main-lead {
-        color: #EB5757;
+        color: #1abc9c;
         margin: 0;
         letter-spacing: normal;
       }
@@ -74,9 +74,9 @@ export default class Header extends Component {
     let region = this.props.basics.location.region;
     let countryCode = this.props.basics.location.countryCode;
     let out = []
-    out.push(typeof(city) == undefined ? null : city)
-    out.push(typeof(region) == undefined ? null : region)
-    out.push(typeof(countryCode) == undefined ? null : countryCode)
+    if (city != undefined || city != null) out.push(city)
+    if (region != undefined || region != null) out.push(region)
+    if (countryCode != undefined || countryCode != null) out.push(countryCode)
     return out.join(', ')
   }
 

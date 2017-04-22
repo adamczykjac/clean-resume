@@ -6,14 +6,14 @@ export default class Skill extends Component {
     return `
       #skills .list-group-item {
         border: 0;
-        padding: 0.4em 0.5em 0.4em 0;
+        padding: 0.4em 0.5em 3.5em 0;
         background-color: transparent;
       }
 
       #skills .list-group-item .skill-caption {
         padding: 0;
       }
-      
+
       .progress {
         background: transparent;
         border: 1px solid #aaa;
@@ -27,13 +27,13 @@ export default class Skill extends Component {
 
       .progress-bar-custom {
         background: rgba(66, 139, 202, 0);
-        border: 1px solid #EB5757;
+        border: 1px solid #1abc9c;
         -webkit-box-shadow: inset 0 0px 0px;
         box-shadow: inset 0 0px 0px;
       }
     `
   }
-  
+
   render() {
     return (
       <InlineCss stylesheet={ Skill.styles() }>

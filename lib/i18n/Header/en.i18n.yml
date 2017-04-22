@@ -1,1 +1,5 @@
-_namespace: Footer
+_namespace: Header
+
+web: 'web'
+phone: 'phone'
+location: 'location'

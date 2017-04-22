@@ -40,7 +40,7 @@ export default class Content extends Component {
 
       .timeline-before {
         width: 1px;
-        background-color: #eb4b52;
+        background-color: #1abc9c;
         position: relative;
         left: 9px;
       }
@@ -78,7 +78,7 @@ export default class Content extends Component {
       }
 
       .timeline-badge > a > .circle {
-        background-color: #eb4b52;
+        background-color: #1abc9c;
         border: 7px solid #fff;
         border-radius: 15px;
         height: 23px;
@@ -98,7 +98,6 @@ export default class Content extends Component {
       }
 
       .timeline-body > p {
-        margin-top: 5px;
         color: #000;
       }
 
@@ -108,6 +107,7 @@ export default class Content extends Component {
 
       .timeline-body > h5 {
         text-transform: none;
+        padding: 5px 0 !import;
       }
 
       .timeline-body > h4, .timeline-body > h5 {
@@ -265,7 +265,7 @@ export default class Content extends Component {
 
           { this.props.awards ? this.renderAwards() : "" }
 
-          { this.renderFillUp('300px') }
+          { this.renderFillUp('280px') }
 
           { this.renderTimelineMoments('Education') }
 
@@ -274,6 +274,8 @@ export default class Content extends Component {
           { this.props.certifications ? this.renderCertifications() : "" }
 
           { this.renderInterests() }
+
+          { this.renderFillUp('500px') }
         </div>
       </InlineCss>
     );
