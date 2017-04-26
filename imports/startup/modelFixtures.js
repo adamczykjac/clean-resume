@@ -5,7 +5,7 @@ export default getModelFixtures = () => ({
       // "picture" : "",
       "email" : "jakubowskarozalia@gmail.com",
       "phone" : "+48 785 496 548",
-      "website" : "rosiejaredovna.blogspot.com",
+      "website" : "fb.com/rosiejaredovna",
       // "summary" : "Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!",
       "location" : {
           // "address" : "2712 Broadway St",
@@ -29,8 +29,9 @@ export default getModelFixtures = () => ({
   },
   "work" : [
       {
-          "company" : "Ewa SO - kobieca fotografka",
+          "company" : "Ewa SO - Kobieca Fotografka",
           "position" : "Współudział w sesji zdjęciowej",
+          "websites" : ["http://facebook.com/ewasostudio"],
           "startDate" : "Luty 2017",
           "endDate" : "Luty 2017"
           // "summary" : "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -43,7 +44,7 @@ export default getModelFixtures = () => ({
       {
           "company" : "Naia.com.pl",
           "position" : "Współpraca",
-          "website" : "http://naia.com.pl",
+          "websites" : ["http://naia.com.pl"],
           "startDate" : "Styczeń 2017",
           "summary" : "Współprowadzenie bloga dla marki modowej Naia (tematyka beauty).",
           // "highlights" : [
@@ -55,7 +56,7 @@ export default getModelFixtures = () => ({
       {
           "company" : "Agencja Reklamowa adStone",
           "position" : "Praktyki w dziale PR oraz Marketingu",
-          "website" : "http://adstone.pl/",
+          "websites" : ["http://adstone.pl"],
           "startDate" : "Czerwiec",
           "endDate" : "Sierpień 2016"
           // "summary" : "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -66,8 +67,11 @@ export default getModelFixtures = () => ({
           // ]
       },
       {
-          "company" : "Sesja zdjęciowa",
-          "position" : "Współpraca z Manufakturą Ślubną oraz Agnieszką Bondyrą",
+          "company" : "Manufaktura Ślubna, Agnieszka Bondyra",
+          "position" : "Współpraca - sesja zdjęciowa",
+          "websites" : ["http://manufakturaslubna.com",
+                       "http://agabondyra.pl/galeria/bohemian-cherry-sesja-stylizowana",
+                       "http://agabondyra.pl/galeria/rustic-orchard-plenerowy-slub-sadzie"],
           "startDate" : "Kwiecień 2016",
           "endDate" : "Kwiecień 2016"
           // "summary" : "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -80,9 +84,32 @@ export default getModelFixtures = () => ({
       {
           "company" : "Rosie Jaredovna",
           "position" : "Prowadzenie Fanpage'a",
-          "website" : "http://rosiejaredovna.blogspot.com",
+          "websites" : ["http://fb.com/rosiejaredovna"],
           "startDate" : "2015",
-          "summary" : "Blog - beauty | moda | lifestyle.",
+          "summary" : "Blog - tematyka: beauty.",
+          // "highlights" : [
+          //     "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
+          //     "Successfully won Techcrunch Disrupt",
+          //     "Optimized an algorithm that holds the current world record for Weisman Scores"
+          // ]
+      },
+      {
+          "company" : "Juliette in Wonderland",
+          "position" : "Współpraca",
+          "websites" : ["http://juliettecapuleti.com"],
+          "startDate" : "2014",
+          "summary" : "Redagowanie postów, organizowanie sesji zdjęciowych, wizaż, social-media.",
+          // "highlights" : [
+          //     "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
+          //     "Successfully won Techcrunch Disrupt",
+          //     "Optimized an algorithm that holds the current world record for Weisman Scores"
+          // ]
+      },
+      {
+          "company" : "Blog Modowy",
+          "position" : "Prowadzenie Fanpage'a",
+          "startDate" : "2012",
+          "endDate" : "2014"
           // "highlights" : [
           //     "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
           //     "Successfully won Techcrunch Disrupt",
@@ -129,88 +156,91 @@ export default getModelFixtures = () => ({
   // ],
   "skills" : [
       {
-          "name" : "Promocja i reklama w social media",
-          "level" : 65
-          // "keywords" : [
-          //     "HTML",
-          //     "CSS",
-          //     "Javascript"
-          // ]
+        "name" : "Promocja i reklama w social media",
+        "keywords" : [
+          "Google+",
+          "Blogger",
+          "Facebook",
+          "Facebook Pages",
+          "Instagram",
+          "Snapchat"
+        ]
       },
       {
-          "name" : "Prezentacja",
-          "level" : 75
-          // "keywords" : [
-          //     "Mpeg",
-          //     "MP4",
-          //     "GIF"
-          // ]
+        "name" : "Microsoft Office",
+        "keywords" : [
+          "Word",
+          "Excel",
+          "PowerPoint"
+        ]
       },
       {
-          "name" : "Kierowanie, motywacja i współpraca",
-          "level" : 70
-          // "keywords" : [
-          //     "Cold Emails"
-          // ]
+        "name" : "Obróbka zdjęć",
+        "keywords" : [
+          "Photoscape"
+        ]
       },
       {
-          "name" : "Organizacja eventów",
-          "level" : 50
-          // "keywords" : [
-          //     "Cold Emails"
-          // ]
+        "name" : "Praca w zespole",
+        "keywords" : [
+          "Prezentacja",
+          "Motywacja",
+          "Współpraca",
+          "Zarządzanie",
+          "Organizacja eventów"
+        ]
       }
   ],
   "languages" : [
       {
           "language" : "angielski",
-          "fluency" : "advanced",
+          "fluency" : "średnio-zaawansowany",
           "level" : 5
       },
       {
           "language" : "włoski",
-          "fluency" : "elementare",
+          "fluency" : "podstawowy",
           "level" : 3
       },
       {
           "language" : "rosyjski",
-          "fluency" : "osnovni",
+          "fluency" : "podstawowy",
           "level" : 3
       }
   ],
   "interests" : [
       {
           "name" : "Wizaż",
-          "icon" : "fashion",
-          // "keywords" : [
-          //     "NBA",
-          //     "Playing"
-          // ]
+          "icon" : "fashion"
       },
       {
           "name" : "Moda",
-          "icon" : "women",
-          // "keywords" : [
-          //     "ATP",
-          //     "Federer"
-          // ]
+          "icon" : "women"
       },
       {
           "name" : "Śpiew",
-          "icon" : "music-1",
-          // "keywords" : [
-          //     "Oriental",
-          //     "Fasftood"
-          // ]
+          "icon" : "music-1"
       },
       {
-          "name" : "Literatura",
-          "icon" : "open-book",
-          // "keywords" : [
-          //     "Oriental",
-          //     "Fasftood"
-          // ]
-      }
+          "name" : "Literatura obyczajowa i romans",
+          "icon" : "open-book"
+      },
+      {
+          "name" : "Podróże",
+          "icon" : "airplane"
+      },
+      {
+          "name" : "Muzyka filmowa",
+          "icon" : "music"
+      },
+      {
+          "name" : "Planowanie wesel",
+          "icon" : "luxury"
+      },
+      {
+          "name" : "DIY",
+          "icon" : "saw"
+      },
   ],
   // "references" : [
   //     {

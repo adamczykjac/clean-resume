@@ -133,20 +133,22 @@ export class App extends Component {
         margin-left: 20px;
       }
 
-      .flaticon-music-1:before { content: "\\f100"; }
-      .flaticon-women:before { content: "\\f101"; }
-      .flaticon-fashion:before { content: "\\f102"; }
-      .flaticon-diploma:before { content: "\\f103"; }
-      .flaticon-airplane:before { content: "\\f104"; }
-      .flaticon-bulb:before { content: "\\f105"; }
-      .flaticon-raquet:before { content: "\\f106"; }
-      .flaticon-basketball:before { content: "\\f107"; }
-      .flaticon-trophy:before { content: "\\f108"; }
-      .flaticon-oscar:before { content: "\\f109"; }
-      .flaticon-book:before { content: "\\f10a"; }
-      .flaticon-open-book:before { content: "\\f10b"; }
-      .flaticon-music:before { content: "\\f10c"; }
-      .flaticon-people:before { content: "\\f10d"; }
+      .flaticon-saw:before { content: "\\f100"; }
+      .flaticon-luxury:before { content: "\\f101"; }
+      .flaticon-music-1:before { content: "\\f102"; }
+      .flaticon-women:before { content: "\\f103"; }
+      .flaticon-fashion:before { content: "\\f104"; }
+      .flaticon-diploma:before { content: "\\f105"; }
+      .flaticon-airplane:before { content: "\\f106"; }
+      .flaticon-bulb:before { content: "\\f107"; }
+      .flaticon-raquet:before { content: "\\f108"; }
+      .flaticon-basketball:before { content: "\\f109"; }
+      .flaticon-trophy:before { content: "\\f10a"; }
+      .flaticon-oscar:before { content: "\\f10b"; }
+      .flaticon-book:before { content: "\\f10c"; }
+      .flaticon-open-book:before { content: "\\f10d"; }
+      .flaticon-music:before { content: "\\f10e"; }
+      .flaticon-people:before { content: "\\f10f"; }
 
       *[class^='flaticon-'].big {
         color: #1abc9c;
@@ -191,7 +193,7 @@ export class App extends Component {
                      50% = 2 columns, 33% = 3 columns 25% = 4 columns */
         -webkit-column-gap: 30px;
         width: 50%;
-        height: 1250px;
+        height: 1400px;
       }
 
       .menu-category {

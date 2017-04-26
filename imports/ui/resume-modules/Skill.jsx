@@ -6,7 +6,6 @@ export default class Skill extends Component {
     return `
       #skills .list-group-item {
         border: 0;
-        padding: 0.4em 0.5em 3.5em 0;
         background-color: transparent;
       }
 
@@ -31,6 +30,19 @@ export default class Skill extends Component {
         -webkit-box-shadow: inset 0 0px 0px;
         box-shadow: inset 0 0px 0px;
       }
+
+      #skills .label-wrapper {
+        display: inline-block;
+      }
+
+      #skills .label-wrapper .keyword {
+        border: 1px solid #1abc9c;
+        background-color: transparent;
+        color: #1abc9c;
+        font-size: 1em;
+        line-height: 2;
+        margin: 0 1px;
+      }
     `
   }
 
@@ -38,17 +50,28 @@ export default class Skill extends Component {
     return (
       <InlineCss stylesheet={ Skill.styles() }>
         <div className="list-group-item">
-          <div className="col-xs-6 col-md-4 skill-caption">
+          <div className="col-xs-4 col-md-4 skill-caption">
             { this.props.skill.name }
           </div>
-          <div className="col-xs-6 col-md-5 progress">
-            <div className="progress-bar progress-bar-custom"
-              role="progressbar"
-              aria-valuenow={ this.props.skill.level }
-              aria-valuemin="0"
-              aria-valuemax="100"
-              style={{ width: this.props.skill.level+'%' }}>
+          <div className="col-xs-8 col-md-5">
+          { this.props.skill.level &&
+            <div className="progress">
+              <div className="progress-bar progress-bar-custom"
+                role="progressbar"
+                aria-valuenow={ this.props.skill.level }
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style={{ width: this.props.skill.level+'%' }}>
+              </div>
             </div>
+          }
+          { this.props.skill.keywords &&
+            this.props.skill.keywords.map( (keyword) => (
+              <div className="label-wrapper">
+                <span className="label label-info keyword">{ keyword }</span>
+              </div>
+            ))
+          }
           </div>
         </div>
       </InlineCss>

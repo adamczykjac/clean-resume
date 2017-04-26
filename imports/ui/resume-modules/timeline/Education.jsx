@@ -16,11 +16,12 @@ export default class Education extends Component {
     return (
       <div className="timeline-body">
         <h4>{ this.props.education.studyType } { this.props.education.area }</h4>
-        <h5>{ this.props.education.institution } | <T>Content.gpa</T> { this.props.education.gpa } | { this.props.education.startDate } - { this.props.education.endDate }</h5>
-        { this.props.education.courses ?
-          (
-            <p>{ this.renderCourses() }</p>
-          ) : ""
+        <h5>
+          { this.props.education.institution } |
+          { this.props.education.startDate } - { this.props.education.endDate }
+        </h5>
+        { this.props.education.courses &&
+          <p>{ this.renderCourses() }</p>
         }
       </div>
     );

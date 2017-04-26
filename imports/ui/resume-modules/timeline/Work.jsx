@@ -23,10 +23,12 @@ export default class Work extends Component {
         <h4>{ this.props.work.position }</h4>
         <h5>{ this.props.work.company } | { this.renderWorkPeriod(this.props.work.startDate, this.props.work.endDate) }</h5>
         { this.props.work.summary ? (<p>{ this.props.work.summary }</p>) : null }
-        { this.props.work.website ?
-          ( <a href={this.props.work.website} className="company-link" target="_blank">
-              { this.props.work.website.replace(HTTP_PROTOCOL, "") }
-            </a> )
+        { this.props.work.websites ?
+          this.props.work.websites.map( (website) => (
+            <a href={website} className="company-link" target="_blank">
+              { website.replace(HTTP_PROTOCOL, "") }
+            </a>
+          ))
           : null }
       </div>
     );

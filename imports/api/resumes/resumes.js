@@ -68,8 +68,16 @@ Resumes.schema = new SimpleSchema({
   },
   'skills.$.level': {
       type: Number,
+      optional: true,
       min: 0,
       max: 100
+  },
+  'skills.$.keywords': {
+      type: Array,
+      optional: true
+  },
+  'skills.$.keywords.$': {
+      type: String
   },
   // Awards
   awards: {
@@ -101,9 +109,12 @@ Resumes.schema = new SimpleSchema({
   'work.$.position': {
       type: String
   },
-  'work.$.website': {
-      type: String,
+  'work.$.websites': {
+      type: Array,
       optional: true
+  },
+  'work.$.websites.$': {
+      type: String
   },
   'work.$.startDate': {
       type: String

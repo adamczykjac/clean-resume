@@ -114,6 +114,10 @@ export default class Content extends Component {
         font-family: 'MontRgl';
         letter-spacing: 0.1em;
       }
+
+      .timeline-body > a {
+        display: block;
+      }
     `
   }
 
@@ -265,8 +269,6 @@ export default class Content extends Component {
 
           { this.props.awards ? this.renderAwards() : "" }
 
-          { this.renderFillUp('280px') }
-
           { this.renderTimelineMoments('Education') }
 
           { this.props.languages ? this.renderLanguages() : "" }
@@ -275,7 +277,7 @@ export default class Content extends Component {
 
           { this.renderInterests() }
 
-          { this.renderFillUp('500px') }
+          { this.renderFillUp('1000px') }
         </div>
       </InlineCss>
     );

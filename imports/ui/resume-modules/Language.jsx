@@ -27,8 +27,12 @@ export default class Language extends Component {
         text-transform: uppercase;
       }
 
-      #languages .lang-label-wrapper label > span{
+      #languages .lang-label-wrapper label > span {
         display: block;
+      }
+
+      #languages .lang-label-wrapper label > span.fluency {
+        font-size: 0.75em;
       }
       `
   }
@@ -41,7 +45,7 @@ export default class Language extends Component {
           <div className="lang-label-wrapper">
             <label>
               <span>{ this.props.data.language }</span>
-              <span>
+              <span className="fluency">
                 { this.props.data.fluency }
                 { this.props.data.certificate ? "*" : "" }
               </span>
