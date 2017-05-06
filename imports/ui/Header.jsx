@@ -63,7 +63,7 @@ export default class Header extends Component {
 
       .avatar {
         margin: 0;
-        width: 6em;
+        width: 7em;
         float: left;
       }
     `

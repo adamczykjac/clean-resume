@@ -1,16 +1,16 @@
 export default getModelFixtures = () => ({
   "basics" : {
-      "name" : "Rozalia Jakubowska",
+      "name" : "Jacek Adamczyk",
       "label" : "",
       // "picture" : "",
-      "email" : "jakubowskarozalia@gmail.com",
-      "phone" : "+48 785 496 548",
-      "website" : "fb.com/rosiejaredovna",
+      "email" : "jacek@adamczyk.me",
+      "phone" : "+48 514 716 760",
+      "website" : "adamczyk.me",
       // "summary" : "Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!",
       "location" : {
           // "address" : "2712 Broadway St",
           // "postalCode" : "CA 94115",
-          "city" : "Poznań",
+          "city" : "Łódź (able to relocate)",
           "countryCode" : "PL",
           // "region" : "NY"
       },
@@ -29,12 +29,11 @@ export default getModelFixtures = () => ({
   },
   "work" : [
       {
-          "company" : "Ewa SO - Kobieca Fotografka",
-          "position" : "Współudział w sesji zdjęciowej",
-          "websites" : ["http://facebook.com/ewasostudio"],
-          "startDate" : "Luty 2017",
-          "endDate" : "Luty 2017"
-          // "summary" : "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "company" : "TomTom",
+          "position" : "Associate Software Developer",
+          "websites" : ["http://tomtom.com"],
+          "startDate" : "Marzec 2016",
+          "summary" : "First 7-months in Berlin, Germany - then in Łódź, Poland. DevOps, Integration and Testing, Infrastructure automation (AWS, Ansible) in geo-distributed teams.",
           // "highlights" : [
           //     "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
           //     "Successfully won Techcrunch Disrupt",
@@ -42,7 +41,7 @@ export default getModelFixtures = () => ({
           // ]
       },
       {
-          "company" : "Naia.com.pl",
+          "company" : ".com.pl",
           "position" : "Współpraca",
           "websites" : ["http://naia.com.pl"],
           "startDate" : "Styczeń 2017",
@@ -132,13 +131,21 @@ export default getModelFixtures = () => ({
   // ],
   "education" : [
       {
-          "institution" : "Uniwersytet Ekonomiczny w Poznaniu",
+          "institution" : {
+            "name": "Uniwersytet Ekonomiczny w Poznaniu",
+            "city": "Poznań",
+            "countryCode": "pl"
+          },
           "area" : "Polityka Społeczna - specjalność: Komunikacja Społeczna",
           "studyType" : "Studia licencjackie",
           "startDate" : "2014",
       },
       {
-          "institution" : "VI LO im. I.J. Paderewskiego w Poznaniu",
+          "institution" : {
+            "name": "VI LO im. I.J. Paderewskiego w Poznaniu",
+            "city": "Poznań",
+            "countryCode": "pl"
+          },
           "area" : "Profil humanistyczny",
           "studyType" : "Liceum Ogólnokształcące",
           "startDate" : "2011",

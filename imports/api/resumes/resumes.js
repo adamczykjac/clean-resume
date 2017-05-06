@@ -133,7 +133,14 @@ Resumes.schema = new SimpleSchema({
       minCount: 1
   },
   'education.$': Object,
-  'education.$.institution': {
+  'education.$.institution': Object,
+  'education.$.institution.name': {
+      type: String
+  },
+  'education.$.institution.city': {
+      type: String
+  },
+  'education.$.institution.countryCode': {
       type: String
   },
   'education.$.area': {

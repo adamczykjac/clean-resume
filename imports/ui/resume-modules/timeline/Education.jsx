@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import i18n from 'meteor/universe:i18n';
+import { renderWorkPeriod } from './utils.js'
 
 const T = i18n.createComponent()
 
@@ -17,8 +18,7 @@ export default class Education extends Component {
       <div className="timeline-body">
         <h4>{ this.props.education.studyType } { this.props.education.area }</h4>
         <h5>
-          { this.props.education.institution } |
-          { this.props.education.startDate } - { this.props.education.endDate }
+          { this.props.education.institution.name } <span className={"flag-icon flag-icon-" + this.props.education.institution.countryCode}></span> | { renderWorkPeriod(this.props.education.startDate, this.props.education.endDate) }
         </h5>
         { this.props.education.courses &&
           <p>{ this.renderCourses() }</p>
