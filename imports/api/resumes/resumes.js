@@ -9,6 +9,27 @@ Resumes.deny({
   remove: () => true,
 });
 
+let locationSchema = new SimpleSchema({
+  "address": {
+    type: String,
+    optional: true
+  },
+  "postalCode": {
+    type: String,
+    optional: true
+  },
+  "city": {
+    type: String
+  },
+  "countryCode": {
+    type: String
+  },
+  "region": {
+    type: String,
+    optional: true
+  },
+})
+
 Resumes.schema = new SimpleSchema({
   // Basics
   "basics": {
@@ -36,27 +57,7 @@ Resumes.schema = new SimpleSchema({
     type: String,
     label: 'Phone'
   },
-  "basics.location": {
-    type: Object
-  },
-  "basics.location.address": {
-    type: String,
-    optional: true
-  },
-  "basics.location.postalCode": {
-    type: String,
-    optional: true
-  },
-  "basics.location.city": {
-    type: String
-  },
-  "basics.location.countryCode": {
-    type: String
-  },
-  "basics.location.region": {
-    type: String,
-    optional: true
-  },
+  "basics.location": locationSchema,
   // Skills
   skills: {
       type: Array,
@@ -92,8 +93,15 @@ Resumes.schema = new SimpleSchema({
       type: String
   },
   'awards.$.awarder': {
+      type: Object
+  },
+  'awards.$.awarder.name': {
       type: String
   },
+  'awards.$.awarder.website': {
+      type: String
+  },
+  'awards.$.awarder.location': locationSchema,
   'awards.$.summary': {
       type: String
   },
@@ -123,6 +131,11 @@ Resumes.schema = new SimpleSchema({
       type: String,
       optional: true
   },
+  'work.$.endDate': {
+      type: String,
+      optional: true
+  },
+  'work.$.location': locationSchema,
   'work.$.summary': {
       type: String,
       optional: true
@@ -137,12 +150,7 @@ Resumes.schema = new SimpleSchema({
   'education.$.institution.name': {
       type: String
   },
-  'education.$.institution.city': {
-      type: String
-  },
-  'education.$.institution.countryCode': {
-      type: String
-  },
+  'education.$.institution.location': locationSchema,
   'education.$.area': {
       type: String
   },
