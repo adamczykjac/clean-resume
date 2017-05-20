@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+ import React, { Component, PropTypes } from 'react';
 import InlineCss from 'react-inline-css';
 import i18n from 'meteor/universe:i18n';
 
@@ -31,6 +31,9 @@ export default class Content extends Component {
       }
 
       .timeline-wrap {
+        position: relative;
+        left: 7px;
+
         display: -webkit-box;
         display: -moz-box;
         display: -ms-flexbox;
@@ -40,7 +43,7 @@ export default class Content extends Component {
 
       .timeline-before {
         width: 1px;
-        background-color: #1abc9c;
+        background-color: #16a085;
         position: relative;
         left: 9px;
       }
@@ -55,6 +58,10 @@ export default class Content extends Component {
         width: 100%;
         float: left;
         clear: left;
+      }
+
+      .timeline > li:last-child {
+        margin-bottom: -10px;
       }
 
       .timeline > li > .timeline-panel {
@@ -78,7 +85,7 @@ export default class Content extends Component {
       }
 
       .timeline-badge > a > .circle {
-        background-color: #1abc9c;
+        background-color: #16a085;
         border: 7px solid #fff;
         border-radius: 15px;
         height: 23px;
@@ -267,13 +274,13 @@ export default class Content extends Component {
 
           { this.renderTimelineMoments('Work') }
 
+          { this.props.certifications ? this.renderCertifications() : "" }
+
           { this.props.awards ? this.renderAwards() : "" }
 
           { this.renderTimelineMoments('Education') }
 
           { this.props.languages ? this.renderLanguages() : "" }
-
-          { this.props.certifications ? this.renderCertifications() : "" }
 
           { this.renderInterests() }
 

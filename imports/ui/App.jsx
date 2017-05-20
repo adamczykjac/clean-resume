@@ -10,10 +10,10 @@ import Footer from './Footer.jsx';
 import Content from './Content.jsx';
 
 export class App extends Component {
-  constructor(props) {
-    super(props);
-    i18n.setLocale('pl');
-  }
+  // constructor(props) {
+  //   super(props);
+  //   i18n.setLocale('pl');
+  // }
 
   // Take it out to the separate module
   static getFont(fontPath) {
@@ -65,7 +65,7 @@ export class App extends Component {
 
     static externalStyles() {
       if(Meteor.isServer){
-        return Assets.getText('stylesheets/bootstrap/bootstrap.min.css')
+        return Assets.getText('stylesheets/bootstrap.min.css')
       }
     }
 
@@ -79,11 +79,11 @@ export class App extends Component {
 
       a, a:visited, a:active {
         font-family: "MontRgl";
-        color: #1abc9c;
+        color: #16a085;
       }
 
       a:hover {
-        color: #1abc9c;
+        color: #16a085;
         text-decoration: none;
       }
 
@@ -100,6 +100,7 @@ export class App extends Component {
 
       h5 {
         letter-spacing: normal !important;
+        line-height: 1.2;
       }
 
       .table > tbody > tr > td {
@@ -133,29 +134,31 @@ export class App extends Component {
         margin-left: 20px;
       }
 
-      .flaticon-saw:before { content: "\\f100"; }
-      .flaticon-luxury:before { content: "\\f101"; }
-      .flaticon-music-1:before { content: "\\f102"; }
-      .flaticon-women:before { content: "\\f103"; }
-      .flaticon-fashion:before { content: "\\f104"; }
-      .flaticon-diploma:before { content: "\\f105"; }
-      .flaticon-airplane:before { content: "\\f106"; }
-      .flaticon-bulb:before { content: "\\f107"; }
-      .flaticon-raquet:before { content: "\\f108"; }
-      .flaticon-basketball:before { content: "\\f109"; }
-      .flaticon-trophy:before { content: "\\f10a"; }
-      .flaticon-oscar:before { content: "\\f10b"; }
-      .flaticon-book:before { content: "\\f10c"; }
-      .flaticon-open-book:before { content: "\\f10d"; }
-      .flaticon-music:before { content: "\\f10e"; }
-      .flaticon-people:before { content: "\\f10f"; }
+      .flaticon-monitor:before { content: "\\f100"; }
+      .flaticon-guitar:before { content: "\\f101"; }
+      .flaticon-saw:before { content: "\\f102"; }
+      .flaticon-luxury:before { content: "\\f103"; }
+      .flaticon-music-1:before { content: "\\f104"; }
+      .flaticon-women:before { content: "\\f105"; }
+      .flaticon-fashion:before { content: "\\f106"; }
+      .flaticon-diploma:before { content: "\\f107"; }
+      .flaticon-airplane:before { content: "\\f108"; }
+      .flaticon-bulb:before { content: "\\f109"; }
+      .flaticon-raquet:before { content: "\\f10a"; }
+      .flaticon-basketball:before { content: "\\f10b"; }
+      .flaticon-trophy:before { content: "\\f10c"; }
+      .flaticon-oscar:before { content: "\\f10d"; }
+      .flaticon-book:before { content: "\\f10e"; }
+      .flaticon-open-book:before { content: "\\f10f"; }
+      .flaticon-music:before { content: "\\f110"; }
+      .flaticon-people:before { content: "\\f111"; }
 
       *[class^='flaticon-'].big {
-        color: #1abc9c;
+        color: #16a085;
       }
 
       *[class^='flaticon-'].big:before {
-        font-size: 3.5em;
+        font-size: 3em;
         margin-left: 0;
       }
 
@@ -193,7 +196,7 @@ export class App extends Component {
                      50% = 2 columns, 33% = 3 columns 25% = 4 columns */
         -webkit-column-gap: 30px;
         width: 50%;
-        height: 1400px;
+        height: 1410px;
       }
 
       .menu-category {
@@ -223,7 +226,7 @@ export class App extends Component {
       }
 
       #awards .award-content, #certifications .certification-content {
-        padding: 10px 0 0 80px;
+        padding: 10px 0 0 60px;
       }
 
       #awards h4, #certifications h4 {
@@ -245,7 +248,7 @@ export class App extends Component {
 
       .progress-bar-custom {
         background: rgba(66, 139, 202, 0);
-        border: 1px solid #1abc9c;
+        border: 1px solid #16a085;
         -webkit-box-shadow: inset 0 0px 0px;
         box-shadow: inset 0 0px 0px;
       }

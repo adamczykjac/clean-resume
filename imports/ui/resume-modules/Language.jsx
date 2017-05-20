@@ -30,10 +30,6 @@ export default class Language extends Component {
       #languages .lang-label-wrapper label > span {
         display: block;
       }
-
-      #languages .lang-label-wrapper label > span.fluency {
-        font-size: 0.75em;
-      }
       `
   }
 

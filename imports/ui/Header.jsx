@@ -47,7 +47,7 @@ export default class Header extends Component {
       }
 
       .main-lead {
-        color: #1abc9c;
+        color: #16a085;
         margin: 0;
         letter-spacing: normal;
       }
@@ -81,6 +81,8 @@ export default class Header extends Component {
   }
 
   render() {
+    const HTTP_PROTOCOL = 'http://'
+
     return (
       <InlineCss stylesheet={ Header.styles() }>
         <header className="row">
@@ -107,7 +109,7 @@ export default class Header extends Component {
                 { this.props.basics.website &&
                   <tr>
                     <td><T>Header.web</T></td>
-                    <td><a href="#" target="_blank">{ this.props.basics.website }</a></td>
+                    <td><a href={this.props.basics.website} target="_blank">{ this.props.basics.website.replace(HTTP_PROTOCOL, "") }</a></td>
                   </tr>
                 }
                 { this.props.basics.phone &&

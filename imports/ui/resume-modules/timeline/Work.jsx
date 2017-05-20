@@ -5,21 +5,25 @@ import { renderWorkPeriod } from './utils.js'
 const T = i18n.createComponent()
 
 export default class Work extends Component {
-  render() {
-    const HTTP_PROTOCOL = 'http://'
+  renderCompany(name, url) {
+    if(url) {
+      return (
+        <a href={url} target="_blank">
+          { name }
+        </a>
+      )
+    }
+    else {
+      return name
+    }
+  }
 
+  render() {
     return (
       <div className="timeline-body">
         <h4>{ this.props.work.position }</h4>
-        <h5>{ this.props.work.company } | { renderWorkPeriod(this.props.work.startDate, this.props.work.endDate) }</h5>
+        <h5>{ this.renderCompany(this.props.work.company, this.props.work.websites[0]) } | { this.props.work.location.city } <span className={"flag-icon flag-icon-" + this.props.work.location.countryCode}></span> | { renderWorkPeriod(this.props.work.startDate, this.props.work.endDate) }</h5>
         { this.props.work.summary ? (<p>{ this.props.work.summary }</p>) : null }
-        { this.props.work.websites ?
-          this.props.work.websites.map( (website) => (
-            <a href={website} className="company-link" target="_blank">
-              { website.replace(HTTP_PROTOCOL, "") }
-            </a>
-          ))
-          : null }
       </div>
     );
   }

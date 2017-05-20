@@ -26,7 +26,7 @@ export default class Skill extends Component {
 
       .progress-bar-custom {
         background: rgba(66, 139, 202, 0);
-        border: 1px solid #1abc9c;
+        border: 1px solid #16a085;
         -webkit-box-shadow: inset 0 0px 0px;
         box-shadow: inset 0 0px 0px;
       }
@@ -36,9 +36,9 @@ export default class Skill extends Component {
       }
 
       #skills .label-wrapper .keyword {
-        border: 1px solid #1abc9c;
+        border: 1px solid #16a085;
         background-color: transparent;
-        color: #1abc9c;
+        color: #16a085;
         font-size: 1em;
         line-height: 2;
         margin: 0 1px;
@@ -66,8 +66,8 @@ export default class Skill extends Component {
             </div>
           }
           { this.props.skill.keywords &&
-            this.props.skill.keywords.map( (keyword) => (
-              <div className="label-wrapper">
+            this.props.skill.keywords.map( (keyword, idx) => (
+              <div className="label-wrapper" key={idx}>
                 <span className="label label-info keyword">{ keyword }</span>
               </div>
             ))

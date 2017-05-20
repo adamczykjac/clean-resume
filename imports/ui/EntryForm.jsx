@@ -9,6 +9,13 @@ import wkhtmltopdf from 'wkhtmltopdf';
 import getModelFixtures from '../startup/modelFixtures.js'
 
 export default class EntryForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      entryForm: {}
+    };
+  }
+
   handleForm(data) {
     console.log(data);
     Meteor.call('resumes.insert', data , (error, _id) => {
@@ -33,7 +40,8 @@ export default class EntryForm extends Component {
   render() {
     return (
       <div className="container">
-        <AutoForm schema={ Resumes.schema }
+        <AutoForm ref={ref => this.state.entryForm = ref}
+                  schema={ Resumes.schema }
                   onSubmit={ data => this.handleForm(data) }
                   model = { getModelFixtures() } />
       </div>
