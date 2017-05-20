@@ -29,17 +29,24 @@
   margin-left: 20px;
 }
 
-.flaticon-bulb:before { content: "\f100"; }
-.flaticon-raquet:before { content: "\f101"; }
-.flaticon-basketball:before { content: "\f102"; }
-.flaticon-airplane:before { content: "\f103"; }
-.flaticon-trophy:before { content: "\f104"; }
-.flaticon-oscar:before { content: "\f105"; }
-.flaticon-diploma:before { content: "\f106"; }
-.flaticon-book:before { content: "\f107"; }
-.flaticon-open-book:before { content: "\f108"; }
-.flaticon-music:before { content: "\f109"; }
-.flaticon-people:before { content: "\f10a"; }
+.flaticon-monitor:before { content: "\f100"; }
+.flaticon-guitar:before { content: "\f101"; }
+.flaticon-saw:before { content: "\f102"; }
+.flaticon-luxury:before { content: "\f103"; }
+.flaticon-music-1:before { content: "\f104"; }
+.flaticon-women:before { content: "\f105"; }
+.flaticon-fashion:before { content: "\f106"; }
+.flaticon-diploma:before { content: "\f107"; }
+.flaticon-airplane:before { content: "\f108"; }
+.flaticon-bulb:before { content: "\f109"; }
+.flaticon-raquet:before { content: "\f10a"; }
+.flaticon-basketball:before { content: "\f10b"; }
+.flaticon-trophy:before { content: "\f10c"; }
+.flaticon-oscar:before { content: "\f10d"; }
+.flaticon-book:before { content: "\f10e"; }
+.flaticon-open-book:before { content: "\f10f"; }
+.flaticon-music:before { content: "\f110"; }
+.flaticon-people:before { content: "\f111"; }
 
 *[class^='flaticon-'].big {
   color: @primary-brand-color;
