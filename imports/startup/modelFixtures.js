@@ -1,11 +1,11 @@
 export default getModelFixtures = () => ({
   "basics" : {
       "name" : "Jacek Adamczyk",
-      "label" : "",
+      "label" : "Team Leader / Product Manager",
       // "picture" : "",
       "email" : "jacek@adamczyk.me",
       "phone" : "+48 514 716 760",
-      "website" : "adamczyk.me",
+      "website" : "http://adamczyk.me",
       // "summary" : "Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!",
       "location" : {
           // "address" : "2712 Broadway St",
@@ -27,128 +27,150 @@ export default getModelFixtures = () => ({
       //     }
       // ]
   },
+  "awards": [
+    {
+      "title": "EU-XCEL Startup Accelerator Finalist",
+      "date": "November 2015",
+      "awarder": {
+        "name": "EU-XCEL",
+        "website": "http://euxcel.eu",
+        "location": {
+          "city": "Cork",
+          "countryCode": "ie"
+        }
+      },
+      "summary": "Head of team 'Tamaze' - talent recognition platform. Final preceeded by SCRUM-Week in Munich and 4-month remote acceleration phase. Pitching, Product Design, Business Model."
+    },
+    {
+      "title": "Best Master Thesis Contest - 3rd place",
+      "date": "February 2015",
+      "awarder": {
+        "name": "Telecommunication Engineers Association",
+        "website": "http://sit.org.pl",
+        "location": {
+          "city": "Poznań",
+          "countryCode": "pl"
+        }
+      },
+      "summary": "Thesis: 'Bluetooth Low Energy beacons in the concept of modern hospital reception desks.' "
+    }
+  ],
   "work" : [
+      {
+          "company" : "Earrly.com",
+          "position" : "Maker",
+          "websites" : ["http://earrly.com"],
+          "startDate" : "July 2016",
+          "summary" : "Side-project. Beautify your resume via an online service. Technology Stack: ReactJS, MeteorJS, Heroku, i18n, Flat Design, Wireframing, Git Branching Model.",
+          "location": {
+            "city": "Łódź",
+            "countryCode": "pl",
+          }
+      },
       {
           "company" : "TomTom",
           "position" : "Associate Software Developer",
           "websites" : ["http://tomtom.com"],
-          "startDate" : "Marzec 2016",
-          "summary" : "First 7-months in Berlin, Germany - then in Łódź, Poland. DevOps, Integration and Testing, Infrastructure automation (AWS, Ansible) in geo-distributed teams.",
-          // "highlights" : [
-          //     "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
-          //     "Successfully won Techcrunch Disrupt",
-          //     "Optimized an algorithm that holds the current world record for Weisman Scores"
-          // ]
+          "startDate" : "September 2016",
+          "summary" : "DevOps, Continuous Integration, Infrastructure automation (AWS, Ansible, Python), Test-Driven Development, coordination between geo-distributed (Berlin-Łódź) teams. Co-organized internal Hackathon for 200+ people.",
+          "location": {
+            "city": "Łódź",
+            "countryCode": "pl"
+          }
       },
       {
-          "company" : ".com.pl",
-          "position" : "Współpraca",
-          "websites" : ["http://naia.com.pl"],
-          "startDate" : "Styczeń 2017",
-          "summary" : "Współprowadzenie bloga dla marki modowej Naia (tematyka beauty).",
-          // "highlights" : [
-          //     "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
-          //     "Successfully won Techcrunch Disrupt",
-          //     "Optimized an algorithm that holds the current world record for Weisman Scores"
-          // ]
+          "company" : "TomTom",
+          "position" : "Software Development Intern",
+          "websites" : ["http://tomtom.com"],
+          "startDate" : "March 2016",
+          "endDate" : "June 2016",
+          "summary" : "Master Thesis - 'Continuous Integration measured in open-source projects and retained during Version Control System migration'.",
+          "location": {
+            "city": "Berlin",
+            "countryCode": "de"
+          }
       },
       {
-          "company" : "Agencja Reklamowa adStone",
-          "position" : "Praktyki w dziale PR oraz Marketingu",
-          "websites" : ["http://adstone.pl"],
-          "startDate" : "Czerwiec",
-          "endDate" : "Sierpień 2016"
-          // "summary" : "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          // "highlights" : [
-          //     "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
-          //     "Successfully won Techcrunch Disrupt",
-          //     "Optimized an algorithm that holds the current world record for Weisman Scores"
-          // ]
+          "company" : "Allegro.pl",
+          "position" : "Junior Web Developer",
+          "websites" : ["http://allegro.pl"],
+          "startDate" : "April 2014",
+          "endDate" : "June 2014",
+          "summary" : "Front-end & DevOps, cross-environment deployment. JavaScript, Version Control / Code Review Systems (GIT/Gerrit).",
+          "location": {
+            "city": "Poznań",
+            "countryCode": "pl"
+          }
       },
       {
-          "company" : "Manufaktura Ślubna, Agnieszka Bondyra",
-          "position" : "Współpraca - sesja zdjęciowa",
-          "websites" : ["http://manufakturaslubna.com",
-                       "http://agabondyra.pl/galeria/bohemian-cherry-sesja-stylizowana",
-                       "http://agabondyra.pl/galeria/rustic-orchard-plenerowy-slub-sadzie"],
-          "startDate" : "Kwiecień 2016",
-          "endDate" : "Kwiecień 2016"
-          // "summary" : "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          // "highlights" : [
-          //     "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
-          //     "Successfully won Techcrunch Disrupt",
-          //     "Optimized an algorithm that holds the current world record for Weisman Scores"
-          // ]
-      },
-      {
-          "company" : "Rosie Jaredovna",
-          "position" : "Prowadzenie Fanpage'a",
-          "websites" : ["http://fb.com/rosiejaredovna"],
-          "startDate" : "2015",
-          "summary" : "Blog - tematyka: beauty.",
-          // "highlights" : [
-          //     "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
-          //     "Successfully won Techcrunch Disrupt",
-          //     "Optimized an algorithm that holds the current world record for Weisman Scores"
-          // ]
-      },
-      {
-          "company" : "Juliette in Wonderland",
-          "position" : "Współpraca",
-          "websites" : ["http://juliettecapuleti.com"],
-          "startDate" : "2014",
-          "summary" : "Redagowanie postów, organizowanie sesji zdjęciowych, wizaż, social-media.",
-          // "highlights" : [
-          //     "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
-          //     "Successfully won Techcrunch Disrupt",
-          //     "Optimized an algorithm that holds the current world record for Weisman Scores"
-          // ]
-      },
-      {
-          "company" : "Blog Modowy",
-          "position" : "Prowadzenie Fanpage'a",
-          "startDate" : "2012",
-          "endDate" : "2014"
-          // "highlights" : [
-          //     "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
-          //     "Successfully won Techcrunch Disrupt",
-          //     "Optimized an algorithm that holds the current world record for Weisman Scores"
-          // ]
+          "company" : "University of Stuttgart - Hydromechanics Dept.",
+          "position" : "IT Assistant",
+          "websites": ["http://www.hydrosys.uni-stuttgart.de/index.en.php"],
+          "startDate" : "May 2013",
+          "endDate" : "September 2013",
+          "summary": "Maintaining CMWR14 Conference Ticketing platform.",
+          "location": {
+            "city": "Stuttgart",
+            "countryCode": "de"
+          }
       }
   ],
-  // "volunteer" : [
-  //     {
-  //         "organization" : "CoderDojo",
-  //         "position" : "Teacher",
-  //         "website" : "http://coderdojo.com/",
-  //         "startDate" : "2012-01-01",
-  //         "endDate" : "2013-01-01",
-  //         "summary" : "Global movement of free coding clubs for young people.",
-  //         "highlights" : [
-  //             "Awarded 'Teacher of the Month'"
-  //         ]
-  //     }
-  // ],
   "education" : [
       {
           "institution" : {
-            "name": "Uniwersytet Ekonomiczny w Poznaniu",
-            "city": "Poznań",
-            "countryCode": "pl"
+            "name": "Tilburg University",
+            "location": {
+              "city": "Tilburg",
+              "countryCode": "nl"
+            }
           },
-          "area" : "Polityka Społeczna - specjalność: Komunikacja Społeczna",
-          "studyType" : "Studia licencjackie",
+          "area" : "Information Management",
+          "studyType" : "Master of Science",
           "startDate" : "2014",
+          "endDate" : "2016",
+          "courses": ["Advanced Resource Planning, Business Process Integration, \
+          Service Oriented Architecture, Enterprise Governance and Digital Transformation"]
       },
       {
           "institution" : {
-            "name": "VI LO im. I.J. Paderewskiego w Poznaniu",
-            "city": "Poznań",
-            "countryCode": "pl"
+            "name": "University of Stuttgart",
+            "location": {
+              "city": "Stuttgart",
+              "countryCode": "de"
+            }
           },
-          "area" : "Profil humanistyczny",
-          "studyType" : "Liceum Ogólnokształcące",
-          "startDate" : "2011",
+          "area" : "Information Technology",
+          "studyType" : "Master of Science",
+          "startDate" : "2014",
+          "endDate" : "2016",
+          "courses": ["Datawarehousing and Analytics (OLAP), Web Services Orchestration"]
+      },
+      {
+          "institution" : {
+            "name": "University of Crete",
+            "location": {
+              "city": "Heraklion",
+              "countryCode": "gr"
+            }
+          },
+          "area" : "Computer Science",
+          "studyType" : "Master of Science",
+          "startDate" : "2014",
+          "endDate" : "2016",
+          "courses": ["Big-Data Management (MapReduce, Hadoop), Large Scale Systems \
+                      (clustering, load balancing), Digital Economics"]
+      },
+      {
+          "institution" : {
+            "name": "Poznań University of Technology",
+            "location": {
+              "city": "Poznań",
+              "countryCode": "pl"
+            }
+          },
+          "area" : "Electronics & Telecommunication",
+          "studyType" : "Master of Science",
+          "startDate" : "2012",
           "endDate" : "2014"
       }
   ],
@@ -163,91 +185,100 @@ export default getModelFixtures = () => ({
   // ],
   "skills" : [
       {
-        "name" : "Promocja i reklama w social media",
+        "name" : "Business",
         "keywords" : [
-          "Google+",
-          "Blogger",
-          "Facebook",
-          "Facebook Pages",
-          "Instagram",
-          "Snapchat"
+          "Enterprise Architecture",
+          "BPMN",
+          "BPEL",
+          "UML",
+          "Business Models"
         ]
       },
       {
-        "name" : "Microsoft Office",
+        "name" : "Soft Skills",
         "keywords" : [
-          "Word",
-          "Excel",
-          "PowerPoint"
+          "Public Speaking",
+          "Leadership"
         ]
       },
       {
-        "name" : "Obróbka zdjęć",
+        "name" : "Web Development",
         "keywords" : [
-          "Photoscape"
+          "MeteorJS",
+          "ReactJS",
+          "REST"
         ]
       },
       {
-        "name" : "Praca w zespole",
+        "name" : "DevOps",
         "keywords" : [
-          "Prezentacja",
-          "Motywacja",
-          "Współpraca",
-          "Zarządzanie",
-          "Organizacja eventów"
+          "Ansible",
+          "Docker",
+          "Gradle",
+          "AWS"
         ]
-      }
+      },
+      {
+        "name" : "Programming",
+        "keywords" : [
+          "Python",
+          "Groovy",
+          "JavaScript",
+          "Java",
+          "TDD"
+        ]
+      },
+      {
+        "name" : "Other",
+        "keywords" : [
+          "Git",
+          "Photoshop",
+          "Illustrator",
+        ]
+      },
   ],
   "languages" : [
       {
-          "language" : "angielski",
-          "fluency" : "średnio-zaawansowany",
-          "level" : 5
+          "language" : "polish",
+          "fluency" : "native",
+          "level" : 8
       },
       {
-          "language" : "włoski",
-          "fluency" : "podstawowy",
-          "level" : 3
+          "language" : "english",
+          "fluency" : "C2",
+          "level" : 7,
+          "certificate": true
       },
       {
-          "language" : "rosyjski",
-          "fluency" : "podstawowy",
-          "level" : 3
+          "language" : "german",
+          "fluency" : "B2",
+          "level" : 5,
+          "certificate": true
+      },
+      {
+          "language" : "spanish",
+          "fluency" : "A2",
+          "level" : 3,
+          "certificate": true
       }
   ],
   "interests" : [
       {
-          "name" : "Wizaż",
-          "icon" : "fashion"
+          "name" : "American Basketball",
+          "icon" : "basketball"
       },
       {
-          "name" : "Moda",
-          "icon" : "women"
+          "name" : "Product & UX Design",
+          "icon" : "monitor"
       },
       {
-          "name" : "Śpiew",
-          "icon" : "music-1"
+          "name" : "Occasional Guitarist",
+          "icon" : "guitar"
       },
       {
-          "name" : "Literatura obyczajowa i romans",
-          "icon" : "open-book"
-      },
-      {
-          "name" : "Podróże",
-          "icon" : "airplane"
-      },
-      {
-          "name" : "Muzyka filmowa",
-          "icon" : "music"
-      },
-      {
-          "name" : "Planowanie wesel",
-          "icon" : "luxury"
-      },
-      {
-          "name" : "DIY",
-          "icon" : "saw"
-      },
+          "name" : "Tennis Player",
+          "icon" : "raquet"
+      }
   ],
   // "references" : [
   //     {
@@ -257,7 +288,12 @@ export default getModelFixtures = () => ({
   // ],
   "certifications" : [
       {
-          "name" : "Prawo jazdy - kat. B"
+          "name" : "Machine Learning Foundations: A Case Study Approach",
+          "authority": "University of Washington"
+      },
+      {
+          "name" : "SCRUM Management Methodology",
+          "authority": "Roche Poznań"
       }
   ],
   // "meta" : {
