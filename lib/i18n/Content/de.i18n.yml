@@ -1,0 +1,18 @@
+_namespace: Content
+
+skills: "Fähigkeiten"
+
+work: "Erfahrung"
+until_now: "bisher"
+
+education: "Ausbildung"
+gpa: "Durschn." # Grades per average
+
+awards: "Preise"
+
+certifications: "Zertifikate"
+
+languages: "Sprache"
+confirmed_by_a_certificate: "mit einem Zertifikat geprüft"
+
+interests: "Interesse"
