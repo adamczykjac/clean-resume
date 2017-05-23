@@ -1,5 +1,5 @@
 _namespace: Header
 
 web: 'Web'
-Hand: 'Mobil'
-location: 'Lage'
+phone: 'Mobil'
+location: 'Ort'

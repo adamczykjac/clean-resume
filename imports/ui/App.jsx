@@ -10,10 +10,10 @@ import Footer from './Footer.jsx';
 import Content from './Content.jsx';
 
 export class App extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   i18n.setLocale('pl');
-  // }
+  constructor(props) {
+    super(props);
+    i18n.setLocale('de');
+  }
 
   // Take it out to the separate module
   static getFont(fontPath) {

@@ -1,6 +1,9 @@
 import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 import InlineCss from 'react-inline-css';
+import i18n from 'meteor/universe:i18n';
+
+const T = i18n.createComponent();
 
 export default class Footer extends Component {
   static styles() {
@@ -23,7 +26,7 @@ export default class Footer extends Component {
       <InlineCss stylesheet={ Footer.styles() }>
         <footer>
           <hr />
-          Crafted with <a href="http://earrly.com">earrly.com</a> &copy; 2017 - Icon credits:&nbsp;
+          <T>Footer.crafted_with_earrly</T> &copy; 2017 - <T>Footer.icon_credits</T>:&nbsp;
           <a href="http://flaticon.com" target="_blank" className="regular-text">flaticon.com</a>
         </footer>
       </InlineCss>

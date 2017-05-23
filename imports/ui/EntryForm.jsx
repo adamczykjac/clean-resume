@@ -37,6 +37,10 @@ export default class EntryForm extends Component {
     return true;
   }
 
+  // componentDidMount() {
+  //   this.state.entryForm.submit()
+  // }
+
   render() {
     return (
       <div className="container">
