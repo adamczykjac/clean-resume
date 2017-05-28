@@ -6,7 +6,7 @@ export const Resumes = new Mongo.Collection('resumes');
 Resumes.deny({
   insert: () => true,
   update: () => true,
-  remove: () => true,
+  remove: () => true
 });
 
 let locationSchema = new SimpleSchema({

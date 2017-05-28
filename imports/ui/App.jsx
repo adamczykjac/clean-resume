@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import InlineCss from 'react-inline-css';
@@ -9,11 +10,12 @@ import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import Content from './Content.jsx';
 
-export class App extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   i18n.setLocale('pl');
-  // }
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    console.log(props);
+    // i18n.setLocale('pl');
+  }
 
   // Take it out to the separate module
   static getFont(fontPath) {
@@ -282,14 +284,13 @@ export class App extends Component {
   }
 
   render() {
+    console.log(this.props);
     // TODO Create a loading spinner
     return this.props.loading ? null : (
       <InlineCss namespace="App" stylesheet={ App.styles() }>
         <div className="top-wrapper">
           <div className="container">
-            {this.renderHeader()}
-            {this.renderContent()}
-            {this.renderFooter()}
+            Hello
           </div>
         </div>
       </InlineCss>
@@ -299,19 +300,17 @@ export class App extends Component {
 
 // Validation of this.props.* types
 // App.propTypes = {
-//   basics: PropTypes.object.isRequired
-//   // content: PropTypes.object.isRequired,
+//   basics: PropTypes.object.isRequired,
+//   content: PropTypes.object.isRequired
 // };
 
 // Fetch data from minimongo and pass it to React component
 // export default createContainer(({ params }) => {
-//   const subscription = Meteor.subscribe('resumes.get');
-//   const loading = !subscription.ready();
 //   let basics = {};
 //   let content = {};
 //
-//   resume = Resumes.findOne({_id: '58d2d48d945f3a9097406a68'});
-//   console.log(res);
+//   resume = Meteor.call('resumes.get', { resumeId: '58d2d48d945f3a9097406a68' });
+//
 //   if(resume) {
 //     basics = resume.basics,
 //     content = {
@@ -324,5 +323,5 @@ export class App extends Component {
 //       interests: resume.interests
 //     }
 //   }
-//   return { loading, basics, content };
+//   return { basics, content };
 // }, App);

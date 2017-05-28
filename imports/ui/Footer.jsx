@@ -1,8 +1,10 @@
 import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 import InlineCss from 'react-inline-css';
+import { createContainer } from 'meteor/react-meteor-data';
+import { Resumes } from '../api/resumes/resumes.js'
 
-export default class Footer extends Component {
+export class Footer extends Component {
   static styles() {
     return `
       footer {
@@ -19,7 +21,7 @@ export default class Footer extends Component {
   }
 
   render() {
-    return (
+    return this.props.loading ? null : (
       <InlineCss stylesheet={ Footer.styles() }>
         <footer>
           <hr />
@@ -30,3 +32,27 @@ export default class Footer extends Component {
     );
   }
 };
+
+export const FooterContainer = createContainer(({ params }) => {
+  let basics = {};
+  let content = {};
+
+  const resumesSub = Meteor.subscribe('resumes.get');
+  const loading = !resumesSub.ready();
+
+  let resume = Resumes.findOne({ _id: '58d2d48d945f3a9097406a68' });
+
+  // if(resume) {
+  //   basics = resume.basics,
+  //   content = {
+  //     skills: resume.skills,
+  //     awards: resume.awards,
+  //     languages: resume.languages,
+  //     works: resume.work,
+  //     educations: resume.education,
+  //     certifications: resume.certifications,
+  //     interests: resume.interests
+  //   }
+  // }
+  return { loading, resume };
+}, Footer);

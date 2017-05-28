@@ -9,3 +9,14 @@ export const insert = new ValidatedMethod({
     return Resumes.insert(resume);
   }
 });
+
+export const get = new ValidatedMethod({
+  name: 'resumes.get',
+  validate: new SimpleSchema({
+    resumeId: { type: String }
+  }).validator(),
+  run({ resumeId }) {
+    let resume = Resumes.findOne({ _id: resumeId })
+    return resume
+  }
+});
