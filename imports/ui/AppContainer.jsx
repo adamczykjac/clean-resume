@@ -13,7 +13,7 @@ export const AppContainer = createContainer(({ params }) => {
   const loading = !resumesSub.ready();
 
   let resume = Resumes.findOne({ _id: '58d2d48d945f3a9097406a68' });
-
+  if(!loading && resume) basics = resume.basics
   // if(resume) {
   //   basics = resume.basics,
   //   content = {
@@ -26,5 +26,5 @@ export const AppContainer = createContainer(({ params }) => {
   //     interests: resume.interests
   //   }
   // }
-  return { loading, resume };
+  return { loading, basics };
 }, AppLayout);

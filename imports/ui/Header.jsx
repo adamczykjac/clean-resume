@@ -4,7 +4,7 @@ import i18n from 'meteor/universe:i18n';
 
 const T = i18n.createComponent();
 
-export default class Header extends Component {
+export class Header extends Component {
   // Take it out to the separate module
   static getAsset(assetPath) {
     if(Meteor.isServer){
@@ -82,8 +82,7 @@ export default class Header extends Component {
 
   render() {
     const HTTP_PROTOCOL = 'http://'
-
-    return (
+    return this.props.loading ? <span>Loading</span> : (
       <InlineCss stylesheet={ Header.styles() }>
         <header className="row">
           <div className="col-md-6 col-xs-5">
