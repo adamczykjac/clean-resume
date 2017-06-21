@@ -13,8 +13,11 @@ import Content from './Content.jsx';
 export default class App extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
     // i18n.setLocale('pl');
+  }
+
+  componentDidUpdate() {
+    console.log(this.props);
   }
 
   // Take it out to the separate module
@@ -269,13 +272,13 @@ export default class App extends Component {
 
   renderContent() {
     return <Content
-      skills={this.props.content.skills}
-      awards={this.props.content.awards}
-      languages={this.props.content.languages}
-      works={this.props.content.works}
-      educations={this.props.content.educations}
-      certifications={this.props.content.certifications}
-      interests={this.props.content.interests}
+      skills={this.props.details.skills}
+      awards={this.props.details.awards}
+      languages={this.props.details.languages}
+      works={this.props.details.works}
+      educations={this.props.details.educations}
+      certifications={this.props.details.certifications}
+      interests={this.props.details.interests}
     />;
   }
 
@@ -284,13 +287,15 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(this.props);
     // TODO Create a loading spinner
-    return this.props.loading ? null : (
+    return this.props.loading ? <span>Loading</span> : (
+      // TODO try to get rid of wrapper and container div, keep your components pure AF
       <InlineCss namespace="App" stylesheet={ App.styles() }>
         <div className="top-wrapper">
           <div className="container">
-            Hello
+            { this.renderHeader() }
+            { this.renderContent() }
+            { this.renderFooter() }
           </div>
         </div>
       </InlineCss>
@@ -299,29 +304,7 @@ export default class App extends Component {
 }
 
 // Validation of this.props.* types
-// App.propTypes = {
-//   basics: PropTypes.object.isRequired,
-//   content: PropTypes.object.isRequired
-// };
-
-// Fetch data from minimongo and pass it to React component
-// export default createContainer(({ params }) => {
-//   let basics = {};
-//   let content = {};
-//
-//   resume = Meteor.call('resumes.get', { resumeId: '58d2d48d945f3a9097406a68' });
-//
-//   if(resume) {
-//     basics = resume.basics,
-//     content = {
-//       skills: resume.skills,
-//       awards: resume.awards,
-//       languages: resume.languages,
-//       works: resume.work,
-//       educations: resume.education,
-//       certifications: resume.certifications,
-//       interests: resume.interests
-//     }
-//   }
-//   return { basics, content };
-// }, App);
+App.propTypes = {
+  basics: PropTypes.object.isRequired,
+  details: PropTypes.object.isRequired
+};

@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 import InlineCss from 'react-inline-css';
 
-export class Footer extends Component {
+export default class Footer extends Component {
   static styles() {
     return `
       footer {

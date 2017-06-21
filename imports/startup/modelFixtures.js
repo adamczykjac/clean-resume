@@ -59,7 +59,7 @@ export default getModelFixtures = () => ({
       {
           "company" : "Earrly.com",
           "position" : "Maker",
-          "websites" : ["http://earrly.com"],
+          "website" : "http://earrly.com",
           "startDate" : "July 2016",
           "summary" : "Side-project. Beautify your resume via an online service. Technology Stack: ReactJS, MeteorJS, Heroku, i18n, Flat Design, Wireframing, Git Branching Model.",
           "location": {
@@ -70,7 +70,7 @@ export default getModelFixtures = () => ({
       {
           "company" : "TomTom",
           "position" : "Associate Software Developer",
-          "websites" : ["http://tomtom.com"],
+          "website" : "http://tomtom.com",
           "startDate" : "September 2016",
           "summary" : "DevOps, Continuous Integration, Infrastructure automation (AWS, Ansible, Python), Test-Driven Development, coordination between geo-distributed (Berlin-Łódź) teams. Co-organized internal Hackathon for 200+ people.",
           "location": {
@@ -81,7 +81,7 @@ export default getModelFixtures = () => ({
       {
           "company" : "TomTom",
           "position" : "Software Development Intern",
-          "websites" : ["http://tomtom.com"],
+          "website" : "http://tomtom.com",
           "startDate" : "March 2016",
           "endDate" : "June 2016",
           "summary" : "Master Thesis - 'Continuous Integration measured in open-source projects and retained during Version Control System migration'.",
@@ -93,7 +93,7 @@ export default getModelFixtures = () => ({
       {
           "company" : "Allegro.pl",
           "position" : "Junior Web Developer",
-          "websites" : ["http://allegro.pl"],
+          "website" : "http://allegro.pl",
           "startDate" : "April 2014",
           "endDate" : "June 2014",
           "summary" : "Front-end & DevOps, cross-environment deployment. JavaScript, Version Control / Code Review Systems (GIT/Gerrit).",
@@ -105,7 +105,7 @@ export default getModelFixtures = () => ({
       {
           "company" : "University of Stuttgart - Hydromechanics Dept.",
           "position" : "IT Assistant",
-          "websites": ["http://www.hydrosys.uni-stuttgart.de/index.en.php"],
+          "website": "http://www.hydrosys.uni-stuttgart.de/index.en.php",
           "startDate" : "May 2013",
           "endDate" : "September 2013",
           "summary": "Maintaining CMWR14 Conference Ticketing platform.",

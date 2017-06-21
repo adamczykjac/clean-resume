@@ -117,12 +117,9 @@ Resumes.schema = new SimpleSchema({
   'work.$.position': {
       type: String
   },
-  'work.$.websites': {
-      type: Array,
+  'work.$.website': {
+      type: String,
       optional: true
-  },
-  'work.$.websites.$': {
-      type: String
   },
   'work.$.startDate': {
       type: String

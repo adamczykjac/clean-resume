@@ -17,7 +17,6 @@ export default class EntryForm extends Component {
   }
 
   handleForm(data) {
-    console.log(data);
     Meteor.call('resumes.insert', data , (error, _id) => {
       if (error) {
       console.log(error);
