@@ -5,77 +5,33 @@ import InlineCss from 'react-inline-css';
 import i18n from 'meteor/universe:i18n';
 
 import { Resumes } from '../api/resumes/resumes.js';
+import FontHelper from './helpers/Font.js'
 
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import Content from './Content.jsx';
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    // i18n.setLocale('pl');
+  static loadFontFaces(fonts) {
+    let fontFaces = fonts.map(( font ) => ( FontHelper.buildFontFace( font ) ))
+    return fontFaces.join("\n")
   }
 
-  componentDidUpdate() {
-    console.log(this.props);
-  }
-
-  // Take it out to the separate module
-  static getFont(fontPath) {
-    if(Meteor.isServer){
-      return Assets.absoluteFilePath(fontPath);
+  static externalStyles() {
+    if(Meteor.isServer) {
+      return Assets.getText('stylesheets/bootstrap.min.css')
     }
-    // client
-    return fontPath
   }
 
-  static loadFontFaces() {
+  static adjustHeight() {
+    if(Meteor.isServer) {
+      return "1410px"; // set after dozens of try outs to fit A4 PDF
+    }
+    return "1825px"; // to fit the screen
+  }
+
+  static componentStyles() {
     return `
-      @font-face {
-        font-family: 'MontRgl';
-        src: url('${ App.getFont('fonts/montserrat/MontRgl.ttf') }') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-      }
-
-      @font-face {
-        font-family: 'MontLt';
-        src: url('${ App.getFont('fonts/montserrat/MontLt.ttf') }') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-      }
-
-      @font-face {
-        font-family: 'MontBld';
-        src: url('${ App.getFont('fonts/montserrat/MontBld.ttf') }') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-      }
-
-      @font-face {
-        font-family: "Flaticon";
-        src: url('${ App.getFont('fonts/flaticon/Flaticon.ttf') }') format("truetype");
-        font-weight: normal;
-        font-style: normal;
-      }
-
-      @media screen and (-webkit-min-device-pixel-ratio:0) {
-        @font-face {
-          font-family: "Flaticon";
-          src: url('${ App.getFont('fonts/flaticon/Flaticon.svg') }#Flaticon') format("svg");
-        }
-      }
-      `
-    }
-
-    static externalStyles() {
-      if(Meteor.isServer){
-        return Assets.getText('stylesheets/bootstrap.min.css')
-      }
-    }
-
-    static componentStyles() {
-      return `
       html, body {
         margin: 1.5em 0.8em 0 0;
         padding: 0;
@@ -201,7 +157,7 @@ export default class App extends Component {
                      50% = 2 columns, 33% = 3 columns 25% = 4 columns */
         -webkit-column-gap: 30px;
         width: 50%;
-        height: 1410px;
+        height: ${ App.adjustHeight() };
       }
 
       .menu-category {
@@ -261,7 +217,13 @@ export default class App extends Component {
   }
 
   static styles() {
-    return App.loadFontFaces() +
+    let fontsToLoad = [
+      FontHelper.FONTS.MONTSERRAT_REGULAR,
+      FontHelper.FONTS.MONTSERRAT_BOLD,
+      FontHelper.FONTS.MONTSERRAT_LIGHT,
+    ]
+
+    return App.loadFontFaces(fontsToLoad) +
            App.externalStyles() +
            App.componentStyles()
   }
