@@ -5,3 +5,4 @@
 node_modules
 .dbbackup
 .gulp
+.DS_Store
