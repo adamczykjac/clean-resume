@@ -26,7 +26,7 @@ export default class Skill extends Component {
 
       .progress-bar-custom {
         background: rgba(66, 139, 202, 0);
-        border: 1px solid #16a085;
+        border: 1px solid #eb4b52;
         -webkit-box-shadow: inset 0 0px 0px;
         box-shadow: inset 0 0px 0px;
       }
@@ -36,9 +36,9 @@ export default class Skill extends Component {
       }
 
       #skills .label-wrapper .keyword {
-        border: 1px solid #16a085;
+        border: 1px solid #eb4b52;
         background-color: transparent;
-        color: #16a085;
+        color: #eb4b52;
         font-size: 1em;
         line-height: 2;
         margin: 0 1px;

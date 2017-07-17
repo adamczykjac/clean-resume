@@ -1,177 +1,117 @@
 export default getModelFixtures = () => ({
   "basics" : {
-      "name" : "Jacek Adamczyk",
-      "label" : "Team Leader / Product Manager",
-      // "picture" : "",
-      "email" : "jacek@adamczyk.me",
-      "phone" : "+48 514 716 760",
-      "website" : "http://adamczyk.me",
-      // "summary" : "Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!",
+      "name" : "Richard Hendriks",
+      "label" : "Doer, Dream Believer, Maker",
+      "email" : "richard.hendriks@mail.com",
+      "phone" : "(912) 555-4321",
+      "website" : "http://richardhendricks.com",
       "location" : {
-          // "address" : "2712 Broadway St",
-          // "postalCode" : "CA 94115",
-          "city" : "Łódź (able to relocate)",
-          "countryCode" : "PL",
-          // "region" : "NY"
+          "address" : "2712 Broadway St",
+          "postalCode" : "CA 94115",
+          "city" : "San Francisco",
+          "countryCode" : "US",
+          "region" : "California"
       },
-      // "profiles" : [
-      //     {
-      //         "network" : "Twitter",
-      //         "username" : "neutralthoughts",
-      //         "url" : ""
-      //     },
-      //     {
-      //         "network" : "SoundCloud",
-      //         "username" : "dandymusicnl",
-      //         "url" : "https://soundcloud.com/dandymusicnl"
-      //     }
-      // ]
   },
   "awards": [
     {
-      "title": "EU-XCEL Startup Accelerator Finalist",
-      "date": "November 2015",
-      "awarder": {
-        "name": "EU-XCEL",
-        "website": "http://euxcel.eu",
-        "location": {
-          "city": "Cork",
-          "countryCode": "ie"
-        }
-      },
-      "summary": "Head of team 'Tamaze' - talent recognition platform. Final preceeded by SCRUM-Week in Munich and 4-month remote acceleration phase. Pitching, Product Design, Business Model."
+        "title" : "Digital Compression Pioneer Award",
+        "date" : "2014-11-01",
+        "awarder": {
+          "name": "Techcrunch",
+          "website": "http://techcrunch.com",
+          "location": {
+            "city": "Rio De Janeiro",
+            "countryCode": "br"
+          }
+        },
+        "summary" : "Proin vitae eleifend nunc. Morbi tristique nisi vitae mi ornare, eu suscipit turpis viverra. Duis eget lorem et mauris interdum convallis. ."
     },
     {
-      "title": "Best Master Thesis Contest - 3rd place",
-      "date": "February 2015",
-      "awarder": {
-        "name": "Telecommunication Engineers Association",
-        "website": "http://sit.org.pl",
-        "location": {
-          "city": "Poznań",
-          "countryCode": "pl"
-        }
-      },
-      "summary": "Thesis: 'Bluetooth Low Energy beacons in the concept of modern hospital reception desks.' "
+        "title" : "Golden Raspberry Award",
+        "date" : "2014-11-01",
+        "awarder": {
+          "name": "Film Academy",
+          "website": "http://nyfa.edu",
+          "location": {
+            "city": "New York",
+            "countryCode": "us"
+          }
+        },
+        "summary" : "For the best role in the series 'Sillicon Valley'. Aliquam risus sem, posuere a rhoncus sed, semper convallis mi. Ut ornare nec diam sit amet tempor. Praesent sit amet dapibus magna."
     }
   ],
   "work" : [
       {
-          "company" : "Earrly.com",
-          "position" : "Maker",
-          "websites" : ["http://earrly.com"],
-          "startDate" : "July 2016",
-          "summary" : "Side-project. Beautify your resume via an online service. Technology Stack: ReactJS, MeteorJS, Heroku, i18n, Flat Design, Wireframing, Git Branching Model.",
+          "company" : "Pied Piper",
+          "position" : "CEO/President",
+          "websites" : ["http://piedpiper.com"],
+          "startDate" : "2014-01",
+          "summary" : "Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.",
           "location": {
-            "city": "Łódź",
-            "countryCode": "pl",
+            "city": "Palo Alto",
+            "countryCode": "us",
           }
       },
       {
-          "company" : "TomTom",
-          "position" : "Associate Software Developer",
-          "websites" : ["http://tomtom.com"],
-          "startDate" : "September 2016",
-          "summary" : "DevOps, Continuous Integration, Infrastructure automation (AWS, Ansible, Python), Test-Driven Development, coordination between geo-distributed (Berlin-Łódź) teams. Co-organized internal Hackathon for 200+ people.",
+          "company" : "Google",
+          "position" : "Intern",
+          "websites" : ["http://google.com"],
+          "startDate" : "2013-12-01",
+          "endDate" : "2014-12-01",
+          "summary" : "My career-breaking point started here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae velit euismod, fringilla ante at, fringilla nisl.",
           "location": {
-            "city": "Łódź",
-            "countryCode": "pl"
+            "city": "Mountain View",
+            "countryCode": "us",
           }
       },
       {
-          "company" : "TomTom",
-          "position" : "Software Development Intern",
-          "websites" : ["http://tomtom.com"],
-          "startDate" : "March 2016",
-          "endDate" : "June 2016",
-          "summary" : "Master Thesis - 'Continuous Integration measured in open-source projects and retained during Version Control System migration'.",
+          "company" : "HochFive",
+          "position" : "Copywriter",
+          "websites" : ["http://hochfive.com"],
+          "startDate" : "2011-12",
+          "endDate" : "2013-12",
+          "summary" : "Hasellus est odio, cursus in vulputate non, semper sed purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta mi quis mauris condimentum, id varius massa sodales. Integer efficitur urna vitae urna finibus elementum.",
           "location": {
             "city": "Berlin",
-            "countryCode": "de"
-          }
-      },
-      {
-          "company" : "Allegro.pl",
-          "position" : "Junior Web Developer",
-          "websites" : ["http://allegro.pl"],
-          "startDate" : "April 2014",
-          "endDate" : "June 2014",
-          "summary" : "Front-end & DevOps, cross-environment deployment. JavaScript, Version Control / Code Review Systems (GIT/Gerrit).",
-          "location": {
-            "city": "Poznań",
-            "countryCode": "pl"
-          }
-      },
-      {
-          "company" : "University of Stuttgart - Hydromechanics Dept.",
-          "position" : "IT Assistant",
-          "websites": ["http://www.hydrosys.uni-stuttgart.de/index.en.php"],
-          "startDate" : "May 2013",
-          "endDate" : "September 2013",
-          "summary": "Maintaining CMWR14 Conference Ticketing platform.",
-          "location": {
-            "city": "Stuttgart",
-            "countryCode": "de"
+            "countryCode": "de",
           }
       }
   ],
   "education" : [
       {
           "institution" : {
-            "name": "Tilburg University",
+            "name": "University of Harvard",
             "location": {
-              "city": "Tilburg",
-              "countryCode": "nl"
+              "city": "Harvard, IL",
+              "countryCode": "us"
             }
           },
-          "area" : "Information Management",
-          "studyType" : "Master of Science",
-          "startDate" : "2014",
-          "endDate" : "2016",
-          "courses": ["Advanced Resource Planning, Business Process Integration, \
-          Service Oriented Architecture, Enterprise Governance and Digital Transformation"]
+          "area" : "Business Administration",
+          "studyType" : "Master",
+          "startDate" : "2011-06-01",
+          "endDate" : "2014-01-01",
+          "courses" : [
+              "DB1101 - Basic SQL",
+              "CS2011 - Java Introduction"
+          ]
       },
       {
           "institution" : {
-            "name": "University of Stuttgart",
+            "name": "Ministry of Silly Walks",
             "location": {
-              "city": "Stuttgart",
-              "countryCode": "de"
+              "city": "London",
+              "countryCode": "gb"
             }
           },
-          "area" : "Information Technology",
-          "studyType" : "Master of Science",
-          "startDate" : "2014",
-          "endDate" : "2016",
-          "courses": ["Datawarehousing and Analytics (OLAP), Web Services Orchestration"]
-      },
-      {
-          "institution" : {
-            "name": "University of Crete",
-            "location": {
-              "city": "Heraklion",
-              "countryCode": "gr"
-            }
-          },
-          "area" : "Computer Science",
-          "studyType" : "Master of Science",
-          "startDate" : "2014",
-          "endDate" : "2016",
-          "courses": ["Big-Data Management (MapReduce, Hadoop), Large Scale Systems \
-                      (clustering, load balancing), Digital Economics"]
-      },
-      {
-          "institution" : {
-            "name": "Poznań University of Technology",
-            "location": {
-              "city": "Poznań",
-              "countryCode": "pl"
-            }
-          },
-          "area" : "Electronics & Telecommunication",
-          "studyType" : "Master of Science",
-          "startDate" : "2012",
-          "endDate" : "2014"
+          "area" : "Moonwalk",
+          "studyType" : "Bachelor",
+          "startDate" : "2008-07",
+          "endDate" : "2010-01",
+          "courses" : [
+              "Basic Silly Footsteps",
+              "Advanced Mambo-Jambo choreography"
+          ]
       }
   ],
   // "publications" : [
@@ -185,14 +125,34 @@ export default getModelFixtures = () => ({
   // ],
   "skills" : [
       {
-        "name" : "Business",
-        "keywords" : [
-          "Enterprise Architecture",
-          "BPMN",
-          "BPEL",
-          "UML",
-          "Business Models"
-        ]
+          "name" : "Web Development",
+          "keywords" : [
+              "HTML",
+              "CSS",
+              "Javascript"
+          ]
+      },
+      {
+          "name" : "Compression",
+          "keywords" : [
+              "Mpeg",
+              "MP4",
+              "GIF"
+          ]
+      },
+      {
+          "name" : "Digital Marketing",
+          "keywords" : [
+              "Cold Emails",
+              "Effective email campaigns"
+          ]
+      },
+      {
+          "name" : "UX Prototyping",
+          "keywords" : [
+              "Sketch",
+              "Wireframing"
+          ]
       },
       {
         "name" : "Soft Skills",
@@ -200,66 +160,29 @@ export default getModelFixtures = () => ({
           "Public Speaking",
           "Leadership"
         ]
-      },
-      {
-        "name" : "Web Development",
-        "keywords" : [
-          "MeteorJS",
-          "ReactJS",
-          "REST"
-        ]
-      },
-      {
-        "name" : "DevOps",
-        "keywords" : [
-          "Ansible",
-          "Docker",
-          "Gradle",
-          "AWS"
-        ]
-      },
-      {
-        "name" : "Programming",
-        "keywords" : [
-          "Python",
-          "Groovy",
-          "JavaScript",
-          "Java",
-          "TDD"
-        ]
-      },
-      {
-        "name" : "Other",
-        "keywords" : [
-          "Git",
-          "Photoshop",
-          "Illustrator",
-        ]
-      },
+      }
   ],
   "languages" : [
       {
-          "language" : "polish",
-          "fluency" : "native",
+          "language" : "English",
+          "fluency" : "Native",
           "level" : 8
       },
       {
-          "language" : "english",
-          "fluency" : "C2",
-          "level" : 7,
-          "certificate": true
+          "language" : "German",
+          "fluency" : "C1",
+          "level" : 6,
+            "certificate": true
       },
       {
-          "language" : "german",
-          "fluency" : "B2",
-          "level" : 5,
-          "certificate": true
+          "language" : "Spanish",
+          "fluency" : "B1",
+          "level" : 3
       },
       {
-          "language" : "spanish",
-          "fluency" : "A2",
-          "level" : 3,
-          "certificate": true
+          "language" : "Esperanto",
+          "fluency" : "A1",
+          "level" : 2
       }
   ],
   "interests" : [
@@ -272,12 +195,12 @@ export default getModelFixtures = () => ({
           "icon" : "monitor"
       },
       {
-          "name" : "Occasional Guitarist",
-          "icon" : "guitar"
+          "name" : "Distant Traveller",
+          "icon" : "airplane"
       },
       {
-          "name" : "Tennis Player",
-          "icon" : "raquet"
+          "name" : "DIY Lover",
+          "icon" : "saw"
       }
   ],
   // "references" : [
@@ -288,12 +211,16 @@ export default getModelFixtures = () => ({
   // ],
   "certifications" : [
       {
-          "name" : "Machine Learning Foundations: A Case Study Approach",
-          "authority": "University of Washington"
+          "name" : "CCC - Compression Codec Certification",
+          "date" : "2015-02-10",
+          "expiryDate" : "2020-02-10",
+          "authority" : "Compression Institute"
       },
       {
-          "name" : "SCRUM Management Methodology",
-          "authority": "Roche Poznań"
+          "name" : "PMP - Project Management Professional",
+          "date" : "2017-01-15",
+          "expiryDate" : "2020-02-10",
+          "authority" : "PMI International"
       }
   ],
   // "meta" : {

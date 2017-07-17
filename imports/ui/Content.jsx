@@ -43,7 +43,7 @@ export default class Content extends Component {
 
       .timeline-before {
         width: 1px;
-        background-color: #16a085;
+        background-color: #eb4b52;
         position: relative;
         left: 9px;
       }
@@ -85,7 +85,7 @@ export default class Content extends Component {
       }
 
       .timeline-badge > a > .circle {
-        background-color: #16a085;
+        background-color: #eb4b52;
         border: 7px solid #fff;
         border-radius: 15px;
         height: 23px;

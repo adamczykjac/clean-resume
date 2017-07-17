@@ -47,7 +47,7 @@ export default class Header extends Component {
       }
 
       .main-lead {
-        color: #16a085;
+        color: #eb4b52;
         margin: 0;
         letter-spacing: normal;
       }
@@ -89,7 +89,7 @@ export default class Header extends Component {
           <div className="col-md-6 col-xs-5">
             <div className="row">
               <div className="col-xs-2 col-md-3 col-lg-2 col-md-offset-0">
-                <img className="img-circle avatar" src={ Header.getAsset('img/profilepic.png') } />
+                <img className="img-circle avatar" src={ Header.getAsset('img/profilepic.jpg') } />
               </div>
               <div className="col-xs-8 col-xs-offset-2 col-sm-offset-2">
                 <h2 className="main-lead">{ this.props.basics.name }</h2>

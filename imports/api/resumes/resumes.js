@@ -16,13 +16,17 @@ let locationSchema = new SimpleSchema({
   },
   "postalCode": {
     type: String,
-    optional: true
+    optional: true,
   },
   "city": {
-    type: String
+    type: String,
+    // workaround
+    optional: true
   },
   "countryCode": {
-    type: String
+    type: String,
+    // workaround
+    optional: true
   },
   "region": {
     type: String,
@@ -99,9 +103,12 @@ Resumes.schema = new SimpleSchema({
       type: String
   },
   'awards.$.awarder.website': {
-      type: String
+      type: String,
+      optional: true
   },
-  'awards.$.awarder.location': locationSchema,
+  'awards.$.awarder.location': {
+    type: locationSchema
+  },
   'awards.$.summary': {
       type: String
   },

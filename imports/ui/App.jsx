@@ -79,11 +79,11 @@ export class App extends Component {
 
       a, a:visited, a:active {
         font-family: "MontRgl";
-        color: #16a085;
+        color: #eb4b52;
       }
 
       a:hover {
-        color: #16a085;
+        color: #eb4b52;
         text-decoration: none;
       }
 
@@ -154,7 +154,7 @@ export class App extends Component {
       .flaticon-people:before { content: "\\f111"; }
 
       *[class^='flaticon-'].big {
-        color: #16a085;
+        color: #eb4b52;
       }
 
       *[class^='flaticon-'].big:before {
@@ -248,7 +248,7 @@ export class App extends Component {
 
       .progress-bar-custom {
         background: rgba(66, 139, 202, 0);
-        border: 1px solid #16a085;
+        border: 1px solid #eb4b52;
         -webkit-box-shadow: inset 0 0px 0px;
         box-shadow: inset 0 0px 0px;
       }
