@@ -15,6 +15,12 @@ export default class EntryForm extends Component {
     this.state = {
       entryForm: {}
     };
+
+    Bert.defaults = {
+      hideDelay: 5000,
+      style: 'fixed-top',
+      type: 'default'
+    };
   }
 
   static styles() {
@@ -36,7 +42,10 @@ export default class EntryForm extends Component {
         console.log(error);
         Bert.alert(error.reason, 'danger');
       } else {
-        Bert.alert('Your data has reached our team and we are processing them now to provide you some beautiful Earrly resume, thank you!', 'success');
+        Bert.alert('Your data has reached our team and we are processing it now to provide you some beautiful Earrly resume, thank you!', 'success');
+        Meteor.setTimeout(() => {
+          window.location = "http://www.earrly.com";
+        }, 5000);
       }
     });
     return true;
