@@ -22,7 +22,8 @@ let locationSchema = new SimpleSchema({
     type: String
   },
   "countryCode": {
-    type: String
+    type: String,
+    optional: true
   },
   "region": {
     type: String,
@@ -187,9 +188,6 @@ Resumes.schema = new SimpleSchema({
   'languages.$.fluency': {
       type: String
   },
-  'languages.$.level': {
-      type: Number
-  },
   'languages.$.certificate': {
       type: Boolean,
       optional: true
@@ -223,10 +221,7 @@ Resumes.schema = new SimpleSchema({
   'interests.$': Object,
   'interests.$.name': {
       type: String
-  },
-  'interests.$.icon': {
-      type: String
-  },
+  }
 })
 
 Resumes.attachSchema(Resumes.schema)

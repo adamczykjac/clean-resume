@@ -1,17 +1,17 @@
 export default getModelFixtures = () => ({
   "basics" : {
-      "name" : "Jacek Adamczyk",
-      "label" : "Team Leader / Product Manager",
+      "name" : "Richard Hendriks",
+      "label" : "DOER, DREAM BELIEVER, MAKER",
       // "picture" : "",
-      "email" : "jacek@adamczyk.me",
-      "phone" : "+48 514 716 760",
-      "website" : "http://adamczyk.me",
+      "email" : "richard.hendriks@mail.com",
+      "phone" : "(912) 555-4321",
+      "website" : "richardhendricks.com",
       // "summary" : "Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!",
       "location" : {
           // "address" : "2712 Broadway St",
           // "postalCode" : "CA 94115",
-          "city" : "Łódź (able to relocate)",
-          "countryCode" : "PL",
+          "city" : "San Francisco",
+          "countryCode" : "US",
           // "region" : "NY"
       },
       // "profiles" : [
@@ -29,89 +29,28 @@ export default getModelFixtures = () => ({
   },
   "awards": [
     {
-      "title": "EU-XCEL Startup Accelerator Finalist",
-      "date": "November 2015",
+      "title": "Digital Compression Pioneer Award",
+      "date": "2014-11",
       "awarder": {
-        "name": "EU-XCEL",
+        "name": "TechCrunch",
         "website": "http://euxcel.eu",
         "location": {
-          "city": "Cork",
-          "countryCode": "ie"
+          "city": "Rio De Janeiro",
+          "countryCode": "br"
         }
       },
-      "summary": "Head of team 'Tamaze' - talent recognition platform. Final preceeded by SCRUM-Week in Munich and 4-month remote acceleration phase. Pitching, Product Design, Business Model."
-    },
-    {
-      "title": "Best Master Thesis Contest - 3rd place",
-      "date": "February 2015",
-      "awarder": {
-        "name": "Telecommunication Engineers Association",
-        "website": "http://sit.org.pl",
-        "location": {
-          "city": "Poznań",
-          "countryCode": "pl"
-        }
-      },
-      "summary": "Thesis: 'Bluetooth Low Energy beacons in the concept of modern hospital reception desks.' "
+      "summary": "Proin vitae eleifend nunc. Morbi tristique nisi vitae mi ornare, eu suscipit turpis viverra. Duis eget lorem et mauris interdum convallis. .."
     }
   ],
   "work" : [
       {
           "company" : "Earrly.com",
-          "position" : "Maker",
+          "position" : "CEO / President",
           "websites" : ["http://earrly.com"],
           "startDate" : "July 2016",
           "summary" : "Side-project. Beautify your resume via an online service. Technology Stack: ReactJS, MeteorJS, Heroku, i18n, Flat Design, Wireframing, Git Branching Model.",
           "location": {
-            "city": "Łódź",
-            "countryCode": "pl",
-          }
-      },
-      {
-          "company" : "TomTom",
-          "position" : "Associate Software Developer",
-          "websites" : ["http://tomtom.com"],
-          "startDate" : "September 2016",
-          "summary" : "DevOps, Continuous Integration, Infrastructure automation (AWS, Ansible, Python), Test-Driven Development, coordination between geo-distributed (Berlin-Łódź) teams. Co-organized internal Hackathon for 200+ people.",
-          "location": {
-            "city": "Łódź",
-            "countryCode": "pl"
-          }
-      },
-      {
-          "company" : "TomTom",
-          "position" : "Software Development Intern",
-          "websites" : ["http://tomtom.com"],
-          "startDate" : "March 2016",
-          "endDate" : "June 2016",
-          "summary" : "Master Thesis - 'Continuous Integration measured in open-source projects and retained during Version Control System migration'.",
-          "location": {
-            "city": "Berlin",
-            "countryCode": "de"
-          }
-      },
-      {
-          "company" : "Allegro.pl",
-          "position" : "Junior Web Developer",
-          "websites" : ["http://allegro.pl"],
-          "startDate" : "April 2014",
-          "endDate" : "June 2014",
-          "summary" : "Front-end & DevOps, cross-environment deployment. JavaScript, Version Control / Code Review Systems (GIT/Gerrit).",
-          "location": {
-            "city": "Poznań",
-            "countryCode": "pl"
-          }
-      },
-      {
-          "company" : "University of Stuttgart - Hydromechanics Dept.",
-          "position" : "IT Assistant",
-          "websites": ["http://www.hydrosys.uni-stuttgart.de/index.en.php"],
-          "startDate" : "May 2013",
-          "endDate" : "September 2013",
-          "summary": "Maintaining CMWR14 Conference Ticketing platform.",
-          "location": {
-            "city": "Stuttgart",
-            "countryCode": "de"
+            "city": "Palo Alto"
           }
       }
   ],
@@ -130,48 +69,6 @@ export default getModelFixtures = () => ({
           "endDate" : "2016",
           "courses": ["Advanced Resource Planning, Business Process Integration, \
           Service Oriented Architecture, Enterprise Governance and Digital Transformation"]
-      },
-      {
-          "institution" : {
-            "name": "University of Stuttgart",
-            "location": {
-              "city": "Stuttgart",
-              "countryCode": "de"
-            }
-          },
-          "area" : "Information Technology",
-          "studyType" : "Master of Science",
-          "startDate" : "2014",
-          "endDate" : "2016",
-          "courses": ["Datawarehousing and Analytics (OLAP), Web Services Orchestration"]
-      },
-      {
-          "institution" : {
-            "name": "University of Crete",
-            "location": {
-              "city": "Heraklion",
-              "countryCode": "gr"
-            }
-          },
-          "area" : "Computer Science",
-          "studyType" : "Master of Science",
-          "startDate" : "2014",
-          "endDate" : "2016",
-          "courses": ["Big-Data Management (MapReduce, Hadoop), Large Scale Systems \
-                      (clustering, load balancing), Digital Economics"]
-      },
-      {
-          "institution" : {
-            "name": "Poznań University of Technology",
-            "location": {
-              "city": "Poznań",
-              "countryCode": "pl"
-            }
-          },
-          "area" : "Electronics & Telecommunication",
-          "studyType" : "Master of Science",
-          "startDate" : "2012",
-          "endDate" : "2014"
       }
   ],
   // "publications" : [
@@ -185,37 +82,10 @@ export default getModelFixtures = () => ({
   // ],
   "skills" : [
       {
-        "name" : "Business",
-        "keywords" : [
-          "Enterprise Architecture",
-          "BPMN",
-          "BPEL",
-          "UML",
-          "Business Models"
-        ]
-      },
-      {
         "name" : "Soft Skills",
         "keywords" : [
           "Public Speaking",
           "Leadership"
-        ]
-      },
-      {
-        "name" : "Web Development",
-        "keywords" : [
-          "MeteorJS",
-          "ReactJS",
-          "REST"
-        ]
-      },
-      {
-        "name" : "DevOps",
-        "keywords" : [
-          "Ansible",
-          "Docker",
-          "Gradle",
-          "AWS"
         ]
       },
       {
@@ -239,45 +109,24 @@ export default getModelFixtures = () => ({
   ],
   "languages" : [
       {
-          "language" : "polish",
-          "fluency" : "native",
-          "level" : 8
-      },
-      {
           "language" : "english",
+          "fluency" : "native",
+      },
+      {
+          "language" : "polish",
           "fluency" : "C2",
-          "level" : 7,
-          "certificate": true
-      },
-      {
-          "language" : "german",
-          "fluency" : "B2",
-          "level" : 5,
-          "certificate": true
-      },
-      {
-          "language" : "spanish",
-          "fluency" : "A2",
-          "level" : 3,
           "certificate": true
       }
   ],
   "interests" : [
       {
-          "name" : "American Basketball",
-          "icon" : "basketball"
+          "name" : "American Basketball"
       },
       {
-          "name" : "Product & UX Design",
-          "icon" : "monitor"
+          "name" : "Product & UX Design"
       },
       {
-          "name" : "Occasional Guitarist",
-          "icon" : "guitar"
-      },
-      {
-          "name" : "Tennis Player",
-          "icon" : "raquet"
+          "name" : "Occasional Guitarist"
       }
   ],
   // "references" : [
@@ -288,12 +137,8 @@ export default getModelFixtures = () => ({
   // ],
   "certifications" : [
       {
-          "name" : "Machine Learning Foundations: A Case Study Approach",
-          "authority": "University of Washington"
-      },
-      {
-          "name" : "SCRUM Management Methodology",
-          "authority": "Roche Poznań"
+          "name" : "CCC - Compression Codec Certification",
+          "authority": "Compression Institute"
       }
   ],
   // "meta" : {
