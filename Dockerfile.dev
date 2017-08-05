@@ -1,0 +1,20 @@
+FROM golden/meteor-dev
+
+ENV APP_USER app
+
+USER root
+# Download and install wkhtmltopdf
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install wget xz-utils libxrender1 libfontconfig1 libxext6
+RUN wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz \
+    -O /tmp/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+RUN tar xf /tmp/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz -C /tmp
+RUN cp -R /tmp/wkhtmltox/* /usr/local
+
+# Cleanup
+RUN rm -rf /tmp/wkhtmltox /tmp/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y remove wget xz-utils && \
+                                   apt-get -y autoremove && \
+                                   apt-get -y clean
+
+USER ${APP_USER}
+ENTRYPOINT [ "/usr/local/bin/meteor" ]
