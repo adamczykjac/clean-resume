@@ -1,17 +1,15 @@
+import { createContainer } from 'meteor/react-meteor-data';
 import React, { Component, PropTypes } from 'react';
 import InlineCss from 'react-inline-css';
 import i18n from 'meteor/universe:i18n';
+import Images from '../api/images/images';
 
 const T = i18n.createComponent();
 
 export default class Header extends Component {
-  // Take it out to the separate module
-  static getAsset(assetPath) {
-    if(Meteor.isServer){
-      return Assets.absoluteFilePath(assetPath);
-    }
-    // client
-    return assetPath
+  getPictureLink() {
+    const imgCursor = Images.findOne({ _id: this.props.basics.picture })
+    if(imgCursor) return imgCursor.link();
   }
 
   static styles() {
@@ -89,7 +87,7 @@ export default class Header extends Component {
           <div className="col-md-6 col-xs-5">
             <div className="row">
               <div className="col-xs-2 col-md-3 col-lg-2 col-md-offset-0">
-                <img className="img-circle avatar" src={ Header.getAsset('img/profilepic.png') } />
+                <img className="img-circle avatar" src={ this.getPictureLink() } />
               </div>
               <div className="col-xs-8 col-xs-offset-2 col-sm-offset-2">
                 <h2 className="main-lead">{ this.props.basics.name }</h2>

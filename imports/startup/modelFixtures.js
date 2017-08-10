@@ -111,11 +111,13 @@ export default getModelFixtures = () => ({
       {
           "language" : "english",
           "fluency" : "native",
+          "level" : 8
       },
       {
           "language" : "polish",
           "fluency" : "C2",
-          "certificate": true
+          "certificate": true,
+          "level" : 7
       }
   ],
   "interests" : [
