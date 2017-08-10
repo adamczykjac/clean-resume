@@ -1,13 +1,13 @@
- import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import InlineCss from 'react-inline-css';
 import i18n from 'meteor/universe:i18n';
 
-import Skill from './resume-modules/Skill.jsx';
-import Award from './resume-modules/Award.jsx';
-import Language from './resume-modules/Language.jsx';
-import TimelineMoment from './resume-modules/TimelineMoment.jsx';
-import Certification from './resume-modules/Certification.jsx';
-import Interest from './resume-modules/Interest.jsx';
+import Skill from './resume/Skill';
+import Award from './resume/Award';
+import Language from './resume/Language';
+import TimelineMoment from './resume/TimelineMoment';
+import Certification from './resume/Certification';
+import Interest from './resume/Interest';
 
 const T = i18n.createComponent();
 

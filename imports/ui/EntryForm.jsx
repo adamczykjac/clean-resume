@@ -42,10 +42,15 @@ export default class EntryForm extends Component {
         console.log(error);
         Bert.alert(error.reason, 'danger');
       } else {
-        Bert.alert('Your data has reached our team and we are processing it now to provide you some beautiful Earrly resume, thank you!', 'success');
-        Meteor.setTimeout(() => {
-          window.location = "http://www.earrly.com";
-        }, 5000);
+        Meteor.call('resumes.download', { resumeId: _id }, (error, response) => {
+          if (error) {
+            console.log(error);
+            Bert.alert(error.reason, 'danger');
+          } else {
+            const blob = base64ToBlob(response.base64);
+            fileSaver.saveAs(blob, response.fileName);
+          }
+        })
       }
     });
     return true;

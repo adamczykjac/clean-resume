@@ -1,5 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
+import ImageField from '../../ui/form/ImageField'
 
 export const Resumes = new Mongo.Collection('resumes');
 
@@ -53,6 +54,10 @@ Resumes.schema = new SimpleSchema({
     type: String,
     label: 'Website',
     optional: true
+  },
+  "basics.picture": {
+    type: String,
+    uniforms: ImageField
   },
   "basics.phone": {
     type: String,
@@ -187,6 +192,9 @@ Resumes.schema = new SimpleSchema({
   },
   'languages.$.fluency': {
       type: String
+  },
+  'languages.$.level': {
+      type: Number
   },
   'languages.$.certificate': {
       type: Boolean,
