@@ -4,7 +4,7 @@ import { Resumes } from '../../imports/api/resumes/resumes.js';
 import AutoForm from 'uniforms-bootstrap3/AutoForm';
 import fileSaver from 'file-saver';
 import InlineCss from 'react-inline-css';
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import wkhtmltopdf from 'wkhtmltopdf';
 
 import getModelFixtures from '../startup/modelFixtures.js'

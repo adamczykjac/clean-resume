@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import i18n from 'meteor/universe:i18n';
 import { renderWorkPeriod } from './utils.js';
 import InlineCss from 'react-inline-css';

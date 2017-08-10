@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import CircularProgressBar from './language/CircularProgressBar.jsx';
 import InlineCss from 'react-inline-css';
 
