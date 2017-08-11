@@ -5,6 +5,7 @@ export default getModelFixtures = () => ({
       // "picture" : "",
       "email" : "richard.hendriks@mail.com",
       "phone" : "(912) 555-4321",
+      "picture": "DxnLe4Qm94dto5M9S", // image with this id has to be present in mongo
       "website" : "richardhendricks.com",
       // "summary" : "Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!",
       "location" : {
@@ -46,11 +47,12 @@ export default getModelFixtures = () => ({
       {
           "company" : "Earrly.com",
           "position" : "CEO / President",
-          "websites" : ["http://earrly.com"],
+          "website" : "http://earrly.com",
           "startDate" : "July 2016",
           "summary" : "Side-project. Beautify your resume via an online service. Technology Stack: ReactJS, MeteorJS, Heroku, i18n, Flat Design, Wireframing, Git Branching Model.",
           "location": {
-            "city": "Palo Alto"
+            "city": "Palo Alto",
+            "countryCode": 'us'
           }
       }
   ],

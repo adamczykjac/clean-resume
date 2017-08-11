@@ -6,12 +6,12 @@ import Education from './timeline/Education.jsx'
 
 export default class TimelineMoment extends Component {
   renderTimelineMomentBody() {
-    // TimelineMoment elements need to be Components either the type of Work or Education
+    // TimelineMoment elements need to be of the type either 'Work' or 'Education'
     switch (this.props.momentType) {
       case 'Work':
-        return <Work work={this.props.moment} />;
+        return <Work work={ this.props.moment } />;
       case 'Education':
-        return <Education education={this.props.moment} />;
+        return <Education education={ this.props.moment } />;
     }
   }
 
