@@ -1,43 +1,25 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import i18n from 'meteor/universe:i18n';
-import { getPeriod, getFlagSpan } from './utils.js'
+import LocationBio from './LocationBio'
 
 const T = i18n.createComponent()
 
 export default class Work extends Component {
-  getWorkplaceBio(workData) {
-    let bioTokens = []
-    if(workData.company)
-      if(workData.website)
-        bioTokens.push(<a href={ workData.website } target="_blank">{ workData.company }</a>);
-      else bioTokens.push(workData.company);
-    if(workData.location.city)
-      if(workData.location.countryCode)
-        bioTokens.push(<span> | </span>);
-        bioTokens.push(
-          <span>
-            { workData.location.city } { getFlagSpan(workData.location.countryCode) }
-          </span>
-        );
-    if(workData.startDate) {
-      bioTokens.push(<span> | </span>);
-      dateBoundaries = { startDate: workData.startDate };
-      if(workData.endDate) dateBoundaries['endDate'] = workData.endDate;
-      bioTokens.push(getPeriod(dateBoundaries))
+  renderWorkplaceBio() {
+    let workplaceData = this.props.work
+    if(workplaceData.company) {
+      workplaceData['authority'] = workplaceData.company
+      delete workplaceData.company
     }
-    return (
-      <h5>
-        { bioTokens }
-      </h5>
-    )
+    return <LocationBio locationData={ workplaceData } />
   }
 
   render() {
     return (
       <div className="timeline-body">
         <h4>{ this.props.work.position }</h4>
-        { this.getWorkplaceBio(this.props.work) }
+        { this.renderWorkplaceBio() }
         { this.props.work.summary &&
           <p>{ this.props.work.summary }</p>
         }
